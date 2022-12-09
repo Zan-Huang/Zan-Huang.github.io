@@ -4,7 +4,7 @@ for f in *
 do
 	output=$f
 	pandoc --read=rtf --write=markdown -s $f -o "$output"
-	mv "$output" ../blags/content/posts
+	cp "$output" ../blags/content/posts
 done
 
 cd ..
