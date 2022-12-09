@@ -10,17 +10,14 @@ echo '<link rel="stylesheet" href="https://latex.now.sh/style.css">' >> index.ht
 cd posts
 for f in *
 do
-  #echo '<link rel="stylesheet" href="../style.css" type="text/css">' >> $f
   echo '<link rel="stylesheet" href="https://latex.now.sh/style.css">' >> $f
 done
 cd ..
 cd ..
 cd ..
-for f in tags/*.html
-do
-  #echo '<link rel="stylesheet" href="../style.css" type="text/css">' >> $f
-  echo '<link rel="stylesheet" href="https://latex.now.sh/style.css">' >> $f
-done
+
+echo '<link rel="stylesheet" href="https://latex.now.sh/style.css">' >> tags/index.html
+
 git add .
 git commit -m "update site"
 git push origin
