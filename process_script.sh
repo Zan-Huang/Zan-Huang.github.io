@@ -2,8 +2,8 @@
 cd documents
 for f in *
 do
-	output=$f
-	pandoc --read=rtf --write=markdown -s $f -o "$output"
+	output="($f).md"
+	pandoc --read=rtf --write=markdown -s $f -o $output
 	cp "$output" ../blags/content/posts
 done
 
