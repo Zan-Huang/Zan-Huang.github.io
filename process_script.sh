@@ -6,7 +6,7 @@ mv -v build/tags ..
 cd ..
 cd blags/build
 insertVAR="<link rel="stylesheet" href="style.css" type="text/css">"
-echo insertVar >> index.html
+echo $insertVar >> index.html
 cd ..
 cd ..
 git add .
