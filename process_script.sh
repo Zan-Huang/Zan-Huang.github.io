@@ -2,8 +2,12 @@
 cd documents
 for f in *
 do
-	echo pandoc -s f -o "$(file).html"
+	output=$f
+	pandoc --read=rtf --write=markdown -s $f -o "$output"
+	mv "$output" ../blags/content/posts
 done
+
+cd ..
 
 cd blags
 blag build
