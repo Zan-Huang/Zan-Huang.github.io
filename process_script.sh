@@ -5,7 +5,8 @@ mv -v build/atom.xml ..
 mv -v build/tags ..
 cd ..
 cd blags/build
-echo '<link rel="stylesheet" href="style.css" type="text/css">' >> index.html
+#echo '<link rel="stylesheet" href="style.css" type="text/css">' >> index.html
+echo '<link rel="stylesheet" href="https://latex.now.sh/style.css">' >> index.html
 cd posts
 for f in *
 do
