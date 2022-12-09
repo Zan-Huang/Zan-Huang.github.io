@@ -9,7 +9,7 @@ echo '<link rel="stylesheet" href="style.css" type="text/css">' >> index.html
 cd posts
 for f in *
 do
-  echo '<link rel="stylesheet" href="../style.css" type="text/css">' >> $f
+  #echo '<link rel="stylesheet" href="../style.css" type="text/css">' >> $f
   echo '<link rel="stylesheet" href="https://latex.now.sh/style.css">' >> $f
 done
 cd ..
