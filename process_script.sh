@@ -6,6 +6,12 @@ mv -v build/tags ..
 cd ..
 cd blags/build
 echo '<link rel="stylesheet" href="style.css" type="text/css">' >> index.html
+cd posts
+for f in *
+do
+  echo '<link rel="stylesheet" href="../style.css" type="text/css">' >> $f
+done
+cd ..
 cd ..
 cd ..
 git add .
