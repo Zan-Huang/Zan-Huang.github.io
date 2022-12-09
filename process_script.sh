@@ -5,7 +5,8 @@ mv -v build/atom.xml ..
 mv -v build/tags ..
 cd ..
 cd blags/build
-sed '3 i <link rel="stylesheet" href="style.css" type="text/css">' index.html
+insertVAR="<link rel="stylesheet" href="style.css" type="text/css">"
+sed '3 i $insertVAR' index.html
 cd ..
 cd ..
 git add .
