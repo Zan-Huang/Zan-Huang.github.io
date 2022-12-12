@@ -10,3 +10,5 @@ Keep Kalm Palm Balm.
 # Files
 
 I generated this site using markdown files with a static site generator.
+
+Hello! What's going on, everybody?
