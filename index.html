@@ -1,164 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zan Huang - A Site for my Technical Work</title>
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Nunito Sans', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fff;
-            padding-top: 50px;
-            padding-bottom: 50px;
-        }
-        .container {
-            width: 90%;
-            max-width: 700px;
-            margin: 40px auto;
-            overflow: hidden;
-        }
-        header {
-            text-align: center;
-            padding-bottom: 10px;
-        }
-        header h1 {
-            font-weight: 300;
-            font-size: 2.5rem;
-            color: #333;
-        }
-        header p {
-            font-weight: 300;
-            color: #666;
-        }
-        section {
-            margin-bottom: 40px;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        section h2 {
-            font-weight: 300;
-            font-size: 1.5rem;
-            color: #333;
-            margin-bottom: 15px;
-        }
-        .project {
-            text-align: center;
-            margin-bottom: 15px;
-        }
-        .project h3 {
-            font-weight: 400;
-        }
-        .project p {
-            color: #666;
-        }
-        .project a {
-            color: #3366BB;
-            text-decoration: none;
-            font-weight: 700;
-        }
-        .project a:hover {
-            text-decoration: underline;
-        }
-        .thumbnail {
-            display: block;
-            margin: 15px auto;
-            width: 100%;
-            max-width: 400px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #666;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        section {
-            animation: fadeIn 1s ease-in-out;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zan Huang - A Site for my Technical Work</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .main-content {
+      flex: 1 1 65%;
+    }
+
+    .sidebar {
+      flex: 1 1 30%;
+    }
+
+    header {
+      text-align: center;
+      padding-bottom: 30px;
+    }
+
+    header h1 {
+      font-weight: 300;
+      font-size: 2.5rem;
+      color: #333;
+    }
+
+    header p {
+      font-weight: 300;
+      color: #666;
+    }
+
+    section {
+      margin-bottom: 40px;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    section h2 {
+      font-weight: 300;
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .project {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .project h3 {
+      font-weight: 400;
+    }
+
+    .project p {
+      color: #666;
+    }
+
+    .project a {
+      color: #3366BB;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    .thumbnail {
+      display: block;
+      margin: 15px auto;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 50px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Responsive: stack columns on small screens */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Zan Huang</h1>
-            <p>A Site for my Technical Work</p>
-        </div>
-    </header>
+  <header>
+    <div class="container" style="flex-direction: column;">
+      <h1>Zan Huang</h1>
+      <p>A Site for my Technical Work</p>
+    </div>
+  </header>
 
-    <section id="bio" class="container">
+  <div class="container">
+    <div class="main-content">
+      <section id="bio">
         <h2>About Me</h2>
-        <p> 
-            My interests lie in alternative computational models for artificial intelligence, mass social patterns, 
-            chaotic/emergent systems, and linguistics. My current research is focused on novel ways of scaling deep 
-            neural networks through neurologically inspired modularity. Questions such as: <em>How can we reduce 
-            parameter space, increase interpretability, and create self-similar task divisions like the brain?</em>
-            <br> </br>
-        </p>
         <p>
-            I am a 2024 <strong>Foresight Institute Fellow</strong> in Neurotechnology. You can find the press release on the 
-            <a href="https://foresight.org/technologies/neurotech-improving-cognition/">Foresight Institute's website</a>.
-            <br> </br>
+          My interests lie in alternative computational models for artificial intelligence, mass social patterns,
+          chaotic/emergent systems, and linguistics. My current research is focused on novel ways of scaling deep
+          neural networks through neurologically inspired modularity. Questions such as:
+          <em>How can we reduce parameter space, increase interpretability, and create self-similar task divisions like the brain?</em>
         </p>
+        <br/>
         <p>
-            I am also the Co-Founder of <strong>Myelin Neurotech</strong>, a nonprofit working on neurotechnology research.
-            You can find our work on the 
-            <a href="https://myelingroup.github.io/">Myelin Neurotech page</a>. 
+          I am a 2024 <strong>Foresight Institute Fellow</strong> in Neurotechnology. You can find the press release on the
+          <a href="https://foresight.org/technologies/neurotech-improving-cognition/">Foresight Institute's website</a>.
         </p>
-    </section>
+        <br/>
+        <p>
+          I am also the Co-Founder of <strong>Myelin Neurotech</strong>, a nonprofit working on neurotechnology research.
+          You can find our work on the <a href="https://myelingroup.github.io/">Myelin Neurotech page</a>.
+        </p>
+      </section>
 
-    <section id="Github" class="container">
+      <section id="Github">
         <h2>Projects</h2>
         <div class="project">
-            <h3>General Portfolio</h3>
-            <p>To see a variety of my projects, visit my GitHub profile.</p>
-            <a href="https://github.com/Zan-Huang/" target="_blank">View my GitHub &rarr;</a>
+          <h3>General Portfolio</h3>
+          <p>To see a variety of my projects, visit my GitHub profile.</p>
+          <a href="https://github.com/Zan-Huang/" target="_blank">View my GitHub &rarr;</a>
         </div>
         <div class="project">
-            <h3>Videos and Talks</h3>
-            <p>Videos about ongoing technical projects.</p>
-            <a href="https://www.youtube.com/watch?v=6WGj1RkWdv4" target="_blank">
-                <img src="https://img.youtube.com/vi/6WGj1RkWdv4/0.jpg" alt="YouTube Thumbnail" class="thumbnail">
-                Watch on YouTube &rarr;
-            </a>
+          <h3>Videos and Talks</h3>
+          <p>Videos about ongoing technical projects.</p>
+          <a href="https://www.youtube.com/watch?v=6WGj1RkWdv4" target="_blank">
+            <img src="https://img.youtube.com/vi/6WGj1RkWdv4/0.jpg" alt="YouTube Thumbnail" class="thumbnail"/>
+            Watch on YouTube &rarr;
+          </a>
         </div>
-        <!-- Add more projects as needed -->
-    </section>
+      </section>
 
-    <section id="contact" class="container">
+      <section id="contact">
         <h2>Contact</h2>
         <p><strong>Email:</strong> <a href="mailto:zanh@umich.edu">zanh@umich.edu</a></p>
         <p><strong>Twitter:</strong> <a href="https://twitter.com/TheZanHuang" target="_blank">@TheZanHuang</a></p>
         <p><strong>Artistic Portfolio:</strong> <a href="https://zanh.myportfolio.com" target="_blank">zanh.myportfolio.com</a></p>
         <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/zan-huang-36a69a110/" target="_blank">View LinkedIn Profile</a></p>
-    </section>
-    
+      </section>
+    </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Zan Huang</p>
-        </div>
-    </footer>
+    <aside class="sidebar">
+      <section>
+        <h2>Publications</h2>
+        <ul>
+          <li><a href="#">Neuro-symbolic Architectures (2023)</a></li>
+          <li><a href="#">Modular Scaling Laws in DNNs (2024)</a></li>
+          <!-- Add more as needed -->
+        </ul>
+      </section>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const sections = document.querySelectorAll("section");
-            sections.forEach(section => {
-                section.style.opacity = '1';
-            });
-        });
-    </script>
+      <section>
+        <h2>Additional Links</h2>
+        <ul>
+          <li><a href="#">Google Scholar</a></li>
+          <li><a href="#">ResearchGate</a></li>
+          <li><a href="#">ArXiv Profile</a></li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+
+  <footer>
+    <div class="container" style="flex-direction: column;">
+      <p>&copy; 2023 Zan Huang</p>
+    </div>
+  </footer>
 </body>
 </html>
