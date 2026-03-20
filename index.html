@@ -6,19 +6,99 @@
   <title>Zan Huang - A Site for my Technical Work</title>
   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700&display=swap" rel="stylesheet"/>
   <style>
+    :root {
+      --bg: #05070b;
+      --bg2: #0b0f17;
+      --panel: rgba(255,255,255,0.05);
+      --panel-border: rgba(255,255,255,0.10);
+      --text: #e8edf5;
+      --muted: #a9b4c7;
+      --accent: #7aa2ff;
+      --accent-soft: rgba(122,162,255,0.16);
+      --shadow: 0 10px 40px rgba(0,0,0,0.45);
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Nunito Sans', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #fff;
+      line-height: 1.7;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(76, 110, 245, 0.10), transparent 28%),
+        radial-gradient(circle at 80% 30%, rgba(0, 217, 255, 0.08), transparent 24%),
+        radial-gradient(circle at 50% 80%, rgba(130, 80, 255, 0.08), transparent 28%),
+        linear-gradient(135deg, #04050a 0%, #090c13 45%, #05070b 100%);
+      min-height: 100vh;
       padding-top: 50px;
       padding-bottom: 50px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Scientific tessellation / technical pattern overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        repeating-linear-gradient(
+          60deg,
+          rgba(255,255,255,0.025) 0px,
+          rgba(255,255,255,0.025) 1px,
+          transparent 1px,
+          transparent 34px
+        ),
+        repeating-linear-gradient(
+          -60deg,
+          rgba(255,255,255,0.025) 0px,
+          rgba(255,255,255,0.025) 1px,
+          transparent 1px,
+          transparent 34px
+        ),
+        repeating-linear-gradient(
+          0deg,
+          rgba(255,255,255,0.018) 0px,
+          rgba(255,255,255,0.018) 1px,
+          transparent 1px,
+          transparent 34px
+        );
+      opacity: 0.45;
+      z-index: 0;
+    }
+
+    /* Subtle top glow */
+    body::after {
+      content: "";
+      position: fixed;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(122,162,255,0.16), transparent 70%);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    a:hover {
+      color: #a9c0ff;
     }
 
     .container {
@@ -28,104 +108,242 @@
       display: flex;
       flex-wrap: wrap;
       gap: 30px;
+      position: relative;
+      z-index: 1;
     }
 
     .main-content {
       flex: 1 1 65%;
+      min-width: 0;
     }
 
     .sidebar {
       flex: 1 1 30%;
+      min-width: 280px;
     }
 
     header {
       text-align: center;
-      padding-bottom: 30px;
+      padding-bottom: 36px;
+      position: relative;
+      z-index: 1;
+    }
+
+    header .container {
+      flex-direction: column;
+      gap: 10px;
     }
 
     header h1 {
-      font-weight: 300;
-      font-size: 2.5rem;
-      color: #333;
+      font-weight: 200;
+      font-size: clamp(2.5rem, 5vw, 4.25rem);
+      letter-spacing: 0.06em;
+      color: #f4f7fb;
+      text-transform: uppercase;
     }
 
     header p {
       font-weight: 300;
-      color: #666;
+      color: var(--muted);
+      font-size: 1.05rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .header-line {
+      width: 120px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.6), transparent);
+      margin: 8px auto 0 auto;
     }
 
     section {
-      margin-bottom: 40px;
-      background-color: #f9f9f9;
-      padding: 20px;
-      border-radius: 10px;
-      animation: fadeIn 1s ease-in-out;
+      margin-bottom: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.03));
+      border: 1px solid var(--panel-border);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 24px;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      animation: fadeIn 0.8s ease-in-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 24px;
+      right: 24px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(122,162,255,0.35), transparent);
     }
 
     section h2 {
       font-weight: 300;
-      font-size: 1.5rem;
-      color: #333;
-      margin-bottom: 15px;
+      font-size: 1.35rem;
+      color: #f0f4fb;
+      margin-bottom: 16px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    p {
+      color: #d8dfeb;
+    }
+
+    em {
+      color: #c2d5ff;
+      font-style: italic;
+    }
+
+    strong {
+      color: #f4f8ff;
+      font-weight: 700;
     }
 
     .project {
-      text-align: center;
-      margin-bottom: 15px;
+      text-align: left;
+      margin-bottom: 22px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .project:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
 
     .project h3 {
       font-weight: 400;
+      margin-bottom: 6px;
+      color: #eef3fb;
     }
 
     .project p {
-      color: #666;
+      color: var(--muted);
+      margin-bottom: 10px;
     }
 
     .project a {
-      color: #3366BB;
-      text-decoration: none;
       font-weight: 700;
-    }
-
-    .project a:hover {
-      text-decoration: underline;
     }
 
     .thumbnail {
       display: block;
-      margin: 15px auto;
+      margin-top: 10px;
       width: 100%;
-      max-width: 400px;
-      border-radius: 10px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 230px; /* smaller */
+      border-radius: 12px;
+      box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255,255,255,0.10);
+      opacity: 0.72; /* less noticeable */
+      filter: grayscale(18%) brightness(0.82) contrast(1.03);
+      transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
+    }
+
+    .thumbnail:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+      filter: grayscale(0%) brightness(0.95);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin-bottom: 14px;
+      color: var(--muted);
+      position: relative;
+      padding-left: 18px;
+    }
+
+    li::before {
+      content: "◦";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+    }
+
+    .sidebar section {
+      padding: 22px;
+    }
+
+    .sidebar a {
+      word-break: break-word;
+    }
+
+    .contact-grid p {
+      margin-bottom: 10px;
+      color: #d8dfeb;
+    }
+
+    .contact-grid strong {
+      display: inline-block;
+      min-width: 110px;
+      color: #f4f8ff;
     }
 
     footer {
       text-align: center;
-      font-size: 0.9rem;
-      color: #666;
-      margin-top: 50px;
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-top: 44px;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer .container {
+      flex-direction: column;
+    }
+
+    .muted-note {
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    /* Responsive: stack columns on small screens */
     @media (max-width: 768px) {
       .container {
         flex-direction: column;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      .thumbnail {
+        max-width: 200px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="container" style="flex-direction: column;">
+    <div class="container">
       <h1>Zan Huang</h1>
       <p>A Site for my Technical Work</p>
+      <div class="header-line"></div>
     </div>
   </header>
 
@@ -135,33 +353,39 @@
         <h2>About Me</h2>
         <p>
           My interests lie in alternative computational models for artificial intelligence, mass social patterns,
-          chaotic/emergent systems, and linguistics. My current research is focused on novel ways of scaling deep
-          neural networks through neurologically inspired modularity. Questions such as:
+          chaotic and emergent systems, and linguistics. My current research is focused on novel ways of scaling deep
+          neural networks through neurologically inspired modularity.
+        </p>
+        <br/>
+        <p>
+          Questions such as:
           <em>How can we reduce parameter space, increase interpretability, and create self-similar task divisions like the brain?</em>
         </p>
         <br/>
         <p>
           I am a 2024 <strong>Foresight Institute Fellow</strong> in Neurotechnology. You can find the press release on the
-          <a href="https://foresight.org/technologies/neurotech-improving-cognition/">Foresight Institute's website</a>.
+          <a href="https://foresight.org/technologies/neurotech-improving-cognition/" target="_blank">Foresight Institute's website</a>.
         </p>
         <br/>
         <p>
           I am also the Co-Founder of <strong>Myelin Neurotech</strong>, a nonprofit working on neurotechnology research.
-          You can find our work on the <a href="https://myelingroup.github.io/">Myelin Neurotech page</a>. I am currently employed at the Laboratory 
-          for Integrated Brain Imaging (UofM) as a NeuroAI researcher.
+          You can find our work on the <a href="https://myelingroup.github.io/" target="_blank">Myelin Neurotech page</a>.
+          I am currently employed at the Laboratory for Integrated Brain Imaging (UofM) as a NeuroAI researcher.
         </p>
       </section>
 
-      <section id="Github">
+      <section id="github">
         <h2>Projects</h2>
+
         <div class="project">
           <h3>General Portfolio</h3>
           <p>To see a variety of my projects, visit my GitHub profile.</p>
           <a href="https://github.com/Zan-Huang/" target="_blank">View my GitHub &rarr;</a>
         </div>
+
         <div class="project">
           <h3>Videos and Talks</h3>
-          <p>Videos about ongoing technical projects.</p>
+          <p class="muted-note">Selected video on ongoing technical work.</p>
           <a href="https://www.youtube.com/watch?v=6WGj1RkWdv4" target="_blank">
             <img src="https://img.youtube.com/vi/6WGj1RkWdv4/0.jpg" alt="YouTube Thumbnail" class="thumbnail"/>
             Watch on YouTube &rarr;
@@ -171,10 +395,12 @@
 
       <section id="contact">
         <h2>Contact</h2>
-        <p><strong>Email:</strong> <a href="mailto:zanh@umich.edu">zanh@umich.edu</a></p>
-        <p><strong>Twitter:</strong> <a href="https://twitter.com/TheZanHuang" target="_blank">@TheZanHuang</a></p>
-        <p><strong>Artistic Portfolio:</strong> <a href="https://zanh.myportfolio.com" target="_blank">zanh.myportfolio.com</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/zan-huang-36a69a110/" target="_blank">View LinkedIn Profile</a></p>
+        <div class="contact-grid">
+          <p><strong>Email:</strong> <a href="mailto:zanh@umich.edu">zanh@umich.edu</a></p>
+          <p><strong>Twitter:</strong> <a href="https://twitter.com/TheZanHuang" target="_blank">@TheZanHuang</a></p>
+          <p><strong>Artistic Portfolio:</strong> <a href="https://zanh.myportfolio.com" target="_blank">zanh.myportfolio.com</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/zan-huang-36a69a110/" target="_blank">View LinkedIn Profile</a></p>
+        </div>
       </section>
     </div>
 
@@ -182,10 +408,11 @@
       <section>
         <h2>Current Work</h2>
         <ul>
-          <li><a href="https://www.dropbox.com/scl/fi/oguhv4o32c8mb7xrk86a8/Preview_Emerging_Functional_Differentiation_of_Multiplicatively_Combined_Neural_Network_Pathways_through_Contrastive_Predictive_Coding_and_Input_Segregation.pdf?rlkey=5ntazxd4xo6nex08ln8u3sz1y&st=uzcgbujs&dl=0">Emerging Functional Differentiation of Multiplicatively
-Combined Neural Network Pathways through Contrastive
-Predictive Coding and Input Segregation (Undergraduate Thesis)</a></li>
-          <!-- Add more as needed -->
+          <li>
+            <a href="https://www.dropbox.com/scl/fi/oguhv4o32c8mb7xrk86a8/Preview_Emerging_Functional_Differentiation_of_Multiplicatively_Combined_Neural_Network_Pathways_through_Contrastive_Predictive_Coding_and_Input_Segregation.pdf?rlkey=5ntazxd4xo6nex08ln8u3sz1y&st=uzcgbujs&dl=0" target="_blank">
+              Emerging Functional Differentiation of Multiplicatively Combined Neural Network Pathways through Contrastive Predictive Coding and Input Segregation (Undergraduate Thesis)
+            </a>
+          </li>
         </ul>
       </section>
 
@@ -199,7 +426,7 @@ Predictive Coding and Input Segregation (Undergraduate Thesis)</a></li>
   </div>
 
   <footer>
-    <div class="container" style="flex-direction: column;">
+    <div class="container">
       <p>&copy; 2025 Zan Huang</p>
     </div>
   </footer>
