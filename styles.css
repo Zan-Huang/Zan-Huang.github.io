@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "UnifrakturMaguntia";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("fonts/UnifrakturMaguntia.woff2") format("woff2");
+}
+
 :root {
   --bg: #f6f3ec;
   --ink: #1c1b18;
@@ -166,18 +174,18 @@ p {
 
 .versal {
   float: left;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   position: relative;
-  width: 1.85em;
-  height: 1.85em;
-  margin: 0.05em 0.3em 0.1em 0;
-  padding: 0;
-  font-family: "UnifrakturMaguntia", "UnifrakturCook", "Times New Roman", serif;
+  width: 2.7rem;
+  height: 2.7rem;
+  margin: 0.1rem 0.5rem 0.2rem 0;
+  padding: 0.2rem 0 0;
+  font-family: "UnifrakturMaguntia", serif;
+  font-style: normal;
   font-weight: 400;
-  font-size: 2.55em;
+  font-size: 2.15rem;
   line-height: 1;
+  text-align: center;
   color: var(--versal-ink);
   background: var(--versal-field);
   border: 1.5px solid var(--versal-gold);
