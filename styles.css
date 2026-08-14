@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Missaali Initials";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("fonts/missaali-init.woff2") format("woff2");
+}
+
 :root {
   --bg: #f6f3ec;
   --ink: #1c1b18;
@@ -163,18 +171,14 @@ p {
 
 .versal {
   float: left;
-  width: 4.6em;
-  margin: 0.05em 0.85em 0.55em 0;
-  line-height: 0;
-}
-
-.versal img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: 0;
-  background: var(--bg);
-  mix-blend-mode: multiply;
+  margin: 0.02em 0.14em 0 0;
+  padding: 0;
+  font-family: "Missaali Initials", Georgia, serif;
+  font-size: 3.45em;
+  line-height: 0.78;
+  font-weight: 400;
+  color: var(--ink);
+  background: none;
 }
 
 .bio-copy p:last-child,
