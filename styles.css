@@ -43,7 +43,7 @@ body::before {
   bottom: 1.35rem;
   left: max(0.25rem, calc(50% - 400px - 3.55rem));
   width: 3.15rem;
-  background: url("vine.svg?v=18") repeat-y center top / 3.15rem auto;
+  background: url("vine.svg?v=19") repeat-y center top / 3.15rem auto;
   pointer-events: none;
   opacity: 0.8;
 }
@@ -203,19 +203,47 @@ p {
 
 .work-thumbs {
   float: right;
-  width: 168px;
-  margin: 0 0 0.85rem 1rem;
+  width: 11.6rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+  margin: 0 0 0.85rem 0.95rem;
 }
 
-.work-thumbs .talk-link {
+.work-mod {
   display: block;
-  margin-bottom: 0.65rem;
-  font-size: 0.88rem;
-  line-height: 1.25;
+  text-decoration: none;
+  color: var(--muted);
+  background: #f3efe4;
+  border: 1px solid var(--rule);
+  padding: 0.28rem 0.28rem 0.38rem;
 }
 
-.work-thumbs .talk-link:last-child {
-  margin-bottom: 0;
+.work-mod img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin: 0;
+  border: 0;
+  background: #e7e1d4;
+}
+
+.work-mod span {
+  display: block;
+  margin-top: 0.28rem;
+  font-size: 0.72rem;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+}
+
+.work-mod:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.talk-mod {
+  width: 11.6rem;
 }
 
 .versal {
@@ -266,14 +294,6 @@ cite {
 
 .talk-link {
   display: inline-block;
-}
-
-.thumbnail {
-  display: block;
-  width: 168px;
-  max-width: 100%;
-  margin-top: 0.35rem;
-  border: 1px solid var(--rule);
 }
 
 .post-list {
@@ -354,7 +374,8 @@ footer a:hover {
 
   .work-thumbs {
     float: none;
-    width: auto;
+    width: 100%;
+    max-width: 18rem;
     margin: 0 0 1rem;
   }
 }
