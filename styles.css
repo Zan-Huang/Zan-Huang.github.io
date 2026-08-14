@@ -41,11 +41,11 @@ body::before {
   position: absolute;
   top: 1.35rem;
   bottom: 1.35rem;
-  left: max(0.3rem, calc(50% - 400px - 3.2rem));
-  width: 2.7rem;
-  background: url("vine.svg?v=17") repeat-y center top / 2.7rem auto;
+  left: max(0.25rem, calc(50% - 400px - 3.55rem));
+  width: 3.15rem;
+  background: url("vine.svg?v=18") repeat-y center top / 3.15rem auto;
   pointer-events: none;
-  opacity: 0.78;
+  opacity: 0.8;
 }
 
 ::selection {
@@ -74,9 +74,27 @@ a:focus-visible {
 }
 
 header {
+  position: relative;
   border-bottom: 1px solid var(--ink);
   padding-bottom: 0.7rem;
+  padding-right: 3.35rem;
   margin-bottom: 1.15rem;
+}
+
+.seal {
+  position: absolute;
+  top: 0.05rem;
+  right: 0;
+  display: block;
+  width: 2.55rem;
+  height: 2.55rem;
+  line-height: 0;
+}
+
+.seal img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 header h1 {
@@ -176,10 +194,28 @@ p {
   margin: 0 0 1.35rem;
 }
 
-.illum::after {
+.illum::after,
+.bio-copy::after {
   content: "";
   display: table;
   clear: both;
+}
+
+.work-thumbs {
+  float: right;
+  width: 168px;
+  margin: 0 0 0.85rem 1rem;
+}
+
+.work-thumbs .talk-link {
+  display: block;
+  margin-bottom: 0.65rem;
+  font-size: 0.88rem;
+  line-height: 1.25;
+}
+
+.work-thumbs .talk-link:last-child {
+  margin-bottom: 0;
 }
 
 .versal {
@@ -283,6 +319,10 @@ footer p {
   margin: 0;
 }
 
+footer .address {
+  margin-top: 0.35rem;
+}
+
 footer a {
   color: inherit;
 }
@@ -310,5 +350,11 @@ footer a:hover {
     border-top: 1px solid var(--rule);
     margin-top: 0.3rem;
     padding-top: 0.9rem;
+  }
+
+  .work-thumbs {
+    float: none;
+    width: auto;
+    margin: 0 0 1rem;
   }
 }
