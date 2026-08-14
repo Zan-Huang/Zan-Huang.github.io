@@ -43,7 +43,7 @@ body::before {
   bottom: 1.35rem;
   left: max(0.25rem, calc(50% - 400px - 3.55rem));
   width: 3.15rem;
-  background: url("vine.svg?v=19") repeat-y center top / 3.15rem auto;
+  background: url("vine.svg?v=23") repeat-y center top / 3.15rem auto;
   pointer-events: none;
   opacity: 0.8;
 }
