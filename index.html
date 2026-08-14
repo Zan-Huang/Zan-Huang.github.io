@@ -145,10 +145,20 @@
     }
 
     .bio-copy p:last-child,
+    .bio-copy ul:last-child,
     .project:last-child,
     .contact-grid p:last-child,
     .role:last-child {
       margin-bottom: 0;
+    }
+
+    .bio-copy ul {
+      margin: 0 0 12px;
+      padding-left: 1.2em;
+    }
+
+    .bio-copy li {
+      margin-bottom: 3px;
     }
 
     ol.bibliography {
@@ -201,23 +211,6 @@
       margin-top: 4px;
       font-size: 0.88rem;
       color: var(--muted);
-    }
-
-    .studied-with {
-      margin-top: 22px;
-      padding-top: 12px;
-      border-top: 1px solid var(--rule);
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .studied-with ul {
-      margin: 6px 0 0;
-      padding-left: 1.2em;
-    }
-
-    .studied-with li {
-      margin-bottom: 3px;
     }
 
     .sidebar ul {
@@ -286,7 +279,8 @@
         &middot; Myelin Neurotech
       </p>
       <nav>
-        <a href="#bio">About</a>
+        <a href="#scientific-bio">Scientific Bio</a>
+        <a href="#artistic-bio">Artistic Bio</a>
         <a href="#research">Research</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
@@ -295,8 +289,8 @@
 
     <div class="layout">
       <div class="main-content">
-        <section id="bio">
-          <h2>About</h2>
+        <section id="scientific-bio">
+          <h2>Scientific Bio</h2>
           <div class="bio-copy">
             <p>
               My interests lie in alternative computational models for artificial intelligence, mass social patterns,
@@ -308,8 +302,11 @@
               <em>How can we reduce parameter space, increase interpretability, and create self-similar task divisions like the brain?</em>
             </p>
             <p>
-              I also compose. That work is collected in my
-              <a href="https://zanh.myportfolio.com" target="_blank" rel="noopener noreferrer">artistic portfolio</a>.
+              I received bachelor's degrees in Computational Cognitive Science and Music Composition from the
+              University of Michigan, with minors in Computer Science and Complex Systems.
+              I was awarded the
+              <a href="https://lsa.umich.edu/weinberginstitute/undergraduates/current-students/honors-program.html" target="_blank" rel="noopener noreferrer">Sam Epstein Award for Contributions to Theoretical Cognitive Science</a>
+              by the Weinberg Institute for Cognitive Science, for engagement with foundational, theoretical, and conceptual issues in the field.
             </p>
             <p>
               I was a 2024 <strong>Foresight Institute Fellow</strong> in Neurotechnology. You can find the press release on the
@@ -327,6 +324,23 @@
               to pursue breakthrough or economically meaningful work, free from the rigid oversight of public markets
               and the fragmentation of modern academia.
             </p>
+          </div>
+        </section>
+
+        <section id="artistic-bio">
+          <h2>Artistic Bio</h2>
+          <div class="bio-copy">
+            <p>
+              I compose. That work is collected in my
+              <a href="https://zanh.myportfolio.com" target="_blank" rel="noopener noreferrer">artistic portfolio</a>.
+            </p>
+            <p>I have studied composition with:</p>
+            <ul>
+              <li>Rodney Lister, New England Conservatory Preparatory School</li>
+              <li>Paul Schoenfield, University of Michigan</li>
+              <li>Bright Sheng, University of Michigan</li>
+              <li>Evan Chambers, University of Michigan</li>
+            </ul>
           </div>
         </section>
 
@@ -366,16 +380,6 @@
               <figcaption><a href="https://www.youtube.com/watch?v=6WGj1RkWdv4" target="_blank" rel="noopener noreferrer">Watch on YouTube</a></figcaption>
             </figure>
           </div>
-          <div class="studied-with">
-            <h3>Artistic study</h3>
-            <p>I have studied composition with:</p>
-            <ul>
-              <li>Rodney Lister, New England Conservatory Preparatory School</li>
-              <li>Paul Schoenfield, University of Michigan</li>
-              <li>Bright Sheng, University of Michigan</li>
-              <li>Evan Chambers, University of Michigan</li>
-            </ul>
-          </div>
         </section>
 
         <section id="contact">
@@ -390,6 +394,16 @@
       </div>
 
       <aside class="sidebar">
+        <section>
+          <h2>Education</h2>
+          <div class="role">
+            <h3>University of Michigan</h3>
+            <p>B.S., Computational Cognitive Science</p>
+            <p>B.M., Music Composition</p>
+            <p>Minors in Computer Science and Complex Systems</p>
+          </div>
+        </section>
+
         <section>
           <h2>Current</h2>
           <div class="role">
