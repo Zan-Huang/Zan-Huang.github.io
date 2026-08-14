@@ -12,9 +12,6 @@
   --muted: #5a564c;
   --rule: #c8c2b4;
   --link: #1a3d8f;
-  --versal-ink: #7c1e18;
-  --versal-gold: #9a7420;
-  --versal-field: #efe4c4;
 }
 
 * {
@@ -174,48 +171,19 @@ p {
 
 .versal {
   float: left;
-  display: block;
-  position: relative;
-  width: 2.7rem;
-  height: 2.7rem;
-  margin: 0.1rem 0.5rem 0.2rem 0;
-  padding: 0.2rem 0 0;
-  font-family: "UnifrakturMaguntia", serif;
+  margin: 0.08em 0.1em 0 0;
+  padding: 0;
+  font-family: "UnifrakturMaguntia", Georgia, serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 2.15rem;
-  line-height: 1;
-  text-align: center;
-  color: var(--versal-ink);
-  background: var(--versal-field);
-  border: 1.5px solid var(--versal-gold);
-  box-shadow:
-    inset 0 0 0 2px #f7f1dc,
-    inset 0 0 0 3px #c4a04a;
+  font-size: 3.25em;
+  line-height: 0.78;
+  color: inherit;
 }
 
-.versal::before,
-.versal::after {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  border: 1px solid var(--versal-gold);
-  content: "";
-  pointer-events: none;
-}
-
-.versal::before {
-  top: 2px;
-  left: 2px;
-  border-right: 0;
-  border-bottom: 0;
-}
-
-.versal::after {
-  right: 2px;
-  bottom: 2px;
-  border-top: 0;
-  border-left: 0;
+.run-in {
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
 }
 
 .bio-copy p:last-child,
