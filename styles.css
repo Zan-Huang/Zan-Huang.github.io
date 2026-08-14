@@ -1,9 +1,9 @@
 @font-face {
-  font-family: "UnifrakturMaguntia";
+  font-family: "MedievalSharp";
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("fonts/UnifrakturMaguntia.woff2") format("woff2");
+  src: url("fonts/MedievalSharp.woff2") format("woff2");
 }
 
 :root {
@@ -171,19 +171,14 @@ p {
 
 .versal {
   float: left;
-  margin: 0.08em 0.1em 0 0;
+  margin: -0.08em 0.18em 0 -0.06em;
   padding: 0;
-  font-family: "UnifrakturMaguntia", Georgia, serif;
+  font-family: "MedievalSharp", Georgia, serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 3.25em;
-  line-height: 0.78;
-  color: inherit;
-}
-
-.run-in {
-  font-variant: small-caps;
-  letter-spacing: 0.05em;
+  font-size: 2.35em;
+  line-height: 0.92;
+  color: #6e2a22;
 }
 
 .bio-copy p:last-child,
