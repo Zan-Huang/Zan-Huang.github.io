@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zan Huang - A Site for my Technical Work</title>
-  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700&display=swap" rel="stylesheet"/>
+  <meta name="description" content="Zan Huang — NeuroAI researcher at the Sripada Lab and director of HuronARC. Work on neurologically inspired modularity, conflict in language models, and alternative computational models for intelligence."/>
+  <meta name="theme-color" content="#05070b"/>
+  <title>Zan Huang — NeuroAI Research</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --bg: #05070b;
@@ -44,7 +46,6 @@
       position: relative;
     }
 
-    /* Scientific tessellation / technical pattern overlay */
     body::before {
       content: "";
       position: fixed;
@@ -76,7 +77,6 @@
       z-index: 0;
     }
 
-    /* Subtle top glow */
     body::after {
       content: "";
       position: fixed;
@@ -91,6 +91,11 @@
       z-index: 0;
     }
 
+    ::selection {
+      background: rgba(122,162,255,0.35);
+      color: #f4f7fb;
+    }
+
     a {
       color: var(--accent);
       text-decoration: none;
@@ -99,6 +104,12 @@
 
     a:hover {
       color: #a9c0ff;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
     }
 
     .container {
@@ -142,12 +153,37 @@
       text-transform: uppercase;
     }
 
-    header p {
+    header .tagline {
       font-weight: 300;
       color: var(--muted);
       font-size: 1.05rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+    }
+
+    .affiliations {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .affiliations a {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #d5e0ff;
+      background: var(--accent-soft);
+      border: 1px solid rgba(122,162,255,0.22);
+      padding: 5px 11px;
+      border-radius: 999px;
+    }
+
+    .affiliations a:hover {
+      color: #f4f7fb;
+      background: rgba(122,162,255,0.24);
     }
 
     .header-line {
@@ -190,6 +226,12 @@
       text-transform: uppercase;
     }
 
+    .bio-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
     p {
       color: #d8dfeb;
     }
@@ -202,6 +244,58 @@
     strong {
       color: #f4f8ff;
       font-weight: 700;
+    }
+
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .pub {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 14px;
+      padding: 14px 14px 14px 12px;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.025);
+    }
+
+    .pub-year {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #c2d5ff;
+      background: var(--accent-soft);
+      border: 1px solid rgba(122,162,255,0.18);
+      border-radius: 10px;
+      height: fit-content;
+      padding: 6px 0;
+      text-align: center;
+    }
+
+    .pub-title {
+      display: block;
+      font-weight: 600;
+      line-height: 1.45;
+      color: #eef3fb;
+      margin-bottom: 6px;
+    }
+
+    .pub-title:hover {
+      color: #a9c0ff;
+    }
+
+    .pub-authors,
+    .pub-venue {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .pub-venue {
+      margin-top: 4px;
     }
 
     .project {
@@ -236,11 +330,11 @@
       display: block;
       margin-top: 10px;
       width: 100%;
-      max-width: 230px; /* smaller */
+      max-width: 230px;
       border-radius: 12px;
       box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.35);
       border: 1px solid rgba(255,255,255,0.10);
-      opacity: 0.72; /* less noticeable */
+      opacity: 0.72;
       filter: grayscale(18%) brightness(0.82) contrast(1.03);
       transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
     }
@@ -263,12 +357,36 @@
       padding-left: 18px;
     }
 
+    li:last-child {
+      margin-bottom: 0;
+    }
+
     li::before {
       content: "◦";
       position: absolute;
       left: 0;
       top: 0;
       color: var(--accent);
+    }
+
+    .role {
+      margin-bottom: 16px;
+    }
+
+    .role:last-child {
+      margin-bottom: 0;
+    }
+
+    .role h3 {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #eef3fb;
+      margin-bottom: 2px;
+    }
+
+    .role p {
+      color: var(--muted);
+      font-size: 0.92rem;
     }
 
     .sidebar section {
@@ -282,6 +400,10 @@
     .contact-grid p {
       margin-bottom: 10px;
       color: #d8dfeb;
+    }
+
+    .contact-grid p:last-child {
+      margin-bottom: 0;
     }
 
     .contact-grid strong {
@@ -308,14 +430,6 @@
       font-size: 0.95rem;
     }
 
-    .pub-meta {
-      display: block;
-      margin-top: 4px;
-      font-size: 0.88rem;
-      line-height: 1.55;
-      color: var(--muted);
-    }
-
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -340,6 +454,16 @@
         padding: 20px;
       }
 
+      .pub {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .pub-year {
+        width: fit-content;
+        padding: 4px 10px;
+      }
+
       .thumbnail {
         max-width: 200px;
       }
@@ -350,7 +474,12 @@
   <header>
     <div class="container">
       <h1>Zan Huang</h1>
-      <p>A Site for my Technical Work</p>
+      <p class="tagline">NeuroAI Research</p>
+      <div class="affiliations">
+        <a href="https://sites.lsa.umich.edu/sripada/" target="_blank" rel="noopener noreferrer">Sripada Lab</a>
+        <a href="https://huronarc.com/" target="_blank" rel="noopener noreferrer">HuronARC</a>
+        <a href="https://myelingroup.github.io/" target="_blank" rel="noopener noreferrer">Myelin Neurotech</a>
+      </div>
       <div class="header-line"></div>
     </div>
   </header>
@@ -359,27 +488,63 @@
     <div class="main-content">
       <section id="bio">
         <h2>About Me</h2>
-        <p>
-          My interests lie in alternative computational models for artificial intelligence, mass social patterns,
-          chaotic and emergent systems, and linguistics. My current research is focused on novel ways of scaling deep
-          neural networks through neurologically inspired modularity.
-        </p>
-        <br/>
-        <p>
-          Questions such as:
-          <em>How can we reduce parameter space, increase interpretability, and create self-similar task divisions like the brain?</em>
-        </p>
-        <br/>
-        <p>
-          I was a 2024 <strong>Foresight Institute Fellow</strong> in Neurotechnology. You can find the press release on the
-          <a href="https://foresight.org/technologies/neurotech-improving-cognition/" target="_blank">Foresight Institute's website</a>.
-        </p>
-        <br/>
-        <p>
-          I was also the Co-Founder of <strong>Myelin Neurotech</strong>, a nonprofit working on neurotechnology research.
-          You can find our work on the <a href="https://myelingroup.github.io/" target="_blank">Myelin Neurotech page</a>.
-          I am currently employed at the Laboratory for Integrated Brain Imaging (UofM) as a NeuroAI researcher until May 2026.
-        </p>
+        <div class="bio-copy">
+          <p>
+            My interests lie in alternative computational models for artificial intelligence, mass social patterns,
+            chaotic and emergent systems, and linguistics. My current research is focused on novel ways of scaling deep
+            neural networks through neurologically inspired modularity.
+          </p>
+          <p>
+            Questions such as:
+            <em>How can we reduce parameter space, increase interpretability, and create self-similar task divisions like the brain?</em>
+          </p>
+          <p>
+            I was a 2024 <strong>Foresight Institute Fellow</strong> in Neurotechnology. You can find the press release on the
+            <a href="https://foresight.org/technologies/neurotech-improving-cognition/" target="_blank" rel="noopener noreferrer">Foresight Institute's website</a>.
+          </p>
+          <p>
+            I was also the Co-Founder of <strong>Myelin Neurotech</strong>, a nonprofit working on neurotechnology research.
+            You can find our work on the <a href="https://myelingroup.github.io/" target="_blank" rel="noopener noreferrer">Myelin Neurotech page</a>.
+            I previously worked at the Laboratory for Integrated Brain Imaging (UofM) as a NeuroAI researcher until May 2026.
+          </p>
+          <p>
+            I am currently employed at the
+            <a href="https://sites.lsa.umich.edu/sripada/" target="_blank" rel="noopener noreferrer">Sripada Lab</a>
+            at the University of Michigan, where I study mechanistic structure in large language models and NeuroAI.
+            I also direct <a href="https://huronarc.com/" target="_blank" rel="noopener noreferrer">HuronARC</a>,
+            a research lab developing neural-circuit-inspired architectures, edge intelligence, and related deep-tech work
+            outside conventional academic and startup constraints.
+          </p>
+        </div>
+      </section>
+
+      <section id="research">
+        <h2>Research</h2>
+        <div class="pub-list">
+          <article class="pub">
+            <div class="pub-year">2026</div>
+            <div>
+              <a class="pub-title" href="https://arxiv.org/abs/2608.11510" target="_blank" rel="noopener noreferrer">
+                Conflict and Congruency Effects in Large Language Models: In-Weight and In-Context Competition in a Verbal Conflict Task
+              </a>
+              <p class="pub-authors">
+                Xiaoyang Hu, Mike Angstadt, Shane Storks, <strong>Zan Huang</strong>, Aman Taxali, Alex Weigard, Richard L. Lewis, Chandra Sripada
+              </p>
+              <p class="pub-venue">arXiv preprint, arXiv:2608.11510</p>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="pub-year">2025</div>
+            <div>
+              <a class="pub-title" href="https://www.dropbox.com/scl/fi/oguhv4o32c8mb7xrk86a8/Preview_Emerging_Functional_Differentiation_of_Multiplicatively_Combined_Neural_Network_Pathways_through_Contrastive_Predictive_Coding_and_Input_Segregation.pdf?rlkey=5ntazxd4xo6nex08ln8u3sz1y&st=uzcgbujs&dl=0" target="_blank" rel="noopener noreferrer">
+                Emerging Functional Differentiation of Multiplicatively Combined Neural Network Pathways through Contrastive Predictive Coding and Input Segregation
+              </a>
+              <p class="pub-authors"><strong>Zan Huang</strong></p>
+              <p class="pub-venue">Undergraduate Thesis, University of Michigan</p>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section id="github">
@@ -388,13 +553,13 @@
         <div class="project">
           <h3>General Portfolio</h3>
           <p>To see a variety of my projects, visit my GitHub profile.</p>
-          <a href="https://github.com/Zan-Huang/" target="_blank">View my GitHub &rarr;</a>
+          <a href="https://github.com/Zan-Huang/" target="_blank" rel="noopener noreferrer">View my GitHub &rarr;</a>
         </div>
 
         <div class="project">
           <h3>Videos and Talks</h3>
           <p class="muted-note">Selected video on ongoing technical work.</p>
-          <a href="https://www.youtube.com/watch?v=6WGj1RkWdv4" target="_blank">
+          <a href="https://www.youtube.com/watch?v=6WGj1RkWdv4" target="_blank" rel="noopener noreferrer">
             <img src="https://img.youtube.com/vi/6WGj1RkWdv4/0.jpg" alt="YouTube Thumbnail" class="thumbnail"/>
             Watch on YouTube &rarr;
           </a>
@@ -405,39 +570,33 @@
         <h2>Contact</h2>
         <div class="contact-grid">
           <p><strong>Email:</strong> <a href="mailto:zanh@umich.edu">zanh@umich.edu</a></p>
-          <p><strong>Twitter:</strong> <a href="https://twitter.com/TheZanHuang" target="_blank">@TheZanHuang</a></p>
-          <p><strong>Artistic Portfolio:</strong> <a href="https://zanh.myportfolio.com" target="_blank">zanh.myportfolio.com</a></p>
-          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/zan-huang-36a69a110/" target="_blank">View LinkedIn Profile</a></p>
+          <p><strong>Twitter:</strong> <a href="https://twitter.com/TheZanHuang" target="_blank" rel="noopener noreferrer">@TheZanHuang</a></p>
+          <p><strong>Artistic Portfolio:</strong> <a href="https://zanh.myportfolio.com" target="_blank" rel="noopener noreferrer">zanh.myportfolio.com</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/zan-huang-36a69a110/" target="_blank" rel="noopener noreferrer">View LinkedIn Profile</a></p>
         </div>
       </section>
     </div>
 
     <aside class="sidebar">
       <section>
-        <h2>Research</h2>
-        <ul>
-          <li>
-            <a href="https://arxiv.org/abs/2608.11510" target="_blank">
-              Conflict and Congruency Effects in Large Language Models: In-Weight and In-Context Competition in a Verbal Conflict Task
-            </a>
-            <span class="pub-meta">
-              Xiaoyang Hu, Mike Angstadt, Shane Storks, <strong>Zan Huang</strong>, Aman Taxali, Alex Weigard, Richard L. Lewis, Chandra Sripada
-              <br/>
-              arXiv:2608.11510, 2026
-            </span>
-          </li>
-          <li>
-            <a href="https://www.dropbox.com/scl/fi/oguhv4o32c8mb7xrk86a8/Preview_Emerging_Functional_Differentiation_of_Multiplicatively_Combined_Neural_Network_Pathways_through_Contrastive_Predictive_Coding_and_Input_Segregation.pdf?rlkey=5ntazxd4xo6nex08ln8u3sz1y&st=uzcgbujs&dl=0" target="_blank">
-              Emerging Functional Differentiation of Multiplicatively Combined Neural Network Pathways through Contrastive Predictive Coding and Input Segregation (Undergraduate Thesis)
-            </a>
-          </li>
-        </ul>
+        <h2>Current</h2>
+        <div class="role">
+          <h3>Sripada Lab</h3>
+          <p>Researcher, University of Michigan</p>
+        </div>
+        <div class="role">
+          <h3>HuronARC</h3>
+          <p>Director</p>
+        </div>
       </section>
 
       <section>
-        <h2>Additional Links</h2>
+        <h2>Links</h2>
         <ul>
-          <li><a href="#">Coming Soon</a></li>
+          <li><a href="https://huronarc.com/" target="_blank" rel="noopener noreferrer">HuronARC</a></li>
+          <li><a href="https://sites.lsa.umich.edu/sripada/" target="_blank" rel="noopener noreferrer">Sripada Lab</a></li>
+          <li><a href="https://myelingroup.github.io/" target="_blank" rel="noopener noreferrer">Myelin Neurotech</a></li>
+          <li><a href="https://github.com/Zan-Huang/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
         </ul>
       </section>
     </aside>
@@ -445,7 +604,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 Zan Huang</p>
+      <p>&copy; 2026 Zan Huang</p>
     </div>
   </footer>
 </body>
