@@ -4,6 +4,9 @@
   --muted: #5a564c;
   --rule: #c8c2b4;
   --link: #1a3d8f;
+  --versal-ink: #7c1e18;
+  --versal-gold: #9a7420;
+  --versal-field: #efe4c4;
 }
 
 * {
@@ -21,9 +24,9 @@ body {
   font-family: "Source Serif 4", Georgia, serif;
   font-optical-sizing: auto;
   font-kerning: normal;
-  font-size: 16.5px;
-  line-height: 1.38;
-  letter-spacing: -0.005em;
+  font-size: 15px;
+  line-height: 1.36;
+  letter-spacing: -0.004em;
   text-rendering: optimizeLegibility;
 }
 
@@ -152,7 +155,52 @@ h3 {
 }
 
 p {
-  margin: 0 0 0.95rem;
+  margin: 0 0 1.35rem;
+}
+
+.illum {
+  overflow: hidden;
+}
+
+.versal {
+  float: left;
+  position: relative;
+  font-family: "Cinzel Decorative", "Palatino Linotype", serif;
+  font-weight: 700;
+  font-size: 2.7em;
+  line-height: 0.8;
+  margin: 0.08em 0.28em 0.06em 0;
+  padding: 0.18em 0.16em 0.1em;
+  color: var(--versal-ink);
+  background: var(--versal-field);
+  border: 1.5px solid var(--versal-gold);
+  box-shadow:
+    inset 0 0 0 2px #f7f1dc,
+    inset 0 0 0 3px #c4a04a;
+}
+
+.versal::before,
+.versal::after {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border: 1px solid var(--versal-gold);
+  content: "";
+  pointer-events: none;
+}
+
+.versal::before {
+  top: 2px;
+  left: 2px;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.versal::after {
+  right: 2px;
+  bottom: 2px;
+  border-top: 0;
+  border-left: 0;
 }
 
 .bio-copy p:last-child,
