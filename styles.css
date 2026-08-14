@@ -30,8 +30,8 @@ body {
   font-family: "Source Serif 4", Georgia, serif;
   font-optical-sizing: auto;
   font-kerning: normal;
-  font-size: 15px;
-  line-height: 1.36;
+  font-size: 16.5px;
+  line-height: 1.48;
   letter-spacing: -0.004em;
   text-rendering: optimizeLegibility;
 }
@@ -176,7 +176,7 @@ section {
 
 h2 {
   margin: 0 0 0.55rem;
-  font-size: 0.8rem;
+  font-size: 0.92rem;
   font-weight: 600;
   font-variant: small-caps;
   letter-spacing: 0.14em;
@@ -232,8 +232,8 @@ p {
 .work-mod span {
   display: block;
   margin-top: 0.28rem;
-  font-size: 0.72rem;
-  line-height: 1.25;
+  font-size: 0.84rem;
+  line-height: 1.3;
   letter-spacing: 0.01em;
 }
 
