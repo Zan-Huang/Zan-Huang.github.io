@@ -161,14 +161,10 @@ p {
   clear: both;
 }
 
-.bio-copy {
-  overflow: hidden;
-}
-
 .versal {
   float: left;
-  width: 3.7em;
-  margin: 0 0.7em 0.2em -0.15em;
+  width: 4.6em;
+  margin: 0.05em 0.85em 0.55em 0;
   line-height: 0;
 }
 
@@ -176,6 +172,7 @@ p {
   display: block;
   width: 100%;
   height: auto;
+  border: 0;
   background: var(--bg);
   mix-blend-mode: multiply;
 }
