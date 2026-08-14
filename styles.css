@@ -167,8 +167,8 @@ p {
 
 .versal {
   float: left;
-  width: 4.1em;
-  margin: 0 0.65em 0.35em 0;
+  width: 3.7em;
+  margin: 0 0.7em 0.2em -0.15em;
   line-height: 0;
 }
 
@@ -176,6 +176,8 @@ p {
   display: block;
   width: 100%;
   height: auto;
+  background: var(--bg);
+  mix-blend-mode: multiply;
 }
 
 .bio-copy p:last-child,
