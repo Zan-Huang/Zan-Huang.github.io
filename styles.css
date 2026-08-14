@@ -22,7 +22,8 @@ body {
   font-optical-sizing: auto;
   font-kerning: normal;
   font-size: 16.5px;
-  line-height: 1.5;
+  line-height: 1.38;
+  letter-spacing: -0.005em;
   text-rendering: optimizeLegibility;
 }
 
@@ -131,11 +132,11 @@ nav a + a::before {
 }
 
 section {
-  margin-bottom: 1.15rem;
+  margin-bottom: 1.45rem;
 }
 
 h2 {
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.55rem;
   font-size: 0.8rem;
   font-weight: 600;
   font-variant: small-caps;
@@ -151,11 +152,10 @@ h3 {
 }
 
 p {
-  margin: 0 0 0.55rem;
+  margin: 0 0 0.95rem;
 }
 
 .bio-copy p:last-child,
-.bio-copy ul:last-child,
 .role:last-child,
 .post-list li:last-child {
   margin-bottom: 0;
