@@ -23,6 +23,7 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   background: var(--bg);
   color: var(--ink);
@@ -33,6 +34,18 @@ body {
   line-height: 1.36;
   letter-spacing: -0.004em;
   text-rendering: optimizeLegibility;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 1.35rem;
+  bottom: 1.35rem;
+  left: max(0.3rem, calc(50% - 400px - 3.2rem));
+  width: 2.7rem;
+  background: url("vine.svg?v=17") repeat-y center top / 2.7rem auto;
+  pointer-events: none;
+  opacity: 0.78;
 }
 
 ::selection {
@@ -276,6 +289,12 @@ footer a {
 
 footer a:hover {
   color: var(--link);
+}
+
+@media (max-width: 900px) {
+  body::before {
+    display: none;
+  }
 }
 
 @media (max-width: 700px) {
