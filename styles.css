@@ -39,13 +39,13 @@ body {
 body::before {
   content: "";
   position: absolute;
-  top: 1.1rem;
-  bottom: 1.1rem;
-  left: max(0.2rem, calc(50% - 400px - 5.7rem));
-  width: 5.15rem;
-  background: url("vine.svg?v=24") repeat-y center top / 5.15rem auto;
+  top: 0.85rem;
+  bottom: 0.85rem;
+  left: max(0.15rem, calc(50% - 400px - 7.85rem));
+  width: 7.15rem;
+  background: url("vine.svg?v=28") repeat-y center top / 7.15rem auto;
   pointer-events: none;
-  opacity: 0.86;
+  opacity: 0.88;
 }
 
 ::selection {
@@ -192,6 +192,36 @@ h3 {
 
 p {
   margin: 0 0 1.35rem;
+}
+
+.about .illum {
+  margin-bottom: 0.85rem;
+}
+
+.farbenlehre {
+  margin: 0;
+  text-align: center;
+}
+
+.farbenlehre svg {
+  display: inline-block;
+  width: 3.15rem;
+  height: 3.15rem;
+  vertical-align: middle;
+}
+
+.farbenlehre figcaption {
+  margin-top: 0.28rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+}
+
+.farbenlehre cite {
+  font-style: italic;
+  font-variant: normal;
+  letter-spacing: 0.02em;
 }
 
 .illum::after,
@@ -355,7 +385,7 @@ footer a:hover {
   color: var(--link);
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1180px) {
   body::before {
     display: none;
   }
