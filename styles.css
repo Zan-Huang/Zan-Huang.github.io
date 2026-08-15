@@ -203,11 +203,12 @@ p {
   text-align: center;
 }
 
-.farbenlehre svg {
+.farbenlehre img {
   display: inline-block;
-  width: 3.15rem;
-  height: 3.15rem;
+  width: 6.4rem;
+  height: auto;
   vertical-align: middle;
+  mix-blend-mode: multiply;
 }
 
 .farbenlehre figcaption {
