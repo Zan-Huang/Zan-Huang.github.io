@@ -218,8 +218,23 @@ p {
   margin: 0 0 1.35rem;
 }
 
+.about p {
+  hanging-punctuation: first last allow-end;
+}
+
 .about .illum {
   margin-bottom: 0.85rem;
+}
+
+.about > p:last-of-type::after {
+  content: "⁂";
+  display: block;
+  margin: 0.95rem 0 0.1rem;
+  color: var(--rule);
+  font-size: 0.72rem;
+  letter-spacing: 0.42em;
+  text-align: center;
+  line-height: 1;
 }
 
 .farbenlehre {
