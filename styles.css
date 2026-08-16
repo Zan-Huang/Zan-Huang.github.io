@@ -447,6 +447,59 @@ cite {
   margin: 0;
 }
 
+.support-note {
+  margin: 0 0 0.75rem;
+  font-size: 0.88rem;
+}
+
+.supporters {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.supporters li {
+  margin: 0 0 0.85rem;
+}
+
+.supporters li:last-child {
+  margin-bottom: 0;
+}
+
+.supporters a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.supporters a:hover span {
+  color: var(--link);
+}
+
+.supporters img {
+  display: block;
+  max-width: 8.6rem;
+  max-height: 2.35rem;
+  width: auto;
+  height: auto;
+}
+
+.supporters .logo-umich {
+  max-height: 2.05rem;
+}
+
+.supporters .logo-ink {
+  max-height: 2.55rem;
+  filter: invert(1);
+  mix-blend-mode: multiply;
+}
+
+.supporters span {
+  display: block;
+  margin-top: 0.18rem;
+  font-size: 0.82rem;
+}
+
 footer {
   margin-top: 0.4rem;
   padding-top: 0.65rem;
