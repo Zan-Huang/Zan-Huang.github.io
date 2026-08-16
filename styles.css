@@ -270,8 +270,60 @@ p {
 
 .piece-meta {
   color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.45;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.piece-note {
+  font-size: 0.8rem;
+  line-height: 1.42;
+  color: var(--muted);
+}
+
+.piece-note summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.piece-note summary::-webkit-details-marker {
+  display: none;
+}
+
+.piece-peek {
+  display: block;
+}
+
+.piece-note[open] .piece-peek {
+  display: none;
+}
+
+.piece-toggle {
+  display: inline-block;
+  margin-top: 0.2rem;
+  color: var(--link);
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+}
+
+.piece-toggle::after {
+  content: "Expand";
+}
+
+.piece-note[open] .piece-toggle::after {
+  content: "Collapse";
+}
+
+.piece-note-body {
+  margin-top: 0.55rem;
+}
+
+.piece-note-body p {
+  margin-bottom: 0.75rem;
+}
+
+.piece-note-body p:last-child {
+  margin-bottom: 0;
 }
 
 .work-mod {
