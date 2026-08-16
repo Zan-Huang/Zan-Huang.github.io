@@ -478,20 +478,14 @@ cite {
 
 .supporters img {
   display: block;
-  max-width: 8.6rem;
-  max-height: 2.35rem;
+  max-width: 10.2rem;
+  max-height: 2.45rem;
   width: auto;
   height: auto;
 }
 
-.supporters .logo-umich {
-  max-height: 2.05rem;
-}
-
-.supporters .logo-ink {
-  max-height: 2.55rem;
-  filter: invert(1);
-  mix-blend-mode: multiply;
+.supporters .logo-wide {
+  max-height: 1.45rem;
 }
 
 .supporters span {
