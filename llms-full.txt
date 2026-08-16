@@ -1,0 +1,72 @@
+# Zan Huang
+
+Canonical site: https://zanhuang.org/
+
+Staff researcher at the Sripada Lab at the University of Michigan and executive director of HuronARC. Work in computational neuroscience, artificial intelligence, and music composition.
+
+## Contact
+
+- HuronARC: zanhuang@huronarc.com
+- University of Michigan: zanh@umich.edu
+- X / Twitter: https://twitter.com/TheZanHuang (@TheZanHuang)
+- Artistic portfolio: https://zanh.myportfolio.com
+- HuronARC address: 175 Jackson Plaza, Ann Arbor, MI 48103
+
+## Current roles
+
+- Executive director, HuronARC, a sovereign lab and holding company in Ann Arbor
+- Staff researcher, Sripada Lab, University of Michigan (https://sites.lsa.umich.edu/sripada/), working on mechanistic interpretability and computational theories of cognition, and independent work in computation and AI
+- Composer; selected work at https://zanh.myportfolio.com
+
+## Former roles
+
+- NeuroAI researcher, Laboratory for Integrated Brain Imaging, University of Michigan (https://libi.engin.umich.edu/), until May 2026. Work included eigenmodes and cortical surface methods with travelling waves, Neural AI, and functional segregation
+- 2024 Foresight Institute Fellow in Neurotechnology (https://foresight.org/people/zan-huang/)
+- Co-Founder, Myelin Neurotech, a nonprofit working on neurotechnology research
+
+## Education
+
+- B.S., Computational Cognitive Science, High Honors, University of Michigan
+- B.M., Music Composition, High Honors, University of Michigan
+- Minors in Computer Science and Complex Systems
+- Sam Epstein Award for Contributions to Theoretical Cognitive Science, Weinberg Institute for Cognitive Science
+
+## Languages
+
+- English (native)
+- Chinese (native speaking / professional fluency)
+- German (functional B1–B2)
+
+## Research interests
+
+Alternative computational models of artificial intelligence; modeling of mass social patterns; chaotic and emergent phenomena in physical and information systems; linguistics; neurologically inspired modularity and compositional generalization in visual perception systems.
+
+## Publications
+
+- Hu, X., Angstadt, M., Storks, S., Huang, Z., Taxali, A., Weigard, A., Lewis, R. L., & Sripada, C. (2026). Conflict and Congruency Effects in Large Language Models: In-Weight and In-Context Competition in a Verbal Conflict Task. arXiv:2608.11510. https://arxiv.org/abs/2608.11510
+- Huang, Z. (2025). Emerging Functional Differentiation of Multiplicatively Combined Neural Network Pathways through Contrastive Predictive Coding and Input Segregation. Undergraduate thesis, University of Michigan.
+
+## Artistic work
+
+Studied with Rodney Lister at the New England Conservatory Preparatory School, and with Paul Schoenfield, Bright Sheng, and Evan Chambers at the University of Michigan.
+
+Selected works:
+
+- Nocturne — https://www.youtube.com/watch?v=baxBlABzeWo
+- After the Violinkonzert — https://www.youtube.com/watch?v=d89Mn8zzxCo
+- Black Mass [For Good Friday] (2024), for 12-piece choir, string quartet, and piano — https://www.youtube.com/watch?v=9OJOVm4swSs
+- In Portbou (2023), for Pierrot ensemble, electronics, mezzo, and baritone — https://www.youtube.com/watch?v=75J2pbFAHmg
+
+## Talks
+
+- Selected talk on ongoing technical work — https://www.youtube.com/watch?v=6WGj1RkWdv4
+
+## Writing
+
+https://zanhuang.org/writing.html — notes on research, computation, and questions adjacent to both. No entries yet.
+
+## Pages
+
+- Home: https://zanhuang.org/
+- Writing: https://zanhuang.org/writing.html
+- Index for language models: https://zanhuang.org/llms.txt
