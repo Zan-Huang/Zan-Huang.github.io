@@ -388,6 +388,30 @@ p {
   color: var(--muted);
 }
 
+.languages-head {
+  margin: 0.7rem 0 0.25rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  font-variant: small-caps;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.languages {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+}
+
+.languages li {
+  margin: 0 0 0.15rem;
+}
+
+.languages li:last-child {
+  margin-bottom: 0;
+}
+
 ol.bibliography {
   margin: 0;
   padding: 0;
@@ -486,6 +510,15 @@ cite {
 
 .supporters .logo-wide {
   max-height: 1.45rem;
+}
+
+.supporters .logo-1517 {
+  max-height: 2.15rem;
+}
+
+.supporters .logo-mercatus {
+  max-width: 100%;
+  max-height: 2.1rem;
 }
 
 .supporters span {
