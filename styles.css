@@ -471,6 +471,21 @@ cite {
   margin: 0;
 }
 
+.insp-works {
+  margin: 0.12rem 0 0;
+  padding: 0 0 0 0.85rem;
+  list-style: disc;
+}
+
+.insp-works li {
+  margin: 0 0 0.08rem;
+  font-size: 0.88rem;
+}
+
+.insp-works li:last-child {
+  margin-bottom: 0;
+}
+
 .support-note {
   margin: 0 0 0.75rem;
   font-size: 0.88rem;
