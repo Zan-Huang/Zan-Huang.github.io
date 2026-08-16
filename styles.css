@@ -622,6 +622,23 @@ footer a:hover {
   color: var(--link);
 }
 
+.colophon {
+  margin-top: 1.25rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-variant: small-caps;
+  letter-spacing: 0.18em;
+  text-align: center;
+  line-height: 1.45;
+}
+
+.colophon .year {
+  font-variant: normal;
+  letter-spacing: 0.08em;
+}
+
 @media (max-width: 1180px) {
   body::before {
     display: none;

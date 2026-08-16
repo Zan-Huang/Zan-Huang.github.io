@@ -7,7 +7,8 @@
   <meta name="theme-color" content="#f6f3ec" id="theme-color"/>
   <script>
     (function () {
-      var hour = new Date().getHours();
+      var now = new Date();
+      var hour = now.getHours();
       var root = document.documentElement;
       var meta = document.getElementById("theme-color");
       if (hour >= 20 || hour < 6) {
@@ -16,6 +17,17 @@
       } else if (hour >= 17) {
         root.classList.add("dusk");
         if (meta) meta.setAttribute("content", "#f3eee4");
+      }
+      function setYear() {
+        var nodes = document.querySelectorAll(".colophon .year");
+        for (var i = 0; i < nodes.length; i++) {
+          nodes[i].textContent = String(now.getFullYear());
+        }
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", setYear);
+      } else {
+        setYear();
       }
     })();
   </script>
@@ -26,7 +38,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="/styles.css?v=40"/>
+  <link rel="stylesheet" href="/styles.css?v=41"/>
 </head>
 <body>
   <div class="wrap">
@@ -63,11 +75,10 @@
         <a href="https://twitter.com/TheZanHuang" target="_blank" rel="noopener noreferrer">@TheZanHuang</a>
         &nbsp;&middot;&nbsp;
         <a href="https://zanh.myportfolio.com" target="_blank" rel="noopener noreferrer">portfolio</a>
-        &nbsp;&middot;&nbsp;
-        &copy; 2026
       </p>
       <p class="address">Inquiries to HuronARC: 175 Jackson Plaza, Ann Arbor 48103</p>
       <p class="address">Inquiries to UMich: <a href="mailto:zanh@umich.edu">zanh@umich.edu</a></p>
+      <p class="colophon">Copyright &copy; <span class="year">2026</span> Zan Huang</p>
     </footer>
   </div>
 </body>
