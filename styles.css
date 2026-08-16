@@ -233,12 +233,45 @@ p {
 }
 
 .work-thumbs {
-  float: right;
-  width: 11.6rem;
+  width: 24rem;
+  max-width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.4rem;
-  margin: 0 0 0.85rem 0.95rem;
+  gap: 0.55rem 0.7rem;
+  margin: 0.15rem 0 1.25rem;
+}
+
+.piece {
+  margin: 0 0 1.55rem;
+}
+
+.piece:last-child {
+  margin-bottom: 0;
+}
+
+.piece::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.piece-vid {
+  float: right;
+  width: 11.6rem;
+  margin: 0.1rem 0 0.75rem 1rem;
+}
+
+.piece h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.piece-meta {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
 }
 
 .work-mod {
@@ -408,9 +441,13 @@ footer a:hover {
   }
 
   .work-thumbs {
-    float: none;
     width: 100%;
     max-width: 18rem;
     margin: 0 0 1rem;
+  }
+
+  .piece-vid {
+    float: none;
+    margin: 0 0 0.75rem;
   }
 }
