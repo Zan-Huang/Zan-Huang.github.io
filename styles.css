@@ -165,25 +165,19 @@ nav a + a::before {
 }
 
 .layout {
-  display: grid;
-  grid-template-columns: 71fr 29fr;
-  align-items: start;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: stretch;
   width: 100%;
 }
 
-.layout::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 .main-content {
-  grid-column: 1;
+  width: 71%;
   padding-right: 1.6rem;
 }
 
 .sidebar {
-  grid-column: 2;
+  width: 29%;
   padding-left: 1.15rem;
   border-left: 1px solid var(--rule);
   color: var(--muted);
@@ -658,6 +652,12 @@ footer a:hover {
 
   .layout {
     display: block;
+  }
+
+  .layout::after {
+    content: "";
+    display: table;
+    clear: both;
   }
 
   .main-content {
