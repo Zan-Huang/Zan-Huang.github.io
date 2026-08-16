@@ -165,28 +165,34 @@ nav a + a::before {
 }
 
 .layout {
-  display: table;
+  display: grid;
+  grid-template-columns: 71fr 29fr;
+  align-items: start;
   width: 100%;
 }
 
-.main-content,
-.sidebar {
-  display: table-cell;
-  vertical-align: top;
+.layout::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .main-content {
-  width: 71%;
+  grid-column: 1;
   padding-right: 1.6rem;
 }
 
 .sidebar {
-  width: 29%;
+  grid-column: 2;
   padding-left: 1.15rem;
   border-left: 1px solid var(--rule);
   color: var(--muted);
   font-size: 0.92rem;
   line-height: 1.4;
+}
+
+.single {
+  display: block;
 }
 
 .single .main-content {
@@ -285,7 +291,7 @@ p {
 .bio-copy::after {
   content: "";
   display: table;
-  clear: both;
+  clear: left;
 }
 
 .work-thumbs {
@@ -651,19 +657,26 @@ footer a:hover {
   }
 
   .layout {
-    table-layout: fixed;
+    display: block;
   }
 
   .main-content {
-    width: 64%;
-    padding-right: 0.7rem;
+    display: block;
+    width: auto;
+    padding-right: 0;
   }
 
   .sidebar {
+    float: right;
     width: 36%;
+    margin: 0 0 0.85rem 0.7rem;
     padding-left: 0.45rem;
     font-size: 0.62rem;
     line-height: 1.28;
+  }
+
+  .piece::after {
+    clear: left;
   }
 
   .sidebar section {
