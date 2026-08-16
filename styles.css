@@ -661,12 +661,59 @@ footer a:hover {
 
   .sidebar {
     width: 36%;
-    padding-left: 0.65rem;
-    font-size: 0.8rem;
+    padding-left: 0.45rem;
+    font-size: 0.62rem;
+    line-height: 1.28;
   }
 
-  .supporters img {
+  .sidebar section {
+    margin-bottom: 0.75rem;
+  }
+
+  .sidebar h2 {
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.32rem;
+  }
+
+  .sidebar .role {
+    margin-bottom: 0.38rem;
+  }
+
+  .sidebar .insp-works {
+    padding-left: 0.65rem;
+  }
+
+  .sidebar .insp-works li,
+  .sidebar .support-note,
+  .sidebar .supporters span {
+    font-size: inherit;
+  }
+
+  .sidebar .support-note {
+    margin-bottom: 0.4rem;
+  }
+
+  .sidebar .supporters li {
+    margin-bottom: 0.42rem;
+  }
+
+  .sidebar .supporters img {
     max-width: 100%;
+    max-height: 1.15rem;
+  }
+
+  .sidebar .supporters .logo-wide {
+    max-height: 0.82rem;
+  }
+
+  .sidebar .supporters .logo-1517,
+  .sidebar .supporters .logo-mercatus {
+    max-height: 1.05rem;
+  }
+
+  .sidebar .supporters span {
+    margin-top: 0.06rem;
   }
 
   .work-thumbs {
