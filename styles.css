@@ -198,6 +198,13 @@ section {
   margin-bottom: 1.45rem;
 }
 
+section:target,
+footer:target {
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 0.55rem;
+  scroll-margin-top: 0.75rem;
+}
+
 h2 {
   margin: 0 0 0.55rem;
   font-size: 0.92rem;
@@ -218,8 +225,18 @@ p {
   margin: 0 0 1.35rem;
 }
 
+.about p,
+.bio-copy p {
+  text-wrap: pretty;
+}
+
 .about p {
   hanging-punctuation: first last allow-end;
+}
+
+.about > p:last-of-type {
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .about .illum {
