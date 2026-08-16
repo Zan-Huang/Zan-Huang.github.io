@@ -573,18 +573,27 @@ footer a:hover {
 }
 
 @media (max-width: 700px) {
-  .main-content,
-  .sidebar {
-    display: block;
-    width: 100%;
-    padding: 0;
-    border: 0;
+  .wrap {
+    padding: 1.15rem 0.7rem 2rem;
+  }
+
+  .layout {
+    table-layout: fixed;
+  }
+
+  .main-content {
+    width: 64%;
+    padding-right: 0.7rem;
   }
 
   .sidebar {
-    border-top: 1px solid var(--rule);
-    margin-top: 0.3rem;
-    padding-top: 0.9rem;
+    width: 36%;
+    padding-left: 0.65rem;
+    font-size: 0.8rem;
+  }
+
+  .supporters img {
+    max-width: 100%;
   }
 
   .work-thumbs {
