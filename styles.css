@@ -751,3 +751,155 @@ footer a:hover {
     --link: #1a3d8f;
   }
 }
+
+.farbenlehre a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.farben-stage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.4rem 2rem;
+  margin: 0.4rem 0 1.1rem;
+}
+
+.farben-wheel {
+  width: 17.5rem;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.farben-rim {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.1;
+}
+
+.farben-hole {
+  fill: var(--bg);
+  stroke: var(--ink);
+  stroke-width: 0.8;
+}
+
+.farben-wedge {
+  cursor: pointer;
+  stroke: var(--ink);
+  stroke-width: 0.55;
+  mix-blend-mode: multiply;
+}
+
+.farben-wedge:focus {
+  outline: none;
+}
+
+.farben-wedge:focus-visible {
+  stroke-width: 1.6;
+}
+
+.farben-wedge.is-chosen {
+  stroke-width: 1.8;
+}
+
+.farben-wedge.is-complement {
+  stroke-width: 1.35;
+  stroke-dasharray: 3 2;
+}
+
+.farben-label {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 11px;
+  font-style: italic;
+  fill: var(--ink);
+  pointer-events: none;
+}
+
+.farben-readout {
+  flex: 1 1 12rem;
+  min-height: 6.5rem;
+}
+
+.farben-readout p {
+  margin: 0 0 0.4rem;
+}
+
+.farben-readout p:last-child {
+  margin-bottom: 0;
+}
+
+.farben-prompt,
+.farben-pole,
+.farben-note {
+  color: var(--muted);
+}
+
+.farben-actions {
+  margin: 0 0 0.55rem;
+}
+
+.farben-btn {
+  appearance: none;
+  background: none;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  font: inherit;
+  font-variant: small-caps;
+  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+  padding: 0.28rem 0.85rem 0.32rem;
+  cursor: pointer;
+}
+
+.farben-btn:hover:not(:disabled) {
+  color: var(--link);
+  border-color: var(--link);
+}
+
+.farben-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.afterimage {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+}
+
+.afterimage-field {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.afterimage-fix {
+  color: #1c1b18;
+  font-size: 1.8rem;
+  line-height: 1;
+  font-weight: 400;
+  mix-blend-mode: difference;
+}
+
+.afterimage-field.is-paper .afterimage-fix {
+  opacity: 0.25;
+}
+
+@media (max-width: 700px) {
+  .farben-wheel {
+    width: 15.5rem;
+    margin: 0 auto;
+  }
+
+  .farben-stage {
+    display: block;
+  }
+
+  .farben-readout {
+    margin-top: 0.85rem;
+    min-height: 0;
+  }
+}

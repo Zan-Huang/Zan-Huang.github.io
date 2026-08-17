@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Writing by Zan Huang — notes on NeuroAI, computation, and adjacent questions."/>
+  <meta name="description" content="An instrument after Goethe's Farbenkreis. Color as a deed of the eye."/>
   <meta name="theme-color" content="#f6f3ec" id="theme-color"/>
   <script>
     (function () {
@@ -31,9 +31,8 @@
       }
     })();
   </script>
-  <title>Writing — Zan Huang</title>
-  <link rel="canonical" href="https://zanhuang.org/writing.html"/>
-  <link rel="describedby" href="https://zanhuang.org/llms.txt"/>
+  <title>Farbenlehre — Zan Huang</title>
+  <link rel="canonical" href="https://zanhuang.org/farbenlehre.html"/>
   <link rel="icon" type="image/png" href="favicon.png"/>
   <link rel="apple-touch-icon" href="favicon.png"/>
   <link rel="mask-icon" href="seal-mask.svg" color="#9a221c"/>
@@ -62,10 +61,28 @@
 
     <div class="layout single">
       <div class="main-content">
-        <section>
-          <h2>Writing</h2>
-          <p class="page-lead">Notes on research, computation, and questions adjacent to both.</p>
-          <p class="empty-note">No entries yet.</p>
+        <section class="farben-page">
+          <h2>Farbenlehre</h2>
+          <p class="illum">
+            <span class="versal">C</span>olor, for Goethe, is not a slice of Newton’s beam. It is a deed of light and dark, completed in the eye.
+            The wheel below is his Farbenkreis of 1809: six hues, each already containing its opposite.
+            Choose a color. The complement is given. Then, if you like, run the physiological experiment — stare at a field of that color until the page returns to paper, and the organism produces the opposite itself.
+          </p>
+
+          <div class="farben-stage">
+            <svg id="farben-wheel" class="farben-wheel" viewBox="0 0 320 320" role="img" aria-label="Goethe's color wheel"></svg>
+            <div class="farben-readout" id="farben-readout">
+              <p class="farben-prompt">Choose a color.</p>
+            </div>
+          </div>
+
+          <p class="farben-actions">
+            <button type="button" class="farben-btn" id="farben-afterimage" disabled>Afterimage</button>
+          </p>
+          <p class="page-lead farben-note">
+            Afterimage: look at the cross without shifting your gaze. The field will clear on its own.
+            What you then see is not on the page.
+          </p>
         </section>
       </div>
     </div>
@@ -83,5 +100,13 @@
       <p class="colophon">Copyright &copy; <span class="year">2026</span> Zan Huang</p>
     </footer>
   </div>
+
+  <div id="afterimage" class="afterimage" hidden>
+    <div class="afterimage-field" id="afterimage-field">
+      <span class="afterimage-fix">+</span>
+    </div>
+  </div>
+
+  <script src="farbenlehre.js"></script>
 </body>
 </html>
