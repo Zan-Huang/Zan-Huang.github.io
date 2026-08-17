@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Visualizing Movement in Higher Dimensions — Zan Huang. Triangle numbers, complete graphs, and rotations in n-space."/>
+  <meta name="theme-color" content="#f6f3ec" id="theme-color"/>
+  <script>
+    (function () {
+      var now = new Date();
+      var hour = now.getHours();
+      var root = document.documentElement;
+      var meta = document.getElementById("theme-color");
+      if (hour >= 20 || hour < 6) {
+        root.classList.add("lamp");
+        if (meta) meta.setAttribute("content", "#efe6d4");
+      } else if (hour >= 17) {
+        root.classList.add("dusk");
+        if (meta) meta.setAttribute("content", "#f3eee4");
+      }
+      function setYear() {
+        var nodes = document.querySelectorAll(".colophon .year");
+        for (var i = 0; i < nodes.length; i++) {
+          nodes[i].textContent = String(now.getFullYear());
+        }
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", setYear);
+      } else {
+        setYear();
+      }
+    })();
+  </script>
+  <title>Visualizing Movement in Higher Dimensions — Zan Huang</title>
+  <link rel="canonical" href="https://zanhuang.org/writing/visualizing.html"/>
+  <link rel="icon" type="image/png" href="../favicon.png"/>
+  <link rel="apple-touch-icon" href="../favicon.png"/>
+  <link rel="mask-icon" href="../seal-mask.svg" color="#9a221c"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"/>
+  <link rel="stylesheet" href="../styles.css?v=46"/>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="seal" href="../index.html"><img src="../seal.png" alt="Zan Huang seal"/></a>
+      <h1><a href="../index.html">Zan Huang</a></h1>
+      <p class="tagline">Computational Neuroscience &middot; Artificial Intelligence &middot; Music Composition</p>
+      <nav>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#scientific-work">Scientific Work</a>
+        <a href="../index.html#artistic-work">Artistic Work</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#research">Research</a>
+        <a href="../writing.html">Writing</a>
+        <a href="../index.html#talks">Talks</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="layout single">
+      <article class="main-content essay">
+        <header class="essay-head">
+          <p class="essay-kicker"><a href="../writing.html">Writing</a></p>
+          <h2>Visualizing Movement in Higher Dimensions</h2>
+          <p class="essay-meta"><time datetime="2026-08-17">17 August 2026</time></p>
+        </header>
+
+        <p class="illum">
+          <span class="versal">H</span>ow does one visualize rotations in higher dimensions?
+          Evolution in our natural environments made it only necessary for us to navigate in a 3-D world.
+          We don’t have the visual systems to necessarily visualize these spaces unless we can somehow reduce the problem into a more readily accessible form.
+          Though a lot of what is said here might seem trivial at first, it’s useful being able to map between isomorphic representations to build good intuitions.
+        </p>
+        <p>
+          While fiddling around with some graphs a few days ago, it occurred to me that both the number of edges in a fully connected undirected graph and the number of possible rotation directions in \(N\)-dimensional space follow the same sequence (the triangle numbers).
+        </p>
+
+        <h3 class="part">Part I</h3>
+        <p>First, it’s useful to introduce the triangle numbers. We can give both a recursive and an explicit form for this sequence. Here is a classic story that you probably already know.</p>
+        <p>
+          In the 19th century, a young Gauss was able to produce the same explicit form in a Prussian schoolhouse, when the teacher had all the kids add from 1 to 100.
+          This was one of the things that probably sucked about being in Prussia and being educated in the 19th century with lazy teachers.
+          Take a look here:
+        </p>
+        \[
+          1 + 2 + \cdots + 100
+        \]
+        <p>This wraps around. Pair the ends:</p>
+
+        <div class="gauss-pairs" aria-hidden="false">
+          <div class="gauss-row"><span>1</span><i>+</i><span>100</span><b>= 101</b></div>
+          <div class="gauss-row"><span>2</span><i>+</i><span>99</span><b>= 101</b></div>
+          <div class="gauss-row"><span>3</span><i>+</i><span>98</span><b>= 101</b></div>
+          <div class="gauss-row muted"><span>⋮</span><i></i><span>⋮</span><b></b></div>
+          <div class="gauss-row"><span>50</span><i>+</i><span>51</span><b>= 101</b></div>
+        </div>
+        <p>
+          Since we have a pair of terms, we divide by two.
+          The numerator naturally represents \(n\) of \((n+1)\) terms — the “101” in this case of Gauss.
+          By adding the previous sequence to the current term we yield the next term.
+          It is immediately obvious why this is the recursive formula for adding to an \(n\)th term.
+        </p>
+
+        <div class="table-wrap">
+          <table class="seq">
+            <thead>
+              <tr>
+                <th>\(n\)</th>
+                <th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>\(T_n\)</th>
+                <td>0</td><td>1</td><td>3</td><td>6</td><td>10</td><td>15</td><td>21</td><td>28</td><td>36</td><td>45</td><td>55</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>A proof by induction reveals how this maps onto fully connected graphs.</p>
+
+        <div class="proof-spread">
+          <div class="proof">
+            <h4>Recursive form</h4>
+            \[
+              T_0 = 0, \qquad T_n = T_{n-1} + n \quad (n \ge 1)
+            \]
+            <h4>Explicit form</h4>
+            \[
+              T_n = \frac{n(n+1)}{2}
+            \]
+            <h4>Proof by induction</h4>
+            <p>Claim: \(T_n = \dfrac{n(n+1)}{2}\).</p>
+            <p>Base case, \(n = 0\): \(T_0 = 0 = \dfrac{0\cdot 1}{2}\).</p>
+            <p>Inductive hypothesis: \(T_k = \dfrac{k(k+1)}{2}\).</p>
+            <p>Inductive step:</p>
+            \[
+              \begin{aligned}
+                T_{k+1} &= T_k + (k+1) \\
+                &= \frac{k(k+1)}{2} + (k+1) \\
+                &= \frac{k(k+1) + 2(k+1)}{2} \\
+                &= \frac{(k+1)(k+2)}{2} \\
+                &= \frac{(k+1)\bigl((k+1)+1\bigr)}{2}.
+              \end{aligned}
+            \]
+            <p>Therefore, by induction, \(T_n = \dfrac{n(n+1)}{2}\) for all \(n \ge 0\).</p>
+          </div>
+          <div class="proof">
+            <h4>Complete undirected graphs</h4>
+            <p>Let \(e_n = \lvert E(K_n)\rvert\).</p>
+            <div class="table-wrap">
+              <table class="seq compact">
+                <thead>
+                  <tr><th>Graph</th><th>\(K_1\)</th><th>\(K_2\)</th><th>\(K_3\)</th><th>\(K_4\)</th><th>\(K_5\)</th><th>\(K_6\)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th>Vertices</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+                  <tr><th>Edges</th><td>0</td><td>1</td><td>3</td><td>6</td><td>10</td><td>15</td></tr>
+                  <tr><th>New edges</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <h4>Adding one vertex</h4>
+            <p>
+              \(K_n \longrightarrow K_{n+1}\): \(n\) vertices become \(n+1\), and \(e_n\) edges become \(e_n + n\).
+              The new vertex connects to all \(n\) existing vertices, so it contributes exactly \(n\) new edges.
+            </p>
+            \[
+              e_{n+1} = e_n + n
+            \]
+            <p>This is the triangular-number recurrence \(T_n = T_{n-1} + n\).</p>
+            \[
+              \lvert E(K_n)\rvert = \binom{n}{2} = \frac{n(n-1)}{2} = T_{n-1}
+            \]
+            <figure class="kn-side">
+              <svg class="kn-svg" data-kn="5" role="img" aria-label="Complete graph K5"></svg>
+              <figcaption>\(K_5\), ten edges. Each new vertex hangs one more edge than the last.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <p class="growth">
+          Visual correspondence:
+          \(K_1 \xrightarrow{+1} K_2 \xrightarrow{+2} K_3 \xrightarrow{+3} K_4 \xrightarrow{+4} K_5\)
+          gives edge counts \(0,1,3,6,10\), which are \(T_0\) through \(T_4\).
+          Each added vertex contributes one more edge than the previous vertex.
+          Hence the edge counts form the triangular-number sequence.
+        </p>
+
+        <h3 class="part">Part II</h3>
+        <p>
+          There was a video about Marvin Minsky from a while ago, where he brings up the
+          <a href="https://www.youtube.com/watch?v=S43WaQywDbw" target="_blank" rel="noopener noreferrer">Society of Mind</a>
+          idea.
+          In two dimensions, we have two intersecting orthogonal lines which form axes.
+          In three, we have three orthogonal intersections.
+          For 4, 5, 6, \ldots, \(n\), we can hold the concept (not necessarily visualize with our primary visual cortex, unless drugs are involved) that there are \(n\) orthogonal intersections.
+        </p>
+
+        <a class="work-mod talk-mod minsky-mod" href="https://www.youtube.com/watch?v=S43WaQywDbw" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.youtube.com/vi/S43WaQywDbw/hqdefault.jpg" alt=""/>
+          <span>Marvin Minsky, Mind as Society</span>
+        </a>
+
+        <p>
+          We can even make sense of this space by dividing the \(n\)-dimensional axis of orthogonal intersections into subspaces of 3 dimensions, if that helps you at all.
+        </p>
+        <p>
+          When my friend Justin posed the problem — “how many possible rotations are in 6 dimensions?” — which requires us to make sense of a general formula for the number of rotations for each dimension, I immediately jumped to trying to think about this in terms of Minsky’s orthogonal lines.
+        </p>
+        <p><em>Spoiler: this ends up following the triangle numbers.</em></p>
+        <p>
+          If in one dimension we have zero degrees of rotation, since there are no pairs of axes to swing between, it follows that in two we have one degree of rotation.
+          In three, we have three degrees of rotation: \(xy\), \(xz\), and \(yz\).
+        </p>
+
+        <div class="axis-row">
+          <figure class="axis-fig">
+            <svg viewBox="0 0 140 140" aria-label="One rotation in the plane">
+              <line x1="20" y1="70" x2="120" y2="70" stroke="currentColor"/>
+              <line x1="70" y1="20" x2="70" y2="120" stroke="currentColor"/>
+              <path d="M 98 70 A 28 28 0 0 0 70 42" fill="none" stroke="#1a3d8f" stroke-width="1.4"/>
+              <text x="124" y="74" font-size="11">x</text>
+              <text x="74" y="16" font-size="11">y</text>
+            </svg>
+            <figcaption>2-D: one plane, \(xy\)</figcaption>
+          </figure>
+          <figure class="axis-fig">
+            <svg viewBox="0 0 140 140" aria-label="Three rotations in space">
+              <line x1="22" y1="88" x2="118" y2="88" stroke="currentColor"/>
+              <line x1="70" y1="22" x2="70" y2="118" stroke="currentColor"/>
+              <line x1="38" y1="112" x2="108" y2="48" stroke="currentColor"/>
+              <path d="M 100 88 A 30 30 0 0 0 70 58" fill="none" stroke="#1a3d8f" stroke-width="1.3"/>
+              <path d="M 70 58 A 26 26 0 0 0 92 70" fill="none" stroke="#8a5a1a" stroke-width="1.3"/>
+              <path d="M 100 88 A 22 22 0 0 1 88 100" fill="none" stroke="#3d6b4f" stroke-width="1.3"/>
+              <text x="122" y="92" font-size="11">x</text>
+              <text x="74" y="18" font-size="11">y</text>
+              <text x="110" y="46" font-size="11">z</text>
+            </svg>
+            <figcaption>3-D: \(xy\), \(xz\), \(yz\)</figcaption>
+          </figure>
+          <figure class="axis-fig">
+            <svg viewBox="0 0 140 140" aria-label="A fourth orthogonal axis">
+              <line x1="22" y1="88" x2="118" y2="88" stroke="currentColor"/>
+              <line x1="70" y1="22" x2="70" y2="118" stroke="currentColor"/>
+              <line x1="38" y1="112" x2="108" y2="48" stroke="currentColor"/>
+              <line x1="28" y1="40" x2="112" y2="112" stroke="#1a3d8f" stroke-dasharray="3 2"/>
+              <text x="122" y="92" font-size="11">x</text>
+              <text x="74" y="18" font-size="11">y</text>
+              <text x="110" y="46" font-size="11">z</text>
+              <text x="18" y="38" font-size="11" fill="#1a3d8f">w</text>
+            </svg>
+            <figcaption>4-D: \(w\) meets \(x,y,z\)</figcaption>
+          </figure>
+        </div>
+
+        <p>
+          For the fourth dimension, imagine there is another axis orthogonally penetrating through the center from another direction.
+          That axis can swing unto each of the existing three dimensions (also corresponding to the current \(n-1\)).
+          Do you see how this takes the form of
+        </p>
+        \[
+          \binom{n}{2} = \frac{n(n-1)}{2} = T_{n-1}\;?
+        \]
+        <p>
+          In 6 dimensions we have \(\binom{6}{2} = 15\) different possible rotations — one for each pair of axes.
+          (If you count \(T_6 = 21\), you have gone one step past six vertices; the rotations of \(\mathbb{R}^6\) are the edges of \(K_6\).)
+        </p>
+        <p class="rot-lead">The fifteen planes:</p>
+        <ul class="rot-list">
+          <li>\(xy\)</li><li>\(xz\)</li><li>\(xw\)</li><li>\(xv\)</li><li>\(xu\)</li>
+          <li>\(yz\)</li><li>\(yw\)</li><li>\(yv\)</li><li>\(yu\)</li>
+          <li>\(zw\)</li><li>\(zv\)</li><li>\(zu\)</li>
+          <li>\(wv\)</li><li>\(wu\)</li>
+          <li>\(vu\)</li>
+        </ul>
+
+        <h3 class="part">Part III</h3>
+        <p>
+          Now for the real mental trick: draw a fully connected graph.
+          Here are some examples for 2, 3, 4, 5, 6 dimensions.
+          Label each vertex with its corresponding direction.
+        </p>
+
+        <div class="kn-gallery">
+          <figure><svg class="kn-svg" data-kn="2"></svg><figcaption>\(K_2\)</figcaption></figure>
+          <figure><svg class="kn-svg" data-kn="3"></svg><figcaption>\(K_3\)</figcaption></figure>
+          <figure><svg class="kn-svg" data-kn="4"></svg><figcaption>\(K_4\)</figcaption></figure>
+          <figure><svg class="kn-svg" data-kn="5"></svg><figcaption>\(K_5\)</figcaption></figure>
+          <figure><svg class="kn-svg" data-kn="6"></svg><figcaption>\(K_6\)</figcaption></figure>
+        </div>
+
+        <div class="kn-live-wrap">
+          <svg id="kn-live" class="kn-svg kn-live" role="img" aria-label="Interactive complete graph"></svg>
+          <div class="kn-controls">
+            <label>
+              Dimension \(n = K_n\)
+              <input id="kn-n" type="range" min="1" max="7" value="6"/>
+              <span><span id="kn-n-read">6</span> vertices, <span id="kn-e-read">15</span> edges</span>
+            </label>
+            <label>
+              Color the generation
+              <input id="kn-gen" type="range" min="0" max="6" value="5"/>
+              <span id="kn-g-read">edges added with u</span>
+            </label>
+            <p class="page-lead">
+              Edges are colored by the vertex that introduced them.
+              The second slider isolates one generation: the \(k\) new edges that appear when the \(k\)-th axis arrives.
+              That is the recurrence \(T_{n} = T_{n-1} + n\), drawn.
+            </p>
+          </div>
+        </div>
+        \[
+          T_0 = 0, \qquad T_n = T_{n-1} + n \quad (n \ge 1)
+        \]
+        <p>
+          We can express a rotation between two particular dimensions by tracing between two vertices.
+          If we simultaneously trace between several vertices (more than two), then we express rotation in the direction of those.
+        </p>
+        <p>Vectors and matrices make this intuitive.</p>
+        <p>
+          \([x,\, y]\) allows us to express the vector location \((x, y)\) in space from the origin.
+          Rotation matrices then perform the matrix operation that transforms these values.
+          A rotation in the plane of two axes \(i,j\) is the identity except in that \(2\times 2\) block:
+        </p>
+        \[
+          R_{ij}(\theta)\;=\;
+          \begin{pmatrix}
+            \cos\theta & -\sin\theta \\
+            \sin\theta & \cos\theta
+          \end{pmatrix}
+          \quad\text{in the }(i,j)\text{ plane, }1\text{ elsewhere.}
+        \]
+        <p>
+          At a right angle, \(\theta = \pi/2\), the sines and cosines collapse to \(0\) and \(1\).
+          Those are the matrices below — one generator for each rotation plane, across a few dimensions.
+        </p>
+
+        <div class="matrix-grid">
+          <figure>
+            <figcaption>2-D, \(xy\)</figcaption>
+            \[
+              \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}
+            \]
+          </figure>
+          <figure>
+            <figcaption>3-D, \(xy\)</figcaption>
+            \[
+              \begin{pmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}
+            \]
+          </figure>
+          <figure>
+            <figcaption>3-D, \(xz\)</figcaption>
+            \[
+              \begin{pmatrix} 0 & 0 & -1 \\ 0 & 1 & 0 \\ 1 & 0 & 0 \end{pmatrix}
+            \]
+          </figure>
+          <figure>
+            <figcaption>3-D, \(yz\)</figcaption>
+            \[
+              \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & -1 \\ 0 & 1 & 0 \end{pmatrix}
+            \]
+          </figure>
+          <figure>
+            <figcaption>4-D, \(xy\)</figcaption>
+            \[
+              \begin{pmatrix}
+                0 & -1 & 0 & 0 \\
+                1 & 0 & 0 & 0 \\
+                0 & 0 & 1 & 0 \\
+                0 & 0 & 0 & 1
+              \end{pmatrix}
+            \]
+          </figure>
+          <figure>
+            <figcaption>4-D, \(xw\)</figcaption>
+            \[
+              \begin{pmatrix}
+                0 & 0 & 0 & -1 \\
+                0 & 1 & 0 & 0 \\
+                0 & 0 & 1 & 0 \\
+                1 & 0 & 0 & 0
+              \end{pmatrix}
+            \]
+          </figure>
+          <figure>
+            <figcaption>4-D, \(zw\)</figcaption>
+            \[
+              \begin{pmatrix}
+                1 & 0 & 0 & 0 \\
+                0 & 1 & 0 & 0 \\
+                0 & 0 & 0 & -1 \\
+                0 & 0 & 1 & 0
+              \end{pmatrix}
+            \]
+          </figure>
+          <figure>
+            <figcaption>6-D, \(xu\)</figcaption>
+            \[
+              \begin{pmatrix}
+                0 & 0 & 0 & 0 & 0 & -1 \\
+                0 & 1 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 1 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 1 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 1 & 0 \\
+                1 & 0 & 0 & 0 & 0 & 0
+              \end{pmatrix}
+            \]
+          </figure>
+        </div>
+        <p>
+          Each such matrix is a \(90^\circ\) turn in one of the planes listed above.
+          The rest of the space sits still.
+          That is the whole correspondence: an edge of \(K_n\), a pair of axes, a Givens rotation, a triangle number.
+        </p>
+      </article>
+    </div>
+
+    <footer id="contact">
+      <p>
+        <a href="mailto:zanhuang@huronarc.com">zanhuang@huronarc.com</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://twitter.com/TheZanHuang" target="_blank" rel="noopener noreferrer">@TheZanHuang</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://zanh.myportfolio.com" target="_blank" rel="noopener noreferrer">portfolio</a>
+      </p>
+      <p class="address">Inquiries to HuronARC: 175 Jackson Plaza, Ann Arbor 48103</p>
+      <p class="address">Inquiries to UMich: <a href="mailto:zanh@umich.edu">zanh@umich.edu</a></p>
+      <p class="colophon">Copyright &copy; <span class="year">2026</span> Zan Huang</p>
+    </footer>
+  </div>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "\\[", right: "\\]", display: true },
+            { left: "\\(", right: "\\)", display: false }
+          ]
+        });
+      }
+    });
+  </script>
+  <script src="visualizing.js"></script>
+</body>
+</html>

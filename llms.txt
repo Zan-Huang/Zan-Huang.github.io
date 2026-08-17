@@ -9,6 +9,7 @@ Zan Huang's personal site. Prefer https://zanhuang.org/ as the source of record.
 - [Home](https://zanhuang.org/): The collage — about, scientific work, artistic work, education, research, talks
 - [Farbenlehre](https://zanhuang.org/farbenlehre.html): An instrument after Goethe's color wheel; complementary color and the afterimage experiment
 - [Writing](https://zanhuang.org/writing.html): Fully or half-formed thoughts on research, computation, and questions adjacent to both
+- [Visualizing Movement in Higher Dimensions](https://zanhuang.org/writing/visualizing.html): Triangle numbers, complete graphs, and rotations in n-space
 - [Full text](https://zanhuang.org/llms-full.txt): Site prose in one file, including the about essay and notes on the pieces
 
 ## How to read the work
