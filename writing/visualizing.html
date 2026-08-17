@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"/>
-  <link rel="stylesheet" href="../styles.css?v=46"/>
+  <link rel="stylesheet" href="../styles.css?v=47"/>
 </head>
 <body>
   <div class="wrap">
@@ -90,13 +90,15 @@
         \]
         <p>This wraps around. Pair the ends:</p>
 
-        <div class="gauss-pairs" aria-hidden="false">
-          <div class="gauss-row"><span>1</span><i>+</i><span>100</span><b>= 101</b></div>
-          <div class="gauss-row"><span>2</span><i>+</i><span>99</span><b>= 101</b></div>
-          <div class="gauss-row"><span>3</span><i>+</i><span>98</span><b>= 101</b></div>
-          <div class="gauss-row muted"><span>⋮</span><i></i><span>⋮</span><b></b></div>
-          <div class="gauss-row"><span>50</span><i>+</i><span>51</span><b>= 101</b></div>
-        </div>
+        <table class="gauss">
+          <tbody>
+            <tr><td>1</td><td>+</td><td>100</td><td>= 101</td></tr>
+            <tr><td>2</td><td>+</td><td>99</td><td>= 101</td></tr>
+            <tr><td>3</td><td>+</td><td>98</td><td>= 101</td></tr>
+            <tr class="gauss-ellipsis"><td colspan="4">⋮</td></tr>
+            <tr><td>50</td><td>+</td><td>51</td><td>= 101</td></tr>
+          </tbody>
+        </table>
         <p>
           Since we have a pair of terms, we divide by two.
           The numerator naturally represents \(n\) of \((n+1)\) terms — the “101” in this case of Gauss.
@@ -123,64 +125,62 @@
 
         <p>A proof by induction reveals how this maps onto fully connected graphs.</p>
 
-        <div class="proof-spread">
+        <div class="form-pair">
           <div class="proof">
             <h4>Recursive form</h4>
             \[
               T_0 = 0, \qquad T_n = T_{n-1} + n \quad (n \ge 1)
             \]
+          </div>
+          <div class="proof">
             <h4>Explicit form</h4>
             \[
               T_n = \frac{n(n+1)}{2}
             \]
-            <h4>Proof by induction</h4>
-            <p>Claim: \(T_n = \dfrac{n(n+1)}{2}\).</p>
-            <p>Base case, \(n = 0\): \(T_0 = 0 = \dfrac{0\cdot 1}{2}\).</p>
-            <p>Inductive hypothesis: \(T_k = \dfrac{k(k+1)}{2}\).</p>
-            <p>Inductive step:</p>
-            \[
-              \begin{aligned}
-                T_{k+1} &= T_k + (k+1) \\
-                &= \frac{k(k+1)}{2} + (k+1) \\
-                &= \frac{k(k+1) + 2(k+1)}{2} \\
-                &= \frac{(k+1)(k+2)}{2} \\
-                &= \frac{(k+1)\bigl((k+1)+1\bigr)}{2}.
-              \end{aligned}
-            \]
-            <p>Therefore, by induction, \(T_n = \dfrac{n(n+1)}{2}\) for all \(n \ge 0\).</p>
           </div>
+        </div>
+
+        <div class="proof">
+          <h4>Proof by induction</h4>
+          <p>Claim: \(T_n = \dfrac{n(n+1)}{2}\). Base case, \(n = 0\): \(T_0 = 0 = \dfrac{0\cdot 1}{2}\). Inductive hypothesis: \(T_k = \dfrac{k(k+1)}{2}\). Then</p>
+          \[
+            \begin{aligned}
+              T_{k+1} &= T_k + (k+1) \\
+              &= \frac{k(k+1)}{2} + (k+1) \\
+              &= \frac{k(k+1) + 2(k+1)}{2} \\
+              &= \frac{(k+1)(k+2)}{2} \\
+              &= \frac{(k+1)\bigl((k+1)+1\bigr)}{2}.
+            \end{aligned}
+          \]
+          <p>Therefore \(T_n = \dfrac{n(n+1)}{2}\) for all \(n \ge 0\).</p>
+        </div>
+
+        <div class="proof-spread">
           <div class="proof">
             <h4>Complete undirected graphs</h4>
             <p>Let \(e_n = \lvert E(K_n)\rvert\).</p>
             <div class="table-wrap">
               <table class="seq compact">
                 <thead>
-                  <tr><th>Graph</th><th>\(K_1\)</th><th>\(K_2\)</th><th>\(K_3\)</th><th>\(K_4\)</th><th>\(K_5\)</th><th>\(K_6\)</th></tr>
+                  <tr><th></th><th>\(K_1\)</th><th>\(K_2\)</th><th>\(K_3\)</th><th>\(K_4\)</th><th>\(K_5\)</th><th>\(K_6\)</th></tr>
                 </thead>
                 <tbody>
                   <tr><th>Vertices</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
                   <tr><th>Edges</th><td>0</td><td>1</td><td>3</td><td>6</td><td>10</td><td>15</td></tr>
-                  <tr><th>New edges</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+                  <tr><th>New</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
                 </tbody>
               </table>
             </div>
-            <h4>Adding one vertex</h4>
             <p>
-              \(K_n \longrightarrow K_{n+1}\): \(n\) vertices become \(n+1\), and \(e_n\) edges become \(e_n + n\).
-              The new vertex connects to all \(n\) existing vertices, so it contributes exactly \(n\) new edges.
+              \(K_n \longrightarrow K_{n+1}\): the new vertex meets all \(n\) old ones, so \(e_{n+1} = e_n + n\).
+              That is the same recurrence. Hence
+              \(\lvert E(K_n)\rvert = \binom{n}{2} = \dfrac{n(n-1)}{2} = T_{n-1}\).
             </p>
-            \[
-              e_{n+1} = e_n + n
-            \]
-            <p>This is the triangular-number recurrence \(T_n = T_{n-1} + n\).</p>
-            \[
-              \lvert E(K_n)\rvert = \binom{n}{2} = \frac{n(n-1)}{2} = T_{n-1}
-            \]
-            <figure class="kn-side">
-              <svg class="kn-svg" data-kn="5" role="img" aria-label="Complete graph K5"></svg>
-              <figcaption>\(K_5\), ten edges. Each new vertex hangs one more edge than the last.</figcaption>
-            </figure>
           </div>
+          <figure class="kn-side">
+            <svg class="kn-svg" data-kn="5" role="img" aria-label="Complete graph K5"></svg>
+            <figcaption>\(K_5\), ten edges. Each new vertex hangs one more edge than the last.</figcaption>
+          </figure>
         </div>
 
         <p class="growth">
@@ -202,7 +202,7 @@
         </p>
 
         <a class="work-mod talk-mod minsky-mod" href="https://www.youtube.com/watch?v=S43WaQywDbw" target="_blank" rel="noopener noreferrer">
-          <img src="https://img.youtube.com/vi/S43WaQywDbw/hqdefault.jpg" alt=""/>
+          <img src="https://img.youtube.com/vi/S43WaQywDbw/mqdefault.jpg" alt=""/>
           <span>Marvin Minsky, Mind as Society</span>
         </a>
 
@@ -220,39 +220,39 @@
 
         <div class="axis-row">
           <figure class="axis-fig">
-            <svg viewBox="0 0 140 140" aria-label="One rotation in the plane">
-              <line x1="20" y1="70" x2="120" y2="70" stroke="currentColor"/>
-              <line x1="70" y1="20" x2="70" y2="120" stroke="currentColor"/>
-              <path d="M 98 70 A 28 28 0 0 0 70 42" fill="none" stroke="#1a3d8f" stroke-width="1.4"/>
-              <text x="124" y="74" font-size="11">x</text>
-              <text x="74" y="16" font-size="11">y</text>
+            <svg viewBox="0 0 160 150" aria-label="One rotation in the plane">
+              <line x1="28" y1="78" x2="132" y2="78" stroke="currentColor" stroke-width="1.15"/>
+              <line x1="80" y1="26" x2="80" y2="130" stroke="currentColor" stroke-width="1.15"/>
+              <path d="M 108 78 A 28 28 0 0 0 80 50" fill="none" stroke="#1a3d8f" stroke-width="1.45"/>
+              <text x="142" y="82" font-size="12" fill="currentColor">x</text>
+              <text x="84" y="20" font-size="12" fill="currentColor">y</text>
             </svg>
             <figcaption>2-D: one plane, \(xy\)</figcaption>
           </figure>
           <figure class="axis-fig">
-            <svg viewBox="0 0 140 140" aria-label="Three rotations in space">
-              <line x1="22" y1="88" x2="118" y2="88" stroke="currentColor"/>
-              <line x1="70" y1="22" x2="70" y2="118" stroke="currentColor"/>
-              <line x1="38" y1="112" x2="108" y2="48" stroke="currentColor"/>
-              <path d="M 100 88 A 30 30 0 0 0 70 58" fill="none" stroke="#1a3d8f" stroke-width="1.3"/>
-              <path d="M 70 58 A 26 26 0 0 0 92 70" fill="none" stroke="#8a5a1a" stroke-width="1.3"/>
-              <path d="M 100 88 A 22 22 0 0 1 88 100" fill="none" stroke="#3d6b4f" stroke-width="1.3"/>
-              <text x="122" y="92" font-size="11">x</text>
-              <text x="74" y="18" font-size="11">y</text>
-              <text x="110" y="46" font-size="11">z</text>
+            <svg viewBox="0 0 160 150" aria-label="Three rotations in space">
+              <line x1="28" y1="96" x2="128" y2="96" stroke="currentColor" stroke-width="1.15"/>
+              <line x1="80" y1="28" x2="80" y2="128" stroke="currentColor" stroke-width="1.15"/>
+              <line x1="44" y1="122" x2="118" y2="52" stroke="currentColor" stroke-width="1.15"/>
+              <path d="M 110 96 A 30 30 0 0 0 80 66" fill="none" stroke="#1a3d8f" stroke-width="1.35"/>
+              <path d="M 80 66 A 24 24 0 0 0 104 78" fill="none" stroke="#8a5a1a" stroke-width="1.35"/>
+              <path d="M 110 96 A 20 20 0 0 1 96 110" fill="none" stroke="#3d6b4f" stroke-width="1.35"/>
+              <text x="136" y="100" font-size="12" fill="currentColor">x</text>
+              <text x="84" y="22" font-size="12" fill="currentColor">y</text>
+              <text x="122" y="50" font-size="12" fill="currentColor">z</text>
             </svg>
             <figcaption>3-D: \(xy\), \(xz\), \(yz\)</figcaption>
           </figure>
           <figure class="axis-fig">
-            <svg viewBox="0 0 140 140" aria-label="A fourth orthogonal axis">
-              <line x1="22" y1="88" x2="118" y2="88" stroke="currentColor"/>
-              <line x1="70" y1="22" x2="70" y2="118" stroke="currentColor"/>
-              <line x1="38" y1="112" x2="108" y2="48" stroke="currentColor"/>
-              <line x1="28" y1="40" x2="112" y2="112" stroke="#1a3d8f" stroke-dasharray="3 2"/>
-              <text x="122" y="92" font-size="11">x</text>
-              <text x="74" y="18" font-size="11">y</text>
-              <text x="110" y="46" font-size="11">z</text>
-              <text x="18" y="38" font-size="11" fill="#1a3d8f">w</text>
+            <svg viewBox="0 0 160 150" aria-label="A fourth orthogonal axis">
+              <line x1="28" y1="96" x2="128" y2="96" stroke="currentColor" stroke-width="1.15"/>
+              <line x1="80" y1="28" x2="80" y2="128" stroke="currentColor" stroke-width="1.15"/>
+              <line x1="44" y1="122" x2="118" y2="52" stroke="currentColor" stroke-width="1.15"/>
+              <line x1="36" y1="44" x2="124" y2="122" stroke="#1a3d8f" stroke-width="1.2" stroke-dasharray="3 2.5"/>
+              <text x="136" y="100" font-size="12" fill="currentColor">x</text>
+              <text x="84" y="22" font-size="12" fill="currentColor">y</text>
+              <text x="122" y="50" font-size="12" fill="currentColor">z</text>
+              <text x="24" y="40" font-size="12" fill="#1a3d8f">w</text>
             </svg>
             <figcaption>4-D: \(w\) meets \(x,y,z\)</figcaption>
           </figure>
@@ -267,17 +267,22 @@
           \binom{n}{2} = \frac{n(n-1)}{2} = T_{n-1}\;?
         \]
         <p>
-          In 6 dimensions we have \(\binom{6}{2} = 15\) different possible rotations — one for each pair of axes.
-          (If you count \(T_6 = 21\), you have gone one step past six vertices; the rotations of \(\mathbb{R}^6\) are the edges of \(K_6\).)
+          In 6 dimensions we have \(\binom{6}{2} = 15\) different possible rotations — one for each pair of axes, the edges of \(K_6\).
         </p>
-        <p class="rot-lead">The fifteen planes:</p>
-        <ul class="rot-list">
-          <li>\(xy\)</li><li>\(xz\)</li><li>\(xw\)</li><li>\(xv\)</li><li>\(xu\)</li>
-          <li>\(yz\)</li><li>\(yw\)</li><li>\(yv\)</li><li>\(yu\)</li>
-          <li>\(zw\)</li><li>\(zv\)</li><li>\(zu\)</li>
-          <li>\(wv\)</li><li>\(wu\)</li>
-          <li>\(vu\)</li>
-        </ul>
+        <div class="table-wrap">
+          <table class="seq planes">
+            <thead>
+              <tr><th></th><th>\(y\)</th><th>\(z\)</th><th>\(w\)</th><th>\(v\)</th><th>\(u\)</th></tr>
+            </thead>
+            <tbody>
+              <tr><th>\(x\)</th><td>\(xy\)</td><td>\(xz\)</td><td>\(xw\)</td><td>\(xv\)</td><td>\(xu\)</td></tr>
+              <tr><th>\(y\)</th><td></td><td>\(yz\)</td><td>\(yw\)</td><td>\(yv\)</td><td>\(yu\)</td></tr>
+              <tr><th>\(z\)</th><td></td><td></td><td>\(zw\)</td><td>\(zv\)</td><td>\(zu\)</td></tr>
+              <tr><th>\(w\)</th><td></td><td></td><td></td><td>\(wv\)</td><td>\(wu\)</td></tr>
+              <tr><th>\(v\)</th><td></td><td></td><td></td><td></td><td>\(vu\)</td></tr>
+            </tbody>
+          </table>
+        </div>
 
         <h3 class="part">Part III</h3>
         <p>
@@ -300,12 +305,12 @@
             <label>
               Dimension \(n = K_n\)
               <input id="kn-n" type="range" min="1" max="7" value="6"/>
-              <span><span id="kn-n-read">6</span> vertices, <span id="kn-e-read">15</span> edges</span>
+              <span class="kn-readout"><span id="kn-n-read">6</span> vertices, <span id="kn-e-read">15</span> edges</span>
             </label>
             <label>
-              Color the generation
-              <input id="kn-gen" type="range" min="0" max="6" value="5"/>
-              <span id="kn-g-read">edges added with u</span>
+              Isolate a generation
+              <input id="kn-gen" type="range" min="-1" max="6" value="-1"/>
+              <span class="kn-readout" id="kn-g-read">all generations</span>
             </label>
             <p class="page-lead">
               Edges are colored by the vertex that introduced them.
@@ -398,7 +403,7 @@
               \end{pmatrix}
             \]
           </figure>
-          <figure>
+          <figure class="matrix-wide">
             <figcaption>6-D, \(xu\)</figcaption>
             \[
               \begin{pmatrix}
@@ -436,16 +441,16 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      if (window.renderMathInElement) {
-        renderMathInElement(document.body, {
-          delimiters: [
-            { left: "$$", right: "$$", display: true },
-            { left: "\\[", right: "\\]", display: true },
-            { left: "\\(", right: "\\)", display: false }
-          ]
-        });
-      }
+    window.addEventListener("load", function () {
+      if (!window.renderMathInElement) return;
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "\\[", right: "\\]", display: true },
+          { left: "\\(", right: "\\)", display: false }
+        ],
+        throwOnError: false
+      });
     });
   </script>
   <script src="visualizing.js"></script>

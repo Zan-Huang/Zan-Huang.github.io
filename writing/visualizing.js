@@ -21,10 +21,13 @@
     var ns = "http://www.w3.org/2000/svg";
     while (svg.firstChild) svg.removeChild(svg.firstChild);
     if (n < 1) return;
-    var w = 220;
-    var h = 220;
+    var w = 240;
+    var h = 240;
     svg.setAttribute("viewBox", "0 0 " + w + " " + h);
-    var pts = points(n, w / 2, h / 2, n === 1 ? 0 : 78);
+    var cx = w / 2;
+    var cy = h / 2;
+    var r = n <= 2 ? 62 : 72;
+    var pts = n === 1 ? [{ x: cx, y: cy, label: AXES[0] }] : points(n, cx, cy, r);
 
     function edge(i, j) {
       var gen = Math.max(i, j);
@@ -34,8 +37,9 @@
       line.setAttribute("x2", pts[j].x);
       line.setAttribute("y2", pts[j].y);
       line.setAttribute("stroke", GEN[gen % GEN.length]);
-      line.setAttribute("stroke-width", highlight === gen ? "2.2" : "1.15");
-      line.setAttribute("stroke-opacity", highlight == null || highlight === gen ? "0.95" : "0.22");
+      line.setAttribute("stroke-linecap", "round");
+      line.setAttribute("stroke-width", highlight === gen ? "2.3" : "1.2");
+      line.setAttribute("stroke-opacity", highlight == null || highlight === gen ? "0.95" : "0.18");
       svg.appendChild(line);
     }
 
@@ -47,17 +51,25 @@
       var c = document.createElementNS(ns, "circle");
       c.setAttribute("cx", p.x);
       c.setAttribute("cy", p.y);
-      c.setAttribute("r", n === 1 ? 5 : 4);
+      c.setAttribute("r", n === 1 ? 5.5 : 4.2);
       c.setAttribute("fill", "#f6f3ec");
       c.setAttribute("stroke", "#1c1b18");
-      c.setAttribute("stroke-width", "1.1");
+      c.setAttribute("stroke-width", "1.15");
       svg.appendChild(c);
       var t = document.createElementNS(ns, "text");
-      var dx = p.x - w / 2;
-      var dy = p.y - h / 2;
-      var len = Math.sqrt(dx * dx + dy * dy) || 1;
-      t.setAttribute("x", p.x + (dx / len) * 14);
-      t.setAttribute("y", p.y + (dy / len) * 14);
+      var lx = p.x;
+      var ly = p.y;
+      if (n === 1) {
+        ly = p.y + 18;
+      } else {
+        var dx = p.x - cx;
+        var dy = p.y - cy;
+        var len = Math.sqrt(dx * dx + dy * dy) || 1;
+        lx = p.x + (dx / len) * 18;
+        ly = p.y + (dy / len) * 18;
+      }
+      t.setAttribute("x", lx);
+      t.setAttribute("y", ly);
       t.setAttribute("text-anchor", "middle");
       t.setAttribute("dominant-baseline", "middle");
       t.setAttribute("class", "kn-label");
@@ -89,15 +101,15 @@
     function render() {
       var n = parseInt(slider.value, 10);
       var gen = parseInt(colorSlider.value, 10);
-      if (gen > n - 1) {
-        colorSlider.value = String(Math.max(0, n - 1));
-        gen = parseInt(colorSlider.value, 10);
-      }
       colorSlider.max = String(Math.max(0, n - 1));
-      drawGraph(svg, n, { highlight: gen });
+      if (gen > n - 1) {
+        colorSlider.value = String(n - 1);
+        gen = n - 1;
+      }
+      drawGraph(svg, n, { highlight: gen < 0 ? null : gen });
       nRead.textContent = String(n);
       eRead.textContent = String(edges(n));
-      gRead.textContent = gen === 0 ? "K₁" : "edges added with " + AXES[gen];
+      gRead.textContent = gen < 0 ? "all generations" : (gen === 0 ? "K₁" : "edges added with " + AXES[gen]);
     }
 
     slider.addEventListener("input", render);
