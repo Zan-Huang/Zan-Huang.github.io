@@ -1142,19 +1142,30 @@ footer a:hover {
   grid-column: 1 / -1;
 }
 
-.essay .katex {
+.katex,
+.katex *,
+.katex ::before,
+.katex ::after {
+  box-sizing: content-box;
+}
+
+.katex {
   color: var(--ink);
-  font-size: 1.02em;
+  letter-spacing: normal;
+  line-height: normal;
+  font-kerning: none;
+  text-rendering: auto;
 }
 
 .essay .katex-display {
-  margin: 0.45rem 0 0.8rem;
+  margin: 0.65rem 0 0.95rem;
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: visible;
+  padding: 0.2rem 0;
 }
 
 .essay .proof .katex-display {
-  margin: 0.35rem 0 0.65rem;
+  margin: 0.4rem 0 0.7rem;
 }
 
 .minsky-mod {
