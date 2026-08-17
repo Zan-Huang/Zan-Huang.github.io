@@ -230,29 +230,36 @@
             <figcaption>2-D: one plane, \(xy\)</figcaption>
           </figure>
           <figure class="axis-fig">
-            <svg viewBox="0 0 160 150" aria-label="Three rotations in space">
-              <line x1="28" y1="96" x2="128" y2="96" stroke="currentColor" stroke-width="1.15"/>
-              <line x1="80" y1="28" x2="80" y2="128" stroke="currentColor" stroke-width="1.15"/>
-              <line x1="44" y1="122" x2="118" y2="52" stroke="currentColor" stroke-width="1.15"/>
-              <path d="M 110 96 A 30 30 0 0 0 80 66" fill="none" stroke="#1a3d8f" stroke-width="1.35"/>
-              <path d="M 80 66 A 24 24 0 0 0 104 78" fill="none" stroke="#8a5a1a" stroke-width="1.35"/>
-              <path d="M 110 96 A 20 20 0 0 1 96 110" fill="none" stroke="#3d6b4f" stroke-width="1.35"/>
-              <text x="136" y="100" font-size="12" fill="currentColor">x</text>
-              <text x="84" y="22" font-size="12" fill="currentColor">y</text>
-              <text x="122" y="50" font-size="12" fill="currentColor">z</text>
+            <svg viewBox="0 0 160 150" aria-label="Three orthogonal axes and their rotation planes">
+              <line x1="80" y1="96" x2="140" y2="96" stroke="currentColor" stroke-width="1.2"/>
+              <polygon points="140,96 132,92.4 132,99.6" fill="currentColor"/>
+              <line x1="80" y1="96" x2="36" y2="128" stroke="currentColor" stroke-width="1.2"/>
+              <polygon points="36,128 44.2,122.2 40.6,120.2" fill="currentColor"/>
+              <line x1="80" y1="96" x2="80" y2="30" stroke="currentColor" stroke-width="1.2"/>
+              <polygon points="80,30 76.4,38 83.6,38" fill="currentColor"/>
+              <path d="M 112 96 Q 92 122 54 120" fill="none" stroke="#1a3d8f" stroke-width="1.4"/>
+              <path d="M 112 96 A 32 32 0 0 0 80 64" fill="none" stroke="#8a5a1a" stroke-width="1.4"/>
+              <path d="M 54 120 Q 48 78 80 64" fill="none" stroke="#3d6b4f" stroke-width="1.4"/>
+              <text x="146" y="100" font-size="12" fill="currentColor">x</text>
+              <text x="22" y="136" font-size="12" fill="currentColor">y</text>
+              <text x="86" y="26" font-size="12" fill="currentColor">z</text>
             </svg>
             <figcaption>3-D: \(xy\), \(xz\), \(yz\)</figcaption>
           </figure>
           <figure class="axis-fig">
-            <svg viewBox="0 0 160 150" aria-label="A fourth orthogonal axis">
-              <line x1="28" y1="96" x2="128" y2="96" stroke="currentColor" stroke-width="1.15"/>
-              <line x1="80" y1="28" x2="80" y2="128" stroke="currentColor" stroke-width="1.15"/>
-              <line x1="44" y1="122" x2="118" y2="52" stroke="currentColor" stroke-width="1.15"/>
-              <line x1="36" y1="44" x2="124" y2="122" stroke="#1a3d8f" stroke-width="1.2" stroke-dasharray="3 2.5"/>
-              <text x="136" y="100" font-size="12" fill="currentColor">x</text>
-              <text x="84" y="22" font-size="12" fill="currentColor">y</text>
-              <text x="122" y="50" font-size="12" fill="currentColor">z</text>
-              <text x="24" y="40" font-size="12" fill="#1a3d8f">w</text>
+            <svg viewBox="0 0 160 150" aria-label="A fourth orthogonal axis through the same origin">
+              <line x1="80" y1="96" x2="140" y2="96" stroke="currentColor" stroke-width="1.2"/>
+              <polygon points="140,96 132,92.4 132,99.6" fill="currentColor"/>
+              <line x1="80" y1="96" x2="36" y2="128" stroke="currentColor" stroke-width="1.2"/>
+              <polygon points="36,128 44.2,122.2 40.6,120.2" fill="currentColor"/>
+              <line x1="80" y1="96" x2="80" y2="30" stroke="currentColor" stroke-width="1.2"/>
+              <polygon points="80,30 76.4,38 83.6,38" fill="currentColor"/>
+              <line x1="80" y1="96" x2="128" y2="40" stroke="#1a3d8f" stroke-width="1.25" stroke-dasharray="3 2.4"/>
+              <polygon points="128,40 119.2,42.6 122.8,47.8" fill="#1a3d8f"/>
+              <text x="146" y="100" font-size="12" fill="currentColor">x</text>
+              <text x="22" y="136" font-size="12" fill="currentColor">y</text>
+              <text x="86" y="26" font-size="12" fill="currentColor">z</text>
+              <text x="132" y="36" font-size="12" fill="#1a3d8f">w</text>
             </svg>
             <figcaption>4-D: \(w\) meets \(x,y,z\)</figcaption>
           </figure>
