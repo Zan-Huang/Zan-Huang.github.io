@@ -1019,6 +1019,60 @@ footer a:hover {
   color: var(--muted);
 }
 
+.essay .fn-ref {
+  font-size: 0.68em;
+  font-variant: normal;
+  letter-spacing: 0;
+  line-height: 0;
+  vertical-align: super;
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.essay .fn-ref:hover {
+  color: var(--link);
+}
+
+.essay-notes {
+  margin: 1.8rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.essay-notes h4 {
+  margin: 0 0 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-variant: small-caps;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.essay-notes ol {
+  margin: 0;
+  padding: 0 0 0 1.15rem;
+}
+
+.essay-notes li {
+  margin: 0 0 0.5rem;
+}
+
+.essay-notes li:last-child {
+  margin-bottom: 0;
+}
+
+.essay-notes .fn-back {
+  margin-left: 0.2em;
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.essay-notes .fn-back:hover {
+  color: var(--link);
+}
+
 .essay .proof h4 {
   margin: 0.7rem 0 0.35rem;
   font-size: 0.82rem;
