@@ -79,4 +79,6 @@ Talk: selected talk on ongoing technical work — https://www.youtube.com/watch?
 
 - Home: https://zanhuang.org/
 - Writing: https://zanhuang.org/writing.html
+- Outside Permutation: https://zanhuang.org/writing/outside-permutation.html
+- Visualizing Movement in Higher Dimensions: https://zanhuang.org/writing/visualizing.html
 - Index for language models: https://zanhuang.org/llms.txt

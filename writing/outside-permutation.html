@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Outside Permutation — Zan Huang. Bricolage and engineering, Napier’s logarithms, and the limits of language."/>
+  <meta name="theme-color" content="#f6f3ec" id="theme-color"/>
+  <script>
+    (function () {
+      var now = new Date();
+      var hour = now.getHours();
+      var root = document.documentElement;
+      var meta = document.getElementById("theme-color");
+      if (hour >= 20 || hour < 6) {
+        root.classList.add("lamp");
+        if (meta) meta.setAttribute("content", "#efe6d4");
+      } else if (hour >= 17) {
+        root.classList.add("dusk");
+        if (meta) meta.setAttribute("content", "#f3eee4");
+      }
+      function setYear() {
+        var nodes = document.querySelectorAll(".colophon .year");
+        for (var i = 0; i < nodes.length; i++) {
+          nodes[i].textContent = String(now.getFullYear());
+        }
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", setYear);
+      } else {
+        setYear();
+      }
+    })();
+  </script>
+  <title>Outside Permutation — Zan Huang</title>
+  <link rel="canonical" href="https://zanhuang.org/writing/outside-permutation.html"/>
+  <link rel="icon" type="image/png" href="../favicon.png"/>
+  <link rel="apple-touch-icon" href="../favicon.png"/>
+  <link rel="mask-icon" href="../seal-mask.svg" color="#9a221c"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"/>
+  <link rel="stylesheet" href="../styles.css?v=50"/>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="seal" href="../index.html"><img src="../seal.png" alt="Zan Huang seal"/></a>
+      <h1><a href="../index.html">Zan Huang</a></h1>
+      <p class="tagline">Computational Neuroscience &middot; Artificial Intelligence &middot; Music Composition</p>
+      <nav>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#scientific-work">Scientific Work</a>
+        <a href="../index.html#artistic-work">Artistic Work</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#research">Research</a>
+        <a href="../writing.html">Writing</a>
+        <a href="../index.html#talks">Talks</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="layout single">
+      <article class="main-content essay">
+        <header class="essay-head">
+          <p class="essay-kicker"><a href="../writing.html">Writing</a></p>
+          <h2>Outside Permutation</h2>
+          <p class="essay-meta"><time datetime="2026-08-30">30 August 2026</time></p>
+        </header>
+
+        <blockquote class="epigraph">
+          <p>
+            5.6 The limits of my language mean the limits of my world.
+          </p>
+          <p>
+            5.61 Logic fills the world: the limits of the world are also its limits.
+            We cannot therefore say in logic: This and this there is in the world, that there is not.
+            For that would apparently presuppose that we exclude certain possibilities, and this cannot
+            be the case since otherwise logic must get outside the limits of the world: that is, if it could
+            consider these limits from the other side also.
+          </p>
+          <p>
+            What we cannot think, that we cannot think: we cannot therefore say what we cannot think.
+          </p>
+          <footer>
+            &mdash;
+            <a href="https://en.wikisource.org/wiki/Tractatus_Logico-Philosophicus" target="_blank" rel="noopener noreferrer">Ludwig Wittgenstein</a>,
+            <cite><a href="https://en.wikipedia.org/wiki/Tractatus_Logico-Philosophicus" target="_blank" rel="noopener noreferrer">Tractatus Logico-Philosophicus</a></cite>
+          </footer>
+        </blockquote>
+
+        <h3 class="part">I. L&eacute;vi-Strauss and Calvino</h3>
+        <p class="illum">
+          <span class="versal">T</span>here seem to be two modes of idea discovery.
+          One, the idea arises from out of distribution with respect to recorded knowledge about the world.
+          Often representing a Copernican turn in understanding a subject, this mode requires a radical reencounter with
+          existing paradigms through tacit knowledge found outside language itself and often creates
+          new modes of thinking.
+          Two, an idea simply arises from permutation of existing knowledge.
+          These discoveries are the more common ones, and these specific ideas, though they may
+          seem novel, are derivative and lie latent in the existing compendium.
+          Often these two modes may occur concurrently.
+        </p>
+        <p>
+          It is important to ask why fundamental theoretical scientific or mathematical work
+          that extends beyond a permutation exists, especially when our contemporary crisis is a
+          <a href="https://en.wikipedia.org/wiki/The_Question_Concerning_Technology" target="_blank" rel="noopener noreferrer">question concerning technology</a>,
+          questions such as the role of research
+          when there are &ldquo;automated researchers&rdquo; and art when there is &ldquo;the question of art
+          generation&rdquo;.
+        </p>
+        <p>
+          Many people are motivated to work on a sort of Ur-Solution through the means of
+          practical engineering.
+          We are seeing claims in the form of &ldquo;if you scale and stabilize these
+          techniques, scale the data involved and cover these technical potholes, then we will be able
+          to solve this entire category of problem altogether&rdquo;.
+          This naturally leads to the question of
+          &ldquo;why do we care about theory or natural philosophy, when its theoretical problems can be
+          treated as an engineering or industrial task?&rdquo;
+          There is also the group of people who do not
+          believe that there was ever a theoretical task, that the Ur-Solution was an engineering trick
+          waiting to be discovered all along.
+          I will not answer this claim extensively here, but a clear
+          difference between the two can be found in
+          <a href="https://en.wikipedia.org/wiki/Claude_L%C3%A9vi-Strauss" target="_blank" rel="noopener noreferrer">L&eacute;vi-Strauss</a>&rsquo;s distinction between a
+          <a href="https://en.wikipedia.org/wiki/Bricolage" target="_blank" rel="noopener noreferrer">Bricoleur</a>
+          and the
+          <a href="https://en.wikipedia.org/wiki/The_Savage_Mind" target="_blank" rel="noopener noreferrer">Engineer</a>.
+          A Bricoleur
+          works in the set of existing concepts, rearranging them for new purposes or to new
+          interpretations.
+          An Engineer goes beyond this and works on a more fundamental level, often
+          developing a new system of understanding upon raw materials to achieve a particular task or
+          a new discovery.
+          The distinction is not perfect.
+          Obviously we are all ensnared by existing
+          language and existing systems of signs to the extent that we need to communicate and
+          efficiently outsource certain mental processes.
+          Bricolage is by and large more efficient.
+        </p>
+        <p>
+          This is also not to say that there isn&rsquo;t any merit in Bricolage.
+          Calvino&rsquo;s idea in
+          <cite><a href="https://en.wikipedia.org/wiki/Italo_Calvino" target="_blank" rel="noopener noreferrer">Cybernetics and Ghosts</a></cite>
+          that our stories are but permutations is not
+          completely wrong.
+          In fact, they may even be automated, if we consider the role of the
+          human to be one of interpretation and compilation.
+          His take is strangely
+          <a href="https://arxiv.org/abs/2005.14165" target="_blank" rel="noopener noreferrer">prescient</a>.
+          However, this cannot definitionally include what we brought up
+          earlier as &ldquo;outside language&rdquo;.
+          The limits of Bricolage are the limits of statistical distributions
+          taken up by our language.
+          Probably, this is one of the many fundamental divides between
+          Machine and Human writing, though human writing itself is usually a combination of
+          autoregression and the outside-language.
+        </p>
+
+        <h3 class="part">II. Logarithms</h3>
+        <p>
+          What drives people to produce novel theoretical work?
+        </p>
+        <p>
+          There are two primary and sometimes overlapping motivations for theoretical work.
+          Either such theorizing is socio-economically relevant in a meaningful sense to the individual,
+          or the individual producing theory is so teleologically driven by the work that it becomes
+          ontologically relevant to the pursuant.
+          We usually consider, in our culture, this second type
+          to be an autistic obsession.
+          We often find tropes for these sorts of people: think
+          <a href="https://en.wikipedia.org/wiki/Isaac_Newton" target="_blank" rel="noopener noreferrer">Isaac Newton</a>,
+          <a href="https://en.wikipedia.org/wiki/Alexander_Grothendieck" target="_blank" rel="noopener noreferrer">Grothendieck</a>,
+          or
+          <a href="https://en.wikipedia.org/wiki/Kurt_G%C3%B6del" target="_blank" rel="noopener noreferrer">G&ouml;del</a>,
+          and their many obsessions.
+          I will not spend time
+          discussing this second type of thinker, because they more or less naturally occur in the
+          beautiful variance we find across human beings.
+          I will spare the violence of explaining away
+          things that simply are what they are.
+          Again, we all have varying degrees of obsessions.
+          Some without any at all.
+        </p>
+        <p>
+          <a href="https://en.wikipedia.org/wiki/John_Napier" target="_blank" rel="noopener noreferrer">John Napier</a>
+          is a good example of the first type of theorist, whose invention of
+          logarithms greatly extended the breadth of mathematical thinking.
+          There really wasn&rsquo;t
+          anything like logarithms in the European world before Napier.
+          Navigation charts relied
+          upon astronomy which required the ability to compute large products, divisions, and ratios.
+          Logarithmic charts were a natural means to an end for these tasks.
+          The word logarithm itself is a
+          compound of <i>logos</i> and <i>arithmos</i>, ratio and number.
+          Our modern conception
+          of logarithms, if anything, loses this original motivational heritage.
+          We define logarithms
+          circularly:
+        </p>
+        \[
+          e^{\ln x} = x \quad \text{if } x \in \mathbb{R}^{+}
+        \]
+        \[
+          \ln e^{x} = x \quad \text{if } x \in \mathbb{R}
+        \]
+        <p>
+          This uncomfortably tautological definition is already sufficient for us to carry modern
+          mathematics, physics, and engineering.
+          It is useful and has a rigorous definition.
+          Napier
+          didn&rsquo;t have this, and I am willing to bet that most people who learned logarithms at some
+          point in their lives do not sufficiently care or need to care about the origin of logarithms.
+          Today, we take this circular conceptualization almost for granted using the semiotic
+          symbolic landscape of modern mathematical concepts.
+          In fact, it&rsquo;s a lot easier to think about
+          the contemporary definitions than how Napier was conceptualizing this.
+          We think of
+          logarithms with integer bases as representing multiplicative ratios in the context of its reversal
+          of exponentiation.
+          And this gives us a conception of what it means for planets to orbit the
+          sun, for money to scale, for populations to grow, and so on.
+          In the context of a natural
+          logarithm it is just an inverse function for natural growth.
+          Here is Napier&rsquo;s definition from
+          <cite><a href="https://en.wikipedia.org/wiki/Mirifici_Logarithmorum_Canonis_Descriptio" target="_blank" rel="noopener noreferrer">Mirifici Logarithmorum Canonis Descriptio</a></cite>:
+        </p>
+        <blockquote>
+          <p>
+            The Logarithme therefore of any sine is a number very neerely expressing the line,
+            which increased equally in the meane time, whiles the line of the whole sine decreased
+            proportionally into that sine, both motions being equal-timed, and the beginning equally swift.
+          </p>
+        </blockquote>
+        <p>
+          We find a similar parallel in Shannon&rsquo;s information theory.
+          The
+          <a href="https://doi.org/10.1002/j.1538-7305.1948.tb01338.x" target="_blank" rel="noopener noreferrer">original paper</a>
+          is a mathematical study of channel coding and loss in communication.
+          Although many
+          of the terms in information theory can now be defined independently of the communication
+          problem, there was an economic motivation there directly linked to the environment.
+          In
+          this case, the telecommunications research activity of Bell Labs Shannon found himself in.
+          The numerous extensions, reformulations, and reconceptualizations of information theory
+          cannot hide its original purpose.
+        </p>
+        <p>
+          The examples are numberless.
+          <a href="https://en.wikipedia.org/wiki/Nicolas_L%C3%A9onard_Sadi_Carnot" target="_blank" rel="noopener noreferrer">Carnot</a>,
+          the father of thermodynamics, was a military
+          engineer focused on maximum capacity in efficiency of heat engines.
+          Despite his
+          theoretical abilities on abstract problems on top of his experimental prowess,
+          <a href="https://en.wikipedia.org/wiki/Enrico_Fermi" target="_blank" rel="noopener noreferrer">Fermi</a>
+          still
+          personally justified scientific advancement primarily through its ability to deliver technical
+          and practical improvements.
+        </p>
+        <p>
+          The economic motivation that makes one produce new theory instead of Bricolage rests in
+          whether the assemblage and permutation of existing components can adequately address a
+          socio-economic need.
+          This underlying cause for the occurrences of Engineers as opposed to
+          Bricoleurs is the same, unless we are discussing people who like to formulate for the love of
+          the game.
+          In both cases, Engineers or Novel-Theorists think outside the symbolic order,
+          outside common language.
+          The difference between whether Engineers or Bricoleurs occur
+          also rests upon whether there exist sufficiently pressing socio-economic problems to be
+          solved that cannot be satisfactorily pieced together by existing cultural components, and
+          whether that subject recognizes these problems and gaps (which implies some recognition
+          of the socio-economic condition itself).
+          Or in other words, recognizing the limits of one&rsquo;s
+          language and that which we cannot think of yet.
+        </p>
+
+        <h3 class="part">III. Exegesis</h3>
+        <p>
+          The motivational chain which drives fundamental discovery comes under threat when the
+          economic superstructure parasitizes the base economy and when the tools which exist to
+          obscure the real gaps created by the superstructure create a culture of automation.
+          Automation cannot exist without the automatable structure.
+          Automatable structure is
+          congruent with an affixed language, or one that easily operates within the increasingly
+          parasitized economy and omits the base realities upholding any socio-economic system.
+          By
+          effectively removing salience on real problems, only the ones that fit into the parasitic
+          superstructure remain in the economy.
+        </p>
+        <p>
+          Superstructure is responsible for resource allocation and planning that may require
+          secondary and tertiary operations.
+          However, in this process the financialized economy
+          emerges through extraction in the process of allocation.
+          Extraction implies a distillation
+          process, by which extracted resources cannot remain in their original living form but must
+          exist as a fungible and liquidatable asset
+          (<a href="https://en.wikipedia.org/wiki/The_Question_Concerning_Technology" target="_blank" rel="noopener noreferrer">standing reserve</a>).
+          Our natural philosophy and technological development are not immune to this
+          process: consider here the rapid commercialization of the university.
+        </p>
+        <p>
+          <a href="https://en.wikipedia.org/wiki/The_Accursed_Share" target="_blank" rel="noopener noreferrer">Bataille&rsquo;s excess</a>
+          normally creates economies of surplus, in which the excess of libidinal
+          socio-economic capital flows into other great developments and mass rituals.
+          A parasitized
+          economy in which the affixed language overtakes all other forms cannot healthily channel
+          this energy except into its own abstracted form.
+          Recently, we see the emergence of religious
+          techno-capital, a phenomenon which threatens its very base substrate.
+          The hollow utopian
+          aesthetics of modern techno-capital cannot reconcile with its own aftermath: the
+          consequential cognitive-perceptual emptiness which fails to sustain any meaningful
+          technological-scientific development on the base economy.
+        </p>
+      </article>
+    </div>
+
+    <footer id="contact">
+      <p>
+        <a href="mailto:zanhuang@huronarc.com">zanhuang@huronarc.com</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://twitter.com/TheZanHuang" target="_blank" rel="noopener noreferrer">@TheZanHuang</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://zanh.myportfolio.com" target="_blank" rel="noopener noreferrer">portfolio</a>
+      </p>
+      <p class="address">Inquiries to HuronARC: 175 Jackson Plaza, Ann Arbor 48103</p>
+      <p class="address">Inquiries to UMich: <a href="mailto:zanh@umich.edu">zanh@umich.edu</a></p>
+      <p class="colophon">Copyright &copy; <span class="year">2026</span> Zan Huang</p>
+    </footer>
+  </div>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"></script>
+  <script>
+    window.addEventListener("load", function () {
+      if (!window.renderMathInElement) return;
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "\\[", right: "\\]", display: true },
+          { left: "\\(", right: "\\)", display: false }
+        ],
+        throwOnError: false
+      });
+    });
+  </script>
+</body>
+</html>
