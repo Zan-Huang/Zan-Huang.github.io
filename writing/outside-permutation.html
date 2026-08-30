@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"/>
-  <link rel="stylesheet" href="../styles.css?v=50"/>
+  <link rel="stylesheet" href="../styles.css?v=51"/>
 </head>
 <body>
   <div class="wrap">
@@ -60,7 +60,15 @@
       </nav>
     </header>
 
-    <div class="layout single">
+    <div class="layout essay-spread">
+      <aside class="essay-rail">
+        <figure class="rule110">
+          <canvas id="rule110" width="200" height="456" role="img" aria-label="Elementary cellular automaton, Rule 110"></canvas>
+          <figcaption>
+            <a href="https://doi.org/10.25088/ComplexSystems.15.1.1" target="_blank" rel="noopener noreferrer">Rule 110</a>
+          </figcaption>
+        </figure>
+      </aside>
       <article class="main-content essay">
         <header class="essay-head">
           <p class="essay-kicker"><a href="../writing.html">Writing</a></p>
@@ -92,7 +100,7 @@
         <h3 class="part">I. L&eacute;vi-Strauss and Calvino</h3>
         <p class="illum">
           <span class="versal">T</span>here seem to be two modes of idea discovery.
-          One, the idea arises from out of distribution with respect to recorded knowledge about the world.
+          One, the idea arises out-of-distribution with respect to recorded knowledge about the world.
           Often representing a Copernican turn in understanding a subject, this mode requires a radical reencounter with
           existing paradigms through tacit knowledge found outside language itself and often creates
           new modes of thinking.
@@ -103,8 +111,8 @@
         </p>
         <p>
           It is important to ask why fundamental theoretical scientific or mathematical work
-          that extends beyond a permutation exists, especially when our contemporary crisis is a
-          <a href="https://archive.org/details/questionconcerni00heid" target="_blank" rel="noopener noreferrer">question concerning technology</a>,
+          that extends beyond a permutation exists, especially when our contemporary crisis is
+          <cite><a href="https://archive.org/details/questionconcerni00heid" target="_blank" rel="noopener noreferrer">The Question Concerning Technology</a></cite>,
           questions such as the role of research
           when there are &ldquo;automated researchers&rdquo; and art when there is &ldquo;the question of art
           generation&rdquo;.
@@ -123,7 +131,7 @@
           waiting to be discovered all along.
           I will not answer this claim extensively here, but a clear
           difference between the two can be found in
-          <a href="https://archive.org/details/savagemind00levi" target="_blank" rel="noopener noreferrer">L&eacute;vi-Strauss</a>&rsquo;s distinction between a
+          <a href="https://archive.org/details/savagemind00levi" target="_blank" rel="noopener noreferrer">L&eacute;vi-Strauss</a>&rsquo;s distinction between the
           <a href="https://archive.org/details/savagemind00levi" target="_blank" rel="noopener noreferrer">Bricoleur</a>
           and the
           <a href="https://archive.org/details/savagemind00levi" target="_blank" rel="noopener noreferrer">Engineer</a>.
@@ -154,15 +162,13 @@
           The limits of Bricolage are the limits of statistical distributions
           taken up by our language.
           Probably, this is one of the many fundamental divides between
-          Machine and Human writing, though human writing itself is usually a combination of
+          machine and human writing, though human writing itself is usually a combination of
           autoregression and the outside-language.
         </p>
 
         <h3 class="part">II. Logarithms</h3>
-        <p>
-          What drives people to produce novel theoretical work?
-        </p>
-        <p>
+        <p class="illum">
+          <span class="versal">W</span>hat drives people to produce novel theoretical work?
           There are two primary and sometimes overlapping motivations for theoretical work.
           Either such theorizing is socio-economically relevant in a meaningful sense to the individual,
           or the individual producing theory is so teleologically driven by the work that it becomes
@@ -217,7 +223,7 @@
           In fact, it&rsquo;s a lot easier to think about
           the contemporary definitions than how Napier was conceptualizing this.
           We think of
-          logarithms with integer bases as representing multiplicative ratios in the context of its reversal
+          logarithms with integer bases as representing multiplicative ratios in the context of their reversal
           of exponentiation.
           And this gives us a conception of what it means for planets to orbit the
           sun, for money to scale, for populations to grow, and so on.
@@ -242,7 +248,7 @@
           of the terms in information theory can now be defined independently of the communication
           problem, there was an economic motivation there directly linked to the environment.
           In
-          this case, the telecommunications research activity of Bell Labs Shannon found himself in.
+          this case, the telecommunications research activity of Bell Labs that Shannon found himself in.
           The numerous extensions, reformulations, and reconceptualizations of information theory
           cannot hide its original purpose.
         </p>
@@ -277,8 +283,8 @@
         </p>
 
         <h3 class="part">III. Exegesis</h3>
-        <p>
-          The motivational chain which drives fundamental discovery comes under threat when the
+        <p class="illum">
+          <span class="versal">T</span>he motivational chain which drives fundamental discovery comes under threat when the
           economic
           <a href="https://www.marxists.org/archive/marx/works/1859/critique-pol-economy/preface.htm" target="_blank" rel="noopener noreferrer">superstructure</a>
           parasitizes the
@@ -301,7 +307,7 @@
           Extraction implies a distillation
           process, by which extracted resources cannot remain in their original living form but must
           exist as a fungible and liquidatable asset
-          (<a href="https://archive.org/details/questionconcerni00heid" target="_blank" rel="noopener noreferrer">standing reserve</a>).
+          (<a href="https://archive.org/details/questionconcerni00heid" target="_blank" rel="noopener noreferrer">standing-reserve</a>).
           Our natural philosophy and technological development are not immune to this
           process: consider here the rapid commercialization of the university.
         </p>
@@ -339,16 +345,74 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"></script>
   <script>
     window.addEventListener("load", function () {
-      if (!window.renderMathInElement) return;
-      renderMathInElement(document.body, {
-        delimiters: [
-          { left: "$$", right: "$$", display: true },
-          { left: "\\[", right: "\\]", display: true },
-          { left: "\\(", right: "\\)", display: false }
-        ],
-        throwOnError: false
-      });
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "\\[", right: "\\]", display: true },
+            { left: "\\(", right: "\\)", display: false }
+          ],
+          throwOnError: false
+        });
+      }
     });
+
+    (function () {
+      var RULE = 110;
+      var canvas = document.getElementById("rule110");
+      if (!canvas) return;
+      var frame = 0;
+
+      function nextRow(prev) {
+        var n = prev.length;
+        var out = new Uint8Array(n);
+        for (var i = 0; i < n; i++) {
+          var left = i > 0 ? prev[i - 1] : 0;
+          var mid = prev[i];
+          var right = i < n - 1 ? prev[i + 1] : 0;
+          out[i] = (RULE >> ((left << 2) | (mid << 1) | right)) & 1;
+        }
+        return out;
+      }
+
+      function draw() {
+        var ink = getComputedStyle(document.documentElement).getPropertyValue("--ink").trim() || "#1c1b18";
+        var cssW = canvas.clientWidth;
+        var cssH = canvas.clientHeight;
+        if (cssW < 2 || cssH < 2) return;
+        var cell = cssW < 140 ? 1.5 : 2;
+        var cols = Math.max(8, Math.floor(cssW / cell));
+        var rows = Math.max(8, Math.floor(cssH / cell));
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.round(cols * cell * dpr);
+        canvas.height = Math.round(rows * cell * dpr);
+        var ctx = canvas.getContext("2d");
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.imageSmoothingEnabled = false;
+        ctx.clearRect(0, 0, cssW, cssH);
+        ctx.fillStyle = ink;
+        var row = new Uint8Array(cols);
+        row[cols - 1] = 1;
+        for (var y = 0; y < rows; y++) {
+          for (var x = 0; x < cols; x++) {
+            if (row[x]) ctx.fillRect(x * cell, y * cell, cell, cell);
+          }
+          row = nextRow(row);
+        }
+      }
+
+      function schedule() {
+        if (frame) cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(draw);
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", draw);
+      } else {
+        draw();
+      }
+      window.addEventListener("resize", schedule);
+    })();
   </script>
 </body>
 </html>
