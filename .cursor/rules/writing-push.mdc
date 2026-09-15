@@ -1,0 +1,6 @@
+---
+description: Commit and push writing-page work without waiting to be asked
+alwaysApply: true
+---
+
+After finishing changes to writing posts, `writing.html`, verse/essay styles for those posts, or the writing entries in `sitemap.xml`, `llms.txt`, and `llms-full.txt`, create a commit and push to `origin` on the current branch. Do not wait for the user to say push. Do not force-push.

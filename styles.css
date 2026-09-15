@@ -930,12 +930,33 @@ footer a:hover {
 }
 
 .verse {
-  font-size: 1.08rem;
-  line-height: 1.55;
-  letter-spacing: 0.01em;
+  font-family: "EB Garamond", "Source Serif 4", Georgia, serif;
+  font-optical-sizing: auto;
+  font-size: 1.22rem;
+  line-height: 1.58;
+  letter-spacing: 0.012em;
   font-variant-ligatures: common-ligatures discretionary-ligatures;
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "onum" 1;
   hanging-punctuation: first allow-end;
+}
+
+.verse .poem-ars {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 2.85rem;
+  column-gap: 4.8rem;
+  align-items: stretch;
+}
+
+.verse .poem-ornament {
+  min-height: 100%;
+}
+
+.verse .poem-ornament svg {
+  display: block;
+  width: 2.85rem;
+  height: 100%;
+  color: var(--ink);
+  opacity: 0.82;
 }
 
 .verse .verse-head {
@@ -1389,6 +1410,14 @@ footer a:hover {
 
   .rule110 canvas {
     height: 16.5rem;
+  }
+
+  .verse .poem-ars {
+    display: block;
+  }
+
+  .verse .poem-ornament {
+    display: none;
   }
 
   .form-pair,
