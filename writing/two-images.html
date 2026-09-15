@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Two Images of Ann Arbor in Different Years — Zan Huang. Ars Poetica and Nickels Arcade."/>
+  <meta name="theme-color" content="#f6f3ec" id="theme-color"/>
+  <script>
+    (function () {
+      var now = new Date();
+      var hour = now.getHours();
+      var root = document.documentElement;
+      var meta = document.getElementById("theme-color");
+      if (hour >= 20 || hour < 6) {
+        root.classList.add("lamp");
+        if (meta) meta.setAttribute("content", "#efe6d4");
+      } else if (hour >= 17) {
+        root.classList.add("dusk");
+        if (meta) meta.setAttribute("content", "#f3eee4");
+      }
+      function setYear() {
+        var nodes = document.querySelectorAll(".colophon .year");
+        for (var i = 0; i < nodes.length; i++) {
+          nodes[i].textContent = String(now.getFullYear());
+        }
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", setYear);
+      } else {
+        setYear();
+      }
+    })();
+  </script>
+  <title>Two Images of Ann Arbor in Different Years — Zan Huang</title>
+  <link rel="canonical" href="https://zanhuang.org/writing/two-images.html"/>
+  <link rel="icon" type="image/png" href="../favicon.png"/>
+  <link rel="apple-touch-icon" href="../favicon.png"/>
+  <link rel="mask-icon" href="../seal-mask.svg" color="#9a221c"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles.css?v=53"/>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="seal" href="../index.html"><img src="../seal.png" alt="Zan Huang seal"/></a>
+      <h1><a href="../index.html">Zan Huang</a></h1>
+      <p class="tagline">Computational Neuroscience &middot; Artificial Intelligence &middot; Music Composition</p>
+      <nav>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#scientific-work">Scientific Work</a>
+        <a href="../index.html#artistic-work">Artistic Work</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#research">Research</a>
+        <a href="../writing.html">Writing</a>
+        <a href="../index.html#talks">Talks</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="layout single">
+      <article class="main-content essay verse">
+        <header class="essay-head">
+          <p class="essay-kicker"><a href="../writing.html">Writing</a></p>
+          <h2>Two Images of Ann Arbor in Different Years</h2>
+          <p class="essay-meta"><time datetime="2026-09-15">15 September 2026</time></p>
+        </header>
+
+        <section class="poem">
+          <h3 class="part">I. Ars Poetica</h3>
+          <p class="stanza illum">
+            <span class="line"><span class="versal">I</span> once danced drunk for you in the rain,</span>
+            <span class="line">barefoot on wet road gravel. And though</span>
+            <span class="line">I did not enjoy bare feet, the</span>
+            <span class="line">rain fell in bitter patter&mdash;it was music,</span>
+            <span class="line">music of late spring, when the goddamn rain</span>
+            <span class="line">wouldn&rsquo;t stop, and when every afternoon</span>
+            <span class="line">my breathing was scented gin-bright</span>
+            <span class="line">from juniper milk poured in the fragile</span>
+            <span class="line">solo cups, occasionally crushed,</span>
+            <span class="line">cut and bled my soiled feet.</span>
+          </p>
+          <p class="stanza">
+            <span class="line">I despised wet and unclean ground;</span>
+            <span class="line">however, Dendrites Dionysus</span>
+            <span class="line">was hidden in the musky wooden scent of</span>
+            <span class="line">cheaply built and old student housing,</span>
+            <span class="line">and the two of you there, Sanya and Eric, just reminded me</span>
+            <span class="line">of fig trees and grape vines and sexual organs,</span>
+            <span class="line">both the pomegranate and the phallus.</span>
+            <span class="line">And I danced, drenched on the pale Sunday,</span>
+            <span class="line">limbs burning brightly, sweating,</span>
+            <span class="line">despite feeling like strange fish submerged</span>
+            <span class="line">in the otherworldly coldness of Arctic water.</span>
+          </p>
+        </section>
+
+        <p class="poem-break" aria-hidden="true">&#8258;</p>
+
+        <section class="poem">
+          <h3 class="part">II. Nickels Arcade</h3>
+          <p class="stanza illum">
+            <span class="line"><span class="versal">I</span> first arrived here as a stranger; I spoke</span>
+            <span class="line">a pidgin sounding of crushed candy wrappers</span>
+            <span class="line">amidst crackling pomegranate seeds, just</span>
+            <span class="line">like how tildes hang from verses&rsquo; edges&rsquo;,</span>
+            <span class="line">unable to communicate that pregnant</span>
+            <span class="line">silence preceding spoken language.</span>
+          </p>
+          <p class="stanza">
+            <span class="line">And outside the tobacco shop, I peeled</span>
+            <span class="line">dry flaky skin from parched coffee kissed lips,</span>
+            <span class="line">sun tanned under the August sun, anxious</span>
+            <span class="line">and confused about the role I should play,</span>
+            <span class="line">whether I should step into the shop or</span>
+            <span class="line">stay pinned between this intersection</span>
+            <span class="line">of customer, spectator, and passerby,</span>
+            <span class="line">struck in front of dozens of unwatching</span>
+            <span class="line">eyes, who would soon go on living their thing,</span>
+            <span class="line">going boating at the local river.</span>
+          </p>
+          <p class="stanza">
+            <span class="line">The August sun beats down through arcade glass;</span>
+            <span class="line">I step under crusty dark hardwood frames,</span>
+            <span class="line">feeling uncertain, with no intent to</span>
+            <span class="line">buy wooden pipes hanging against the wall</span>
+            <span class="line">or ivory shaving cream carefully</span>
+            <span class="line">sealed into shining portable tin jars.</span>
+          </p>
+          <p class="stanza">
+            <span class="line">Those summer days felt like the streets leading</span>
+            <span class="line">back to my house, in anxious right angles.</span>
+            <span class="line">Each day started at the morning mirror,</span>
+            <span class="line">then kept away to distant places before</span>
+            <span class="line">returning right back to where it all began.</span>
+          </p>
+        </section>
+      </article>
+    </div>
+
+    <footer id="contact">
+      <p>
+        <a href="mailto:zanhuang@huronarc.com">zanhuang@huronarc.com</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://twitter.com/TheZanHuang" target="_blank" rel="noopener noreferrer">@TheZanHuang</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://zanh.myportfolio.com" target="_blank" rel="noopener noreferrer">portfolio</a>
+      </p>
+      <p class="address">Inquiries to HuronARC: 175 Jackson Plaza, Ann Arbor 48103</p>
+      <p class="address">Inquiries to UMich: <a href="mailto:zanh@umich.edu">zanh@umich.edu</a></p>
+      <p class="colophon">Copyright &copy; <span class="year">2026</span> Zan Huang</p>
+    </footer>
+  </div>
+</body>
+</html>
