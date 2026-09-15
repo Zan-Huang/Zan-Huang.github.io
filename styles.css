@@ -949,14 +949,12 @@ footer a:hover {
 
 .verse .poem-ornament {
   min-height: 100%;
-}
-
-.verse .poem-ornament svg {
-  display: block;
-  width: 2.85rem;
-  height: 100%;
-  color: var(--ink);
-  opacity: 0.82;
+  width: 2.6rem;
+  background-color: var(--ink);
+  -webkit-mask: url("ornaments/roman-square-spiral.svg") repeat-y center top / 100% auto;
+  mask: url("ornaments/roman-square-spiral.svg") repeat-y center top / 100% auto;
+  mask-mode: alpha;
+  opacity: 0.78;
 }
 
 .verse .verse-head {
