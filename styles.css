@@ -1068,12 +1068,6 @@ footer a:hover {
   color: var(--muted);
 }
 
-.verse .poem-num {
-  font-style: normal;
-  font-variant-numeric: lining-nums;
-  margin-right: 0.55em;
-}
-
 .verse .stanza {
   margin: 0 0 1.55em;
 }
