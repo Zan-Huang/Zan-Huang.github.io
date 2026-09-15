@@ -929,12 +929,28 @@ footer a:hover {
   font-size: 0.88rem;
 }
 
-.verse .poem {
-  max-width: 27.5rem;
+.verse {
+  font-size: 1.06rem;
+  line-height: 1.5;
+  font-variant-ligatures: common-ligatures discretionary-ligatures;
+  hanging-punctuation: first allow-end;
+}
+
+.verse .poem + .poem {
+  margin-top: 2.75rem;
+}
+
+.essay.verse .part {
+  margin: 0 0 1.5em;
+  font-size: inherit;
+  font-weight: 400;
+  font-variant: normal;
+  letter-spacing: 0;
+  color: var(--ink);
 }
 
 .verse .stanza {
-  margin: 0 0 1.45rem;
+  margin: 0 0 1.5em;
 }
 
 .verse .stanza:last-child {
@@ -943,20 +959,7 @@ footer a:hover {
 
 .verse .line {
   display: block;
-  line-height: 1.42;
-}
-
-.verse .poem-break {
-  margin: 2.35rem 0 2.15rem;
-  color: var(--rule);
-  font-size: 0.72rem;
-  letter-spacing: 0.42em;
-  text-align: center;
-  line-height: 1;
-}
-
-.verse .poem-break + .poem .part {
-  margin-top: 0;
+  line-height: 1.5;
 }
 
 .essay .epigraph {
@@ -1362,16 +1365,6 @@ footer a:hover {
 
   .rule110 canvas {
     height: 16.5rem;
-  }
-
-  .verse .line {
-    padding-left: 0.85rem;
-    text-indent: -0.85rem;
-  }
-
-  .verse .illum .line:first-child {
-    padding-left: 0;
-    text-indent: 0;
   }
 
   .form-pair,
