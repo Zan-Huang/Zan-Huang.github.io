@@ -940,7 +940,8 @@ footer a:hover {
   hanging-punctuation: first allow-end;
 }
 
-.verse .poem-ars {
+.verse .poem-ars,
+.verse .poem-nickels {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 2.85rem;
   column-gap: 4.8rem;
@@ -955,6 +956,80 @@ footer a:hover {
   mask: url("ornaments/roman-square-spiral.svg") repeat-y center top / 100% auto;
   mask-mode: alpha;
   opacity: 0.78;
+}
+
+.verse .poem-river {
+  min-height: 100%;
+  width: 2.6rem;
+  overflow: hidden;
+  opacity: 0.72;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 5%,
+    #000 16%,
+    transparent 24%,
+    transparent 32%,
+    #000 40%,
+    #000 54%,
+    transparent 62%,
+    transparent 70%,
+    #000 78%,
+    #000 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 5%,
+    #000 16%,
+    transparent 24%,
+    transparent 32%,
+    #000 40%,
+    #000 54%,
+    transparent 62%,
+    transparent 70%,
+    #000 78%,
+    #000 92%,
+    transparent 100%
+  );
+  -webkit-mask-size: 100% 170%;
+  mask-size: 100% 170%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  animation: river-intervals 16s ease-in-out infinite;
+}
+
+.verse .poem-river svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.verse .poem-river .river-line {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.35;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .verse .poem-river {
+    animation: none;
+  }
+}
+
+@keyframes river-intervals {
+  0%,
+  100% {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  50% {
+    -webkit-mask-position: 0 100%;
+    mask-position: 0 100%;
+  }
 }
 
 .verse .verse-head {
@@ -975,13 +1050,22 @@ footer a:hover {
 }
 
 .essay.verse .part {
-  margin: 0 0 1.55em;
+  margin: 0 0 0.22em;
   font-size: inherit;
   font-weight: 400;
   font-style: italic;
   font-variant: normal;
   letter-spacing: 0.01em;
   color: var(--ink);
+}
+
+.verse .poem-date {
+  margin: 0 0 1.45em;
+  font-size: 0.7rem;
+  line-height: 1.2;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  color: var(--muted);
 }
 
 .verse .poem-num {
@@ -1410,11 +1494,13 @@ footer a:hover {
     height: 16.5rem;
   }
 
-  .verse .poem-ars {
+  .verse .poem-ars,
+  .verse .poem-nickels {
     display: block;
   }
 
-  .verse .poem-ornament {
+  .verse .poem-ornament,
+  .verse .poem-river {
     display: none;
   }
 
