@@ -1173,6 +1173,93 @@ footer a:hover {
   color: var(--muted);
 }
 
+.travelogue .essay-body {
+  max-width: 40.5rem;
+  text-wrap: pretty;
+  hanging-punctuation: first allow-end;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 7 3 3;
+}
+
+.travelogue .essay-body p {
+  margin-bottom: 1.1rem;
+  line-height: 1.52;
+}
+
+.travelogue .itinerary {
+  font-style: italic;
+}
+
+.travelogue .dateline {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7em;
+  margin: 2.35rem 0 0.75rem;
+  color: var(--muted);
+}
+
+.travelogue .dateline:first-child {
+  margin-top: 0.5rem;
+}
+
+.travelogue .dateline .place {
+  flex: none;
+  color: var(--ink);
+}
+
+.travelogue .dateline .when {
+  flex: none;
+  font-variant: normal;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+}
+
+.travelogue .dateline::after {
+  content: "";
+  flex: 1 1 auto;
+  min-width: 1.5rem;
+  border-top: 1px solid var(--rule);
+  transform: translateY(-0.32em);
+}
+
+.travelogue .motto {
+  margin: 0.15rem 0 1.1rem;
+  padding-left: 1rem;
+}
+
+.travelogue .motto p {
+  margin: 0;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.travelogue .close-line {
+  margin-bottom: 0.55rem;
+}
+
+.travelogue .close-line + p {
+  margin-top: 1.1rem;
+}
+
+.travelogue .envoi {
+  margin-top: 1.1rem;
+  margin-bottom: 0;
+}
+
+.travelogue .envoi::after {
+  content: "⁂";
+  display: block;
+  margin: 1.35rem 0 0.2rem;
+  color: var(--rule);
+  font-size: 0.72rem;
+  letter-spacing: 0.42em;
+  text-align: center;
+  line-height: 1;
+}
+
 .essay .fn-ref {
   font-size: 0.68em;
   font-variant: normal;

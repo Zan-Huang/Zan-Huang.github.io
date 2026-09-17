@@ -9,6 +9,7 @@ Zan Huang's personal site. Prefer https://zanhuang.org/ as the source of record.
 - [Home](https://zanhuang.org/): The collage — about, scientific work, artistic work, education, research, talks
 - [Farbenlehre](https://zanhuang.org/farbenlehre.html): An instrument after Goethe's color wheel; complementary color and the afterimage experiment
 - [Writing](https://zanhuang.org/writing.html): Notes on interesting topics or my life
+- [Turin Travelogue](https://zanhuang.org/writing/turin-travelogue.html): Dated entries from Ann Arbor to Turin and the Alps along the Pellice, September 2026
 - [Two Images of Ann Arbor in Different Years](https://zanhuang.org/writing/two-images.html): Two poems — Ars Poetica (2020) and Nickels Arcade (2022)
 - [Outside Permutation](https://zanhuang.org/writing/outside-permutation.html): Bricolage and engineering, Napier’s logarithms, and the limits of language
 - [Visualizing Movement in Higher Dimensions](https://zanhuang.org/writing/visualizing.html): Triangle numbers, complete graphs, and rotations in n-space
