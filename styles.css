@@ -1203,6 +1203,24 @@ footer a:hover {
   margin-top: 0.5rem;
 }
 
+.travelogue .frontispiece {
+  margin: 0.55rem 0 0.4rem;
+  text-align: center;
+}
+
+.travelogue .frontispiece img {
+  display: inline-block;
+  width: 15.5rem;
+  max-width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+  filter: brightness(1.06) saturate(0.92);
+}
+
+.travelogue .frontispiece + .dateline {
+  margin-top: 1.5rem;
+}
+
 .travelogue .dateline .place {
   flex: none;
   color: var(--ink);
