@@ -1209,6 +1209,20 @@ footer a:hover {
   margin: 0;
 }
 
+.essay.notes .motto footer {
+  display: block;
+  max-width: 28rem;
+  margin: 0.55rem auto 0;
+  font-style: normal;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.essay.notes .motto footer a {
+  color: inherit;
+}
+
 .essay.notes .motto.close {
   margin: 1.6rem 0 0;
 }
