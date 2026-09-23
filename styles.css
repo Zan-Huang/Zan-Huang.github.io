@@ -1189,6 +1189,14 @@ footer a:hover {
   line-height: 1.52;
 }
 
+.essay.notes .where {
+  font-style: italic;
+}
+
+.essay.notes .mithras {
+  font-style: italic;
+}
+
 .essay.notes .motto {
   margin: 0 0 1.35rem;
   padding: 0;
