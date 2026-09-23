@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Notes from the London Underground — Zan Huang. On the Mithraeum, the several Englishes, and language as map, picture, and interaction."/>
+  <meta name="theme-color" content="#f6f3ec" id="theme-color"/>
+  <script>
+    (function () {
+      var now = new Date();
+      var hour = now.getHours();
+      var root = document.documentElement;
+      var meta = document.getElementById("theme-color");
+      if (hour >= 20 || hour < 6) {
+        root.classList.add("lamp");
+        if (meta) meta.setAttribute("content", "#efe6d4");
+      } else if (hour >= 17) {
+        root.classList.add("dusk");
+        if (meta) meta.setAttribute("content", "#f3eee4");
+      }
+      function setYear() {
+        var nodes = document.querySelectorAll(".colophon .year");
+        for (var i = 0; i < nodes.length; i++) {
+          nodes[i].textContent = String(now.getFullYear());
+        }
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", setYear);
+      } else {
+        setYear();
+      }
+    })();
+  </script>
+  <title>Notes from the London Underground — Zan Huang</title>
+  <link rel="canonical" href="https://zanhuang.org/writing/london-underground.html"/>
+  <link rel="icon" type="image/png" href="../favicon.png"/>
+  <link rel="apple-touch-icon" href="../favicon.png"/>
+  <link rel="mask-icon" href="../seal-mask.svg" color="#9a221c"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles.css?v=65"/>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="seal" href="../index.html"><img src="../seal.png" alt="Zan Huang seal"/></a>
+      <h1><a href="../index.html">Zan Huang</a></h1>
+      <p class="tagline">Computational Neuroscience &middot; Artificial Intelligence &middot; Music Composition</p>
+      <nav>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#scientific-work">Scientific Work</a>
+        <a href="../index.html#artistic-work">Artistic Work</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#research">Research</a>
+        <a href="../writing.html">Writing</a>
+        <a href="../index.html#talks">Talks</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="layout single">
+      <article class="main-content essay notes">
+        <header class="essay-head">
+          <p class="essay-kicker"><a href="../writing.html">Writing</a></p>
+          <h2>Notes from the London Underground</h2>
+          <p class="essay-meta"><time datetime="2026-09-23">23 September 2026</time></p>
+        </header>
+
+        <div class="essay-body">
+          <blockquote class="motto" lang="la">
+            <p>Nama Persis tutela Mercuris</p>
+          </blockquote>
+
+          <p>
+            The cult of Mithras, still located in the lower underground layers of Londinium at the Mithraeum,
+            recognizes the essential cosmological significance of Persians (Rome&rsquo;s mortal enemy and the ever outsider).
+          </p>
+          <p>
+            The first difference I experienced between British and American English is how identical sets of
+            words and grammatical structures may manifest entirely differently in use. Historical exchange and
+            modern communication remove many of these disparities in formal or written communication, but
+            notable differences still persist in how the language expresses itself locally in social contexts. Usually
+            we call these differences &ldquo;mannerisms&rdquo;.
+          </p>
+          <p>
+            Language is simultaneously map, picture, and interaction. People are usually slightly confused when
+            saying the phrase &ldquo;language doesn&rsquo;t capture reality&rdquo;, because to the extent that language is a map or
+            picture, it certainly is one of many possible capturings. We must be careful what we mean by
+            capture. Capture does not denote that language itself is reality, but rather that reality can be indexed into
+            a system of abstracted signs.
+          </p>
+          <p>
+            People are also confused, however, when they claim that language alone is sufficient for
+            understanding the world, because insofar as language is about and for interaction, interaction is not
+            solely a linguistic phenomenon. Instead, language is often a mediator and top-down mechanism upon
+            native perception and action. Clearly, sex and hunger drives originate pre-linguistically, yet the way
+            we go about expressing them is mediated through ritual and social boundaries encoded
+            linguistically. In other cases, language is the result of an underlying need to act or communicate
+            stemming from non-linguistic origins. This structure echoes system-1 and system-2 cognitive
+            theories. Interaction is ultimately responsible for the mannerism aspect of language.
+          </p>
+          <p>
+            It is apparent that British English is different from American English, and American English from Singaporean
+            English. There are several different Englishes even within American English (see AAVE). Whether
+            something is grammatical in a given English is predicated both upon fixed rules governed by
+            structural constraints maintaining construction consistency and social normativity in how one
+            carries an interaction. &ldquo;I am moving house&rdquo; is grammatical in British English but not in American
+            English.
+          </p>
+          <p>
+            Given all these aspects of language and knowing what we know from language models, it&rsquo;s not a bad
+            idea to redefine language as the broader category of discrete symbols that may take on a statistical
+            distribution of the likelihood of its elements appearing in particular configurations and sequences.
+            After all, this covers the idea of a map, picture, and interaction norms. Perhaps, I would even dare define
+            a generic tautology where language is simply whatever a language model can model.
+          </p>
+          <p>
+            Every stupid statement or claim I&rsquo;ve ever made originates from an unwillingness (or laziness) to put
+            up with the fatigue that comes with fully explaining the intangible full reality that cannot be easily
+            captured in words. Thus, my unfortunate audience only receives an inaccurate reduction or an
+            abstraction along a particular perspectival dimension. Sometimes these can end up sounding really
+            stupid, even when the statement captures some previously occluded aspect of the truth.
+          </p>
+          <p>
+            Yes, I think the Greeks were broadly right that we are born with all knowledge. Language sections
+            the world into limited models. However, the tabula rasa singularity of cognition at the moment of
+            birth or at the moment of enlightenment is as ontologically complete as it is useless. Sectioning is
+            required to build any sort of model. Models are useful for navigating the world using a set of
+            assumptions and their likely consequences. In some languages, such as mathematics,
+            this process simply becomes completely deductive and discrete.
+          </p>
+          <p>
+            When two languages are intelligible to a singular person and both languages embody a different form
+            of life, then the individual must reconcile two different ways of being or two different sectionings of
+            reality. The outsider is ontologically pivotal, as we must have foreigners that speak a different
+            language from us in order to approach a more complete understanding of the singularity. To actually
+            achieve the singularity is to discover all the enumerable languages that may occur and their
+            interactions and evolutions with respect to one another when put into an interaction model.
+          </p>
+          <p>
+            In a world of autocompletion, the importance of alterity comes from an understanding of what is
+            actually being completed. For an understanding of the elements, and of mistranslation, allows
+            transgression. Transgression and misunderstanding are the fundamental conditions for poetry and
+            the expansion of new language. New language is the fundamental basis of science.
+          </p>
+
+          <blockquote class="motto close" lang="la">
+            <p>Nama Persis tutela Mercuris</p>
+          </blockquote>
+        </div>
+      </article>
+    </div>
+
+    <footer id="contact">
+      <p>
+        <a href="mailto:zanhuang@huronarc.com">zanhuang@huronarc.com</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://twitter.com/TheZanHuang" target="_blank" rel="noopener noreferrer">@TheZanHuang</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://zanh.myportfolio.com" target="_blank" rel="noopener noreferrer">portfolio</a>
+      </p>
+      <p class="address">Inquiries to HuronARC: 175 Jackson Plaza, Ann Arbor 48103</p>
+      <p class="address">Inquiries to UMich: <a href="mailto:zanh@umich.edu">zanh@umich.edu</a></p>
+      <p class="colophon">Copyright &copy; <span class="year">2026</span> Zan Huang</p>
+    </footer>
+  </div>
+</body>
+</html>

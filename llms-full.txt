@@ -79,11 +79,40 @@ Talk: selected talk on ongoing technical work — https://www.youtube.com/watch?
 
 - Home: https://zanhuang.org/
 - Writing: https://zanhuang.org/writing.html
+- Notes from the London Underground: https://zanhuang.org/writing/london-underground.html
 - Turin Travelogue: https://zanhuang.org/writing/turin-travelogue.html
 - Two Images of Ann Arbor in Different Years: https://zanhuang.org/writing/two-images.html
 - Outside Permutation: https://zanhuang.org/writing/outside-permutation.html
 - Visualizing Movement in Higher Dimensions: https://zanhuang.org/writing/visualizing.html
 - Index for language models: https://zanhuang.org/llms.txt
+
+## Notes from the London Underground
+
+23 September 2026. https://zanhuang.org/writing/london-underground.html
+
+Nama Persis tutela Mercuris
+
+The cult of Mithras, still located in the lower underground layers of Londinium at the Mithraeum, recognizes the essential cosmological significance of Persians (Rome's mortal enemy and the ever outsider).
+
+The first difference I experienced between British and American English is how identical sets of words and grammatical structures may manifest entirely differently in use. Historical exchange and modern communication remove many of these disparities in formal or written communication, but notable differences still persist in how the language expresses itself locally in social contexts. Usually we call these differences "mannerisms".
+
+Language is simultaneously map, picture, and interaction. People are usually slightly confused when saying the phrase "language doesn't capture reality", because to the extent that language is a map or picture, it certainly is one of many possible capturings. We must be careful what we mean by capture. Capture does not denote that language itself is reality, but rather that reality can be indexed into a system of abstracted signs.
+
+People are also confused, however, when they claim that language alone is sufficient for understanding the world, because insofar as language is about and for interaction, interaction is not solely a linguistic phenomenon. Instead, language is often a mediator and top-down mechanism upon native perception and action. Clearly, sex and hunger drives originate pre-linguistically, yet the way we go about expressing them is mediated through ritual and social boundaries encoded linguistically. In other cases, language is the result of an underlying need to act or communicate stemming from non-linguistic origins. This structure echoes system-1 and system-2 cognitive theories. Interaction is ultimately responsible for the mannerism aspect of language.
+
+It is apparent that British English is different from American English, and American English from Singaporean English. There are several different Englishes even within American English (see AAVE). Whether something is grammatical in a given English is predicated both upon fixed rules governed by structural constraints maintaining construction consistency and social normativity in how one carries an interaction. "I am moving house" is grammatical in British English but not in American English.
+
+Given all these aspects of language and knowing what we know from language models, it's not a bad idea to redefine language as the broader category of discrete symbols that may take on a statistical distribution of the likelihood of its elements appearing in particular configurations and sequences. After all, this covers the idea of a map, picture, and interaction norms. Perhaps, I would even dare define a generic tautology where language is simply whatever a language model can model.
+
+Every stupid statement or claim I've ever made originates from an unwillingness (or laziness) to put up with the fatigue that comes with fully explaining the intangible full reality that cannot be easily captured in words. Thus, my unfortunate audience only receives an inaccurate reduction or an abstraction along a particular perspectival dimension. Sometimes these can end up sounding really stupid, even when the statement captures some previously occluded aspect of the truth.
+
+Yes, I think the Greeks were broadly right that we are born with all knowledge. Language sections the world into limited models. However, the tabula rasa singularity of cognition at the moment of birth or at the moment of enlightenment is as ontologically complete as it is useless. Sectioning is required to build any sort of model. Models are useful for navigating the world using a set of assumptions and their likely consequences. In some languages, such as mathematics, this process simply becomes completely deductive and discrete.
+
+When two languages are intelligible to a singular person and both languages embody a different form of life, then the individual must reconcile two different ways of being or two different sectionings of reality. The outsider is ontologically pivotal, as we must have foreigners that speak a different language from us in order to approach a more complete understanding of the singularity. To actually achieve the singularity is to discover all the enumerable languages that may occur and their interactions and evolutions with respect to one another when put into an interaction model.
+
+In a world of autocompletion, the importance of alterity comes from an understanding of what is actually being completed. For an understanding of the elements, and of mistranslation, allows transgression. Transgression and misunderstanding are the fundamental conditions for poetry and the expansion of new language. New language is the fundamental basis of science.
+
+Nama Persis tutela Mercuris
 
 ## Turin Travelogue
 

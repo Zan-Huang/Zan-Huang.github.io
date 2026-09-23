@@ -1173,7 +1173,8 @@ footer a:hover {
   color: var(--muted);
 }
 
-.travelogue .essay-body {
+.travelogue .essay-body,
+.essay.notes .essay-body {
   max-width: 40.5rem;
   text-wrap: pretty;
   hanging-punctuation: first allow-end;
@@ -1182,9 +1183,26 @@ footer a:hover {
   hyphenate-limit-chars: 7 3 3;
 }
 
-.travelogue .essay-body p {
+.travelogue .essay-body p,
+.essay.notes .essay-body p {
   margin-bottom: 1.1rem;
   line-height: 1.52;
+}
+
+.essay.notes .motto {
+  margin: 0 0 1.35rem;
+  padding: 0;
+  border: 0;
+  font-style: italic;
+  text-align: center;
+}
+
+.essay.notes .motto p {
+  margin: 0;
+}
+
+.essay.notes .motto.close {
+  margin: 1.6rem 0 0;
 }
 
 .travelogue .itinerary {
