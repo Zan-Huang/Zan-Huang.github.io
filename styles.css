@@ -68,6 +68,22 @@ html.lamp body::before {
   opacity: 0.72;
 }
 
+body::after {
+  content: "";
+  position: absolute;
+  top: 0.85rem;
+  bottom: 0.85rem;
+  right: max(0.15rem, calc(50% - 400px - 7.85rem));
+  width: 7.15rem;
+  background: url("brandenburg.svg?v=1") repeat-y center top / 7.15rem auto;
+  pointer-events: none;
+  opacity: 0.88;
+}
+
+html.lamp body::after {
+  opacity: 0.72;
+}
+
 ::selection {
   background: #ddd6c6;
 }
@@ -640,7 +656,8 @@ footer a:hover {
 }
 
 @media (max-width: 1180px) {
-  body::before {
+  body::before,
+  body::after {
     display: none;
   }
 }
