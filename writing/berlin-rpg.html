@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"/>
-  <link rel="stylesheet" href="../styles.css?v=73"/>
+  <link rel="stylesheet" href="../styles.css?v=75"/>
 </head>
 <body>
   <div class="wrap">
@@ -69,12 +69,23 @@
         </header>
 
         <div class="essay-body">
+          <nav class="berlin-toc" aria-label="Contents">
+            <p class="toc-label">Contents</p>
+            <ol>
+              <li><a href="#teil-i">Teil I. Einleitung</a></li>
+              <li><a href="#teil-ii">Teil II. Ad Oculos</a></li>
+              <li><a href="#teil-iii">Teil III. Cyber-Polemics with Cobalt</a></li>
+              <li><a href="#philistines">Letter to the Philistines</a></li>
+              <li><a href="#teil-iv">Teil IV. Zur Leise</a></li>
+              <li><a href="#teil-v">Teil V. Formulations</a></li>
+            </ol>
+          </nav>
           <p>
             This is a work of mathematics, poetics, and hermeneutics meant to dissolve the artificial
             boundaries between all of them.
           </p>
 
-          <h3 class="part">Teil I. Einleitung</h3>
+          <h3 class="part" id="teil-i">Teil I. Einleitung</h3>
           <p class="ded">zur Theo Rockas</p>
           <p class="scene">September 27th, 2026. Morgens&ndash;Mittag. The art commune by the Spree in Moabit.</p>
 
@@ -259,7 +270,7 @@
             cappuccino cups; it&rsquo;s called French coffee.
           </p>
 
-          <h3 class="part">Teil II. Ad Oculos</h3>
+          <h3 class="part" id="teil-ii">Teil II. Ad Oculos</h3>
           <p class="ded">zur Bryce Hidysmith</p>
 
           <blockquote class="epigraph">
@@ -829,7 +840,7 @@
           <p>&ldquo;I know what you mean. I&rsquo;ve always been interested recently in what goes on in San Francisco. As you know, I am really still spiritually a Beatnik from San Francisco. I&rsquo;ve read them since I was around 14 years old, when I started dropping massive quantities of acid. I do think it&rsquo;s increasingly relevant to everything. Mind if I ask about the situation there over the next few weeks?&rdquo;</p>
           <p>&ldquo;Of course. But, it&rsquo;s a fucking mess there. Can you imagine how messed up a place becomes when the CIA gives LSD to random teenage runaways on the street in Soma and Mission during the 60&rsquo;s? That&rsquo;s where all the AI companies are located today.&rdquo;</p>
 
-          <h3 class="part">Teil III. Cyber-Polemics with Cobalt</h3>
+          <h3 class="part" id="teil-iii">Teil III. Cyber-Polemics with Cobalt</h3>
           <p class="ded">zur Cobalt Barnett</p>
 
           <blockquote class="epigraph">
@@ -944,7 +955,7 @@
             more reason to want to not build a world where that&rsquo;s the norm.&rdquo;
           </p>
           <p class="motto-line">***</p>
-          <h3 class="part">Letter to the Philistines</h3>
+          <h3 class="part" id="philistines">Letter to the Philistines</h3>
           <p>
             To a large extent, the essential problem of AI safety is the central
             question of theology and aesthetics. The question was never one of
@@ -1047,7 +1058,7 @@
           </p>
           <p class="motto-line" lang="de">Ich weinte, ich weinte. Ich weinte dazu.</p>
 
-          <h3 class="part">Teil IV. Zur Leise</h3>
+          <h3 class="part" id="teil-iv">Teil IV. Zur Leise</h3>
           <p class="ded">zur Leise</p>
           <p>
             Madame Claude in Neuk&ouml;lln has become my favorite place in this city
@@ -1116,7 +1127,7 @@
           </p>
           <p>I hope we will continue being friends for a long time.</p>
 
-          <h3 class="part">Teil V. Formulations</h3>
+          <h3 class="part" id="teil-v">Teil V. Formulations</h3>
           <p class="ded">zur Rohan Raju</p>
           <p>Dear Rohan,</p>
           <p>
@@ -1217,6 +1228,58 @@
         if (target) target.scrollIntoView();
       }
     });
+  </script>
+  <script>
+    (function () {
+      var nav = document.querySelector(".berlin-toc");
+      if (!nav) return;
+      var ol = nav.querySelector("ol");
+      var links = nav.querySelectorAll("a");
+      var heads = [];
+      for (var i = 0; i < links.length; i++) {
+        var el = document.getElementById(links[i].getAttribute("href").slice(1));
+        if (el) heads.push(el);
+      }
+      var current = null;
+      var phone = window.matchMedia("(max-width: 700px)");
+      function mark(id) {
+        if (id === current) return;
+        current = id;
+        var active = null;
+        for (var i = 0; i < links.length; i++) {
+          var on = links[i].getAttribute("href") === "#" + id;
+          links[i].classList.toggle("is-here", on);
+          if (on) {
+            links[i].setAttribute("aria-current", "location");
+            active = links[i];
+          } else {
+            links[i].removeAttribute("aria-current");
+          }
+        }
+        if (active && phone.matches) {
+          var left = active.offsetLeft - (ol.clientWidth - active.offsetWidth) / 2;
+          ol.scrollTo({ left: Math.max(0, left), behavior: "smooth" });
+        }
+      }
+      function update() {
+        var line = phone.matches ? 64 : 28;
+        var id = "";
+        for (var i = 0; i < heads.length; i++) {
+          if (heads[i].getBoundingClientRect().top <= line) id = heads[i].id;
+        }
+        mark(id);
+      }
+      var ticking = false;
+      window.addEventListener("scroll", function () {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () {
+          ticking = false;
+          update();
+        });
+      }, { passive: true });
+      update();
+    })();
   </script>
 </body>
 </html>
