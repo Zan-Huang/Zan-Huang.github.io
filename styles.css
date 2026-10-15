@@ -75,7 +75,7 @@ body::after {
   bottom: 0.85rem;
   right: max(0.15rem, calc(50% - 400px - 7.85rem));
   width: 7.15rem;
-  background: url("brandenburg.svg?v=1") repeat-y center top / 7.15rem auto;
+  background: url("brandenburg.svg?v=2") repeat-y center top / 7.15rem auto;
   pointer-events: none;
   opacity: 0.88;
 }

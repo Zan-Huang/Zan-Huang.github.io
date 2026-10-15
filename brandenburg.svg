@@ -1,89 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 600" width="78" height="600" fill="none">
-  <g stroke="#1c1b18" stroke-linecap="round" stroke-linejoin="round">
-    <!-- East, from Pariser Platz: the Quadriga faces the city -->
-    <g id="east">
-      <path d="M39 3.2 V11" stroke-width="0.9"/>
-      <path d="M37.2 4.6 H40.8 M38.2 6.2 H39.8" stroke-width="0.7"/>
-      <path d="M39 8.2 C37.4 10.2 36.6 12.4 36.8 15.2" stroke-width="0.9"/>
-      <path d="M38.6 10.6 C41.2 11.2 43.2 12.6 44.2 14.4" stroke-width="0.8"/>
-      <path d="M24 16.6 H54" stroke-width="0.9"/>
-      <path d="M26.5 16.6 C26.2 11.2 30.2 10.6 30.6 16.6" stroke-width="0.9"/>
-      <path d="M32.2 16.6 C31.8 10.2 36.4 9.6 36.8 16.6" stroke-width="0.9"/>
-      <path d="M38.2 16.6 C37.8 10.2 42.4 9.6 42.8 16.6" stroke-width="0.9"/>
-      <path d="M44.2 16.6 C43.8 11.2 47.8 10.6 48.2 16.6" stroke-width="0.9"/>
-      <path d="M28.2 12.2 L28.6 10.6 M34.2 11.2 L34.6 9.6 M40.2 11.2 L40.6 9.6 M46.2 12.2 L46.6 10.6" stroke-width="0.7"/>
-      <path d="M16 22 H62 V29 H16 Z" stroke-width="0.9"/>
-      <path d="M20 24.2 H24 M28 24.2 H32 M36 24.2 H42 M46 24.2 H50 M54 24.2 H58" stroke-width="0.6"/>
-      <path d="M13 29 H65 V34 H13 Z" stroke-width="0.9"/>
-      <path d="M17 34 V58 M25.5 34 V58 M34 34 V58 M44 34 V58 M52.5 34 V58 M61 34 V58" stroke-width="1.55"/>
-      <path d="M14.6 34 H19.4 M23.1 34 H27.9 M31.6 34 H36.4 M41.6 34 H46.4 M50.1 34 H54.9 M58.6 34 H63.4" stroke-width="0.9"/>
-      <path d="M3 46 H13 V58 H3 Z" stroke-width="0.9"/>
-      <path d="M65 46 H75 V58 H65 Z" stroke-width="0.9"/>
-      <path d="M6.2 46 V58 M9.8 46 V58 M68.2 46 V58 M71.8 46 V58" stroke-width="0.9"/>
-      <path d="M2 58 H76" stroke-width="1.05"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 460" width="78" height="460" fill="none">
+  <defs>
+    <g id="tor" stroke="#1c1b18" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke">
+      <!-- Quadriga: Victoria with the wreath, horses to either side -->
+      <circle cx="35" cy="2.6" r="1.7" stroke-width="1.05"/>
+      <path d="M35 4.3 V8.6" stroke-width="1.05"/>
+      <path d="M35 6.2 L32.4 4.4" stroke-width="1"/>
+      <path d="M33.2 8.6 L31.2 11.4 M36.8 8.6 L38.8 11.4" stroke-width="1"/>
+      <path d="M24.2 12.6 C24.6 9.2 27.4 8.6 28.6 10.4 C29.2 8.2 32.2 8.4 32.4 11.8" stroke-width="1.1"/>
+      <path d="M24.2 11.4 L22.6 10.2 L23.2 12.2" stroke-width="1"/>
+      <path d="M26.4 12.2 V14.2 M29.6 12.2 V14.2" stroke-width="0.9"/>
+      <path d="M37.6 11.8 C37.8 8.4 40.8 8.2 41.4 10.4 C42.6 8.6 45.4 9.2 45.8 12.6" stroke-width="1.1"/>
+      <path d="M45.8 11.4 L47.4 10.2 L46.8 12.2" stroke-width="1"/>
+      <path d="M40.4 12.2 V14.2 M43.6 12.2 V14.2" stroke-width="0.9"/>
+      <path d="M21 14.2 H49 V17.2 H21 Z" stroke-width="1.2"/>
+      <!-- cornice, wider than the attic, with the turned ends -->
+      <path d="M16 17.2 H54 L58 20.4 H12 L16 17.2" stroke-width="1.25"/>
+      <path d="M8 20.4 H62 V24.6 H8 Z" stroke-width="1.3"/>
+      <path d="M8 22.5 H62" stroke-width="1"/>
+      <!-- six columns -->
+      <rect x="9.2" y="24.6" width="5.6" height="24" stroke-width="1.3"/>
+      <rect x="18.6" y="24.6" width="5.6" height="24" stroke-width="1.3"/>
+      <rect x="28" y="24.6" width="5.6" height="24" stroke-width="1.3"/>
+      <rect x="37.4" y="24.6" width="5.6" height="24" stroke-width="1.3"/>
+      <rect x="46.8" y="24.6" width="5.6" height="24" stroke-width="1.3"/>
+      <rect x="56.2" y="24.6" width="5.6" height="24" stroke-width="1.3"/>
     </g>
-
-    <!-- South flank: the hall runs east, and the horses face east -->
-    <g id="south" transform="translate(0 150)">
-      <path d="M58 6.2 V14" stroke-width="0.9"/>
-      <path d="M56.2 7.6 H59.8" stroke-width="0.7"/>
-      <path d="M58 10 V16.5" stroke-width="0.9"/>
-      <path d="M57.2 12.2 C54.6 13.4 53.2 15.2 53.4 17" stroke-width="0.8"/>
-      <circle cx="52.2" cy="18.2" r="2.5" stroke-width="0.8"/>
-      <path d="M50.4 18.2 H46" stroke-width="0.8"/>
-      <path d="M46 17.2 C40 12.2 32 12.4 26 16.2 C22 13.2 16 13.6 12.5 16.4" stroke-width="0.9"/>
-      <path d="M12.5 16.4 L10.2 15.2 L9.2 17.2" stroke-width="0.8"/>
-      <path d="M14.6 17 V22.2 M20 16.6 V22.2 M27 16.4 V22.2 M34 16.2 V22.2 M41 16.6 V22.2" stroke-width="0.75"/>
-      <path d="M8 22 H62 V28 H8 Z" stroke-width="0.9"/>
-      <path d="M12 28 V52 M20 28 V52 M28 28 V52 M36 28 V52" stroke-width="1.35"/>
-      <path d="M9.8 28 H14.2 M17.8 28 H22.2 M25.8 28 H30.2 M33.8 28 H38.2" stroke-width="0.85"/>
-      <path d="M40 36 H74 V52 H40 Z" stroke-width="0.9"/>
-      <path d="M48 36 V52 M56 36 V52 M64 36 V52 M72 36 V52" stroke-width="0.85"/>
-      <path d="M4 52 H76" stroke-width="1.05"/>
-    </g>
-
-    <!-- West, from the Tiergarten: the Quadriga is seen going away -->
-    <g id="west" transform="translate(0 300)">
-      <path d="M39 4.2 V12" stroke-width="0.9"/>
-      <path d="M37.2 5.6 H40.8 M38.2 7.2 H39.8" stroke-width="0.7"/>
-      <path d="M34 10 H44 V17 H34 Z" stroke-width="0.9"/>
-      <path d="M39 12 V16.2" stroke-width="0.7"/>
-      <path d="M24 17.2 H54" stroke-width="0.9"/>
-      <path d="M26.2 17.2 C26.6 12.4 30.2 12 30.4 17.2" stroke-width="0.9"/>
-      <path d="M32 17.2 C32.4 11.6 36.2 11.2 36.6 17.2" stroke-width="0.9"/>
-      <path d="M38.2 17.2 C38.6 11.6 42.4 11.2 42.8 17.2" stroke-width="0.9"/>
-      <path d="M44.2 17.2 C44.6 12.4 48.2 12 48.4 17.2" stroke-width="0.9"/>
-      <path d="M27.4 17.2 C26.6 20.2 28.8 20.6 28.2 17.2" stroke-width="0.7"/>
-      <path d="M33.2 17.2 C32.4 20.4 34.8 20.8 34.2 17.2" stroke-width="0.7"/>
-      <path d="M39.4 17.2 C38.6 20.4 41 20.8 40.4 17.2" stroke-width="0.7"/>
-      <path d="M45.4 17.2 C44.6 20.2 46.8 20.6 46.2 17.2" stroke-width="0.7"/>
-      <path d="M16 26 H62 V33 H16 Z" stroke-width="0.9"/>
-      <path d="M13 33 H65 V38 H13 Z" stroke-width="0.9"/>
-      <path d="M17 38 V62 M25.5 38 V62 M34 38 V62 M44 38 V62 M52.5 38 V62 M61 38 V62" stroke-width="1.55"/>
-      <path d="M14.6 38 H19.4 M23.1 38 H27.9 M31.6 38 H36.4 M41.6 38 H46.4 M50.1 38 H54.9 M58.6 38 H63.4" stroke-width="0.9"/>
-      <path d="M3 50 H13 V62 H3 Z" stroke-width="0.9"/>
-      <path d="M65 50 H75 V62 H65 Z" stroke-width="0.9"/>
-      <path d="M6.2 50 V62 M9.8 50 V62 M68.2 50 V62 M71.8 50 V62" stroke-width="0.9"/>
-      <path d="M2 62 H76" stroke-width="1.05"/>
-    </g>
-
-    <!-- North flank: the same hall, horses still facing east -->
-    <g id="north" transform="translate(78 450) scale(-1 1)">
-      <path d="M58 6.2 V14" stroke-width="0.9"/>
-      <path d="M56.2 7.6 H59.8" stroke-width="0.7"/>
-      <path d="M58 10 V16.5" stroke-width="0.9"/>
-      <path d="M57.2 12.2 C54.6 13.4 53.2 15.2 53.4 17" stroke-width="0.8"/>
-      <circle cx="52.2" cy="18.2" r="2.5" stroke-width="0.8"/>
-      <path d="M50.4 18.2 H46" stroke-width="0.8"/>
-      <path d="M46 17.2 C40 12.2 32 12.4 26 16.2 C22 13.2 16 13.6 12.5 16.4" stroke-width="0.9"/>
-      <path d="M12.5 16.4 L10.2 15.2 L9.2 17.2" stroke-width="0.8"/>
-      <path d="M14.6 17 V22.2 M20 16.6 V22.2 M27 16.4 V22.2 M34 16.2 V22.2 M41 16.6 V22.2" stroke-width="0.75"/>
-      <path d="M8 22 H62 V28 H8 Z" stroke-width="0.9"/>
-      <path d="M12 28 V52 M20 28 V52 M28 28 V52 M36 28 V52" stroke-width="1.35"/>
-      <path d="M9.8 28 H14.2 M17.8 28 H22.2 M25.8 28 H30.2 M33.8 28 H38.2" stroke-width="0.85"/>
-      <path d="M40 36 H74 V52 H40 Z" stroke-width="0.9"/>
-      <path d="M48 36 V52 M56 36 V52 M64 36 V52 M72 36 V52" stroke-width="0.85"/>
-      <path d="M4 52 H76" stroke-width="1.05"/>
-    </g>
-  </g>
+  </defs>
+  <!-- facing you, as on the pane straight ahead -->
+  <use href="#tor" transform="translate(4 2)"/>
+  <!-- the pane turning away to the left -->
+  <use href="#tor" transform="translate(46 78) scale(0.86) skewX(-28) translate(-35 -8)"/>
+  <!-- the same mark on its side, quadriga toward the platform -->
+  <use href="#tor" transform="translate(39 196) rotate(90) translate(-35 -26)"/>
+  <!-- the pane turning away to the right -->
+  <use href="#tor" transform="translate(32 250) scale(0.86) skewX(28) translate(-35 -8)"/>
+  <!-- on its side the other way -->
+  <use href="#tor" transform="translate(39 368) rotate(-90) translate(-35 -26)"/>
 </svg>
