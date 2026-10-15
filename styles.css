@@ -1748,6 +1748,11 @@ footer a:hover {
   .berlin .chain {
     font-size: 0.82rem;
   }
+
+  .berlin .flow-node,
+  .berlin .flow-q {
+    font-size: 0.78rem;
+  }
 }
 
 .berlin {
@@ -2019,3 +2024,131 @@ footer a:hover {
 
 .berlin .box.src { color: var(--diag); }
 .berlin .box.img { color: var(--built); }
+
+.berlin .flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.berlin .flow-node {
+  width: min(16.5rem, 100%);
+  padding: 0.42rem 0.55rem;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  text-align: center;
+  line-height: 1.35;
+}
+
+.berlin .flow-node .ln {
+  display: block;
+  margin-top: 0.12rem;
+}
+
+.berlin .flow-node.built { color: var(--built); }
+.berlin .flow-node.src { color: var(--diag); }
+.berlin .flow-node.lt { color: var(--loop); }
+.berlin .flow-node.halt { color: var(--halt); }
+
+.berlin .flow-node.limit {
+  width: min(22rem, 100%);
+  background: #ebe6da;
+  border-color: #cfc6b6;
+  color: var(--ink);
+}
+
+.berlin .flow-node.limit .claim {
+  color: var(--loop);
+  font-weight: 700;
+}
+
+.berlin .stem {
+  width: 0;
+  height: 0.7rem;
+  border-left: 1px solid var(--ink);
+  flex: none;
+}
+
+.berlin .stem.arrow {
+  position: relative;
+  height: 0.85rem;
+  margin-bottom: 0.28rem;
+}
+
+.berlin .stem.arrow::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  bottom: -5px;
+  border-width: 5px 4px 0;
+  border-style: solid;
+  border-color: var(--ink) transparent transparent;
+}
+
+.berlin .fork {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+  width: 100%;
+  position: relative;
+}
+
+.berlin .fork::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+  border-top: 1px solid var(--ink);
+}
+
+.berlin .fork .arm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
+
+.berlin .fork .flow-node {
+  width: 100%;
+}
+
+.berlin .stem.grow {
+  flex: 1 1 auto;
+  min-height: 0.7rem;
+}
+
+.berlin .merge {
+  position: relative;
+  width: 100%;
+  height: 0;
+}
+
+.berlin .merge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+  border-top: 1px solid var(--ink);
+}
+
+.berlin .flow-q {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: 100%;
+  margin: 0.95rem 0 0.8rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.berlin .flow-q::before,
+.berlin .flow-q::after {
+  content: "";
+  flex: 1;
+  border-top: 1px dashed var(--muted);
+}

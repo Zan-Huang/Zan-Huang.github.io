@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"/>
-  <link rel="stylesheet" href="../styles.css?v=69"/>
+  <link rel="stylesheet" href="../styles.css?v=70"/>
 </head>
 <body>
   <div class="wrap">
@@ -456,6 +456,74 @@
             involves choices of abstraction, even if those constraints alone do
             not establish the impossibility of an objective ontology.
           </p>
+
+          <figure class="mathfig" id="limits">
+            <figcaption>Expressive and computability limits</figcaption>
+            <div class="flow">
+              <div class="flow-node">Finite, nonempty alphabet \(\Sigma\)</div>
+              <div class="stem arrow"></div>
+              <div class="flow-node built">
+                All finite strings \(\Sigma^{*}\)
+                <span class="ln">\(|\Sigma^{*}| = \aleph_0\)</span>
+              </div>
+              <div class="fork">
+                <div class="arm">
+                  <div class="stem arrow"></div>
+                  <div class="flow-node src">
+                    Finite symbolic descriptions
+                    <span class="ln">\(|\mathrm{Desc}| \le \aleph_0\)</span>
+                  </div>
+                  <div class="stem arrow"></div>
+                  <div class="flow-node src">
+                    Finitely specifiable languages \(\mathrm{Def}\)
+                    <span class="ln">\(|\mathrm{Def}| \le \aleph_0\)</span>
+                  </div>
+                  <div class="stem"></div>
+                </div>
+                <div class="arm">
+                  <div class="stem arrow"></div>
+                  <div class="flow-node lt">
+                    All languages \(\mathcal{L} = \mathcal{P}(\Sigma^{*})\)
+                    <span class="ln">\(|\mathcal{L}| = 2^{\aleph_0} &gt; \aleph_0\)</span>
+                  </div>
+                  <div class="stem grow"></div>
+                </div>
+              </div>
+              <div class="merge"></div>
+              <div class="stem arrow"></div>
+              <div class="flow-node limit">
+                <strong>Expressive limitation</strong>
+                <span class="ln claim">\(\mathrm{Def} \subset \mathcal{L}\)</span>
+                <span class="ln">Not every language has finite description</span>
+              </div>
+              <p class="flow-q">Second question: Is a finitely described problem decidable?</p>
+              <div class="flow-node">Finitely described decision problems</div>
+              <div class="fork">
+                <div class="arm">
+                  <div class="stem arrow"></div>
+                  <div class="flow-node halt">
+                    Some are decidable
+                    <span class="ln">e.g. membership in a regular language</span>
+                  </div>
+                  <div class="stem"></div>
+                </div>
+                <div class="arm">
+                  <div class="stem arrow"></div>
+                  <div class="flow-node lt">
+                    \(\mathrm{HALT} = \{ \langle P, x \rangle : P(x) \downarrow \}\)
+                    <span class="ln">Finitely describable but undecidable</span>
+                  </div>
+                  <div class="stem"></div>
+                </div>
+              </div>
+              <div class="merge"></div>
+              <div class="stem arrow"></div>
+              <div class="flow-node limit">
+                <strong>Computability limitation</strong>
+                <span class="ln">Finite describability does not imply decidability</span>
+              </div>
+            </div>
+          </figure>
 
           <figure class="mathfig">
             <figcaption>Languages, descriptions, algorithms</figcaption>
