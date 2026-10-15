@@ -1743,4 +1743,279 @@ footer a:hover {
     margin-top: 0.85rem;
     min-height: 0;
   }
+
+  .berlin .cantor,
+  .berlin .chain {
+    font-size: 0.82rem;
+  }
 }
+
+.berlin {
+  --built: #1a3d8f;
+  --diag: #8a5a12;
+  --halt: #2c5c3a;
+  --loop: #9a221c;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  letter-spacing: 0;
+}
+
+.berlin .essay-head h2,
+.berlin .essay-meta,
+.berlin .essay-kicker {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.berlin .essay-head h2 {
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.berlin .essay-body {
+  max-width: 39rem;
+}
+
+.berlin .part {
+  margin: 2.4rem 0 0.2rem;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  font-variant: normal;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.berlin .ded,
+.berlin .scene {
+  margin: 0 0 1.15rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.berlin .scene {
+  margin-bottom: 1.35rem;
+}
+
+.berlin .say {
+  margin-left: 1.15rem;
+}
+
+.berlin .epigraph {
+  font-size: 0.92rem;
+}
+
+.berlin .aside-note {
+  margin: 0.2rem 0 1.2rem 1.15rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.berlin .motto-line {
+  margin: 1.15rem 0;
+  font-style: italic;
+  text-align: center;
+}
+
+.berlin .mathfig {
+  margin: 1.15rem 0 1.45rem;
+  padding: 0.85rem 0.9rem 0.95rem;
+  border: 1px solid var(--rule);
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+}
+
+.berlin .katex {
+  color: inherit;
+}
+
+.berlin .mathfig figcaption {
+  margin: 0 0 0.75rem;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.01em;
+}
+
+.berlin .mathfig .katex-display {
+  margin: 0.45rem 0;
+}
+
+.berlin .swatch {
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-right: 0.35rem;
+  vertical-align: 0.05em;
+  background: currentColor;
+}
+
+.berlin .key {
+  margin: 0.35rem 0 0.8rem;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.berlin .key li {
+  display: inline-block;
+  margin: 0 0.9rem 0.25rem 0;
+}
+
+.berlin .key .diag { color: var(--diag); }
+.berlin .key .built { color: var(--built); }
+.berlin .key .halt { color: var(--halt); }
+.berlin .key .loop { color: var(--loop); }
+
+.berlin .cycle {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0.45rem 0.7rem;
+  align-items: center;
+  margin: 0.7rem 0 0.2rem;
+}
+
+.berlin .cycle .arm {
+  padding: 0.45rem 0.55rem;
+  text-align: center;
+  border: 1px solid var(--rule);
+}
+
+.berlin .cycle .in { color: var(--built); }
+.berlin .cycle .out { color: var(--loop); }
+.berlin .cycle .hence {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.berlin .cantor {
+  border-collapse: collapse;
+  margin: 0.3rem 0 0.7rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.berlin .cantor td {
+  padding: 0.18rem 0.38rem;
+  text-align: center;
+}
+
+.berlin .cantor .ix {
+  padding-right: 0.7rem;
+  text-align: right;
+  color: var(--muted);
+}
+
+.berlin .cantor .diag {
+  color: var(--diag);
+  box-shadow: inset 0 -2px 0 var(--diag);
+  font-weight: 700;
+}
+
+.berlin .cantor .built {
+  color: var(--built);
+  font-weight: 700;
+}
+
+.berlin .cantor .yrow td {
+  padding-top: 0.55rem;
+}
+
+.berlin .haltgrid {
+  display: grid;
+  grid-template-columns: minmax(3.4rem, 7.5rem) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.35rem 0.6rem;
+  align-items: center;
+  margin: 0.4rem 0 0.8rem;
+}
+
+.berlin .haltgrid .h {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.berlin .pill {
+  display: block;
+  padding: 0.28rem 0.45rem;
+  border: 1px solid var(--rule);
+  text-align: center;
+}
+
+.berlin .pill.halt { color: var(--halt); }
+.berlin .pill.loop { color: var(--loop); }
+
+.berlin .contra {
+  margin: 0.2rem 0 0.6rem;
+  padding: 0.55rem 0.6rem;
+  text-align: center;
+  color: var(--loop);
+  border: 1px dashed var(--loop);
+}
+
+.berlin .chain {
+  margin: 0.2rem 0 0.8rem;
+  padding: 0;
+  list-style: none;
+}
+
+.berlin .chain li {
+  margin: 0 0 0.28rem;
+}
+
+.berlin .chain .lt { color: var(--loop); }
+.berlin .chain .eq { color: var(--built); }
+
+.berlin .gloss {
+  display: grid;
+  grid-template-columns: 6.2rem 1fr;
+  gap: 0.18rem 0.75rem;
+  margin: 0.6rem 0 0.2rem;
+  font-size: 0.86rem;
+}
+
+.berlin .gloss dt { color: var(--built); }
+.berlin .gloss dd { margin: 0; }
+
+.berlin .arrow-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 0.7rem;
+  margin: 0.55rem 0 0.3rem;
+}
+
+.berlin .mapsto {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.12rem;
+  min-width: 3.6rem;
+  color: var(--muted);
+}
+
+.berlin .mapsto .shaft {
+  display: block;
+  width: 3.4rem;
+  height: 0;
+  border-top: 1px solid currentColor;
+  position: relative;
+}
+
+.berlin .mapsto .shaft::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: -4px;
+  border-width: 4px 0 4px 6px;
+  border-style: solid;
+  border-color: transparent transparent transparent currentColor;
+}
+
+.berlin .box {
+  padding: 0.4rem 0.55rem;
+  border: 1px solid var(--rule);
+}
+
+.berlin .box.src { color: var(--diag); }
+.berlin .box.img { color: var(--built); }

@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Berlin RPG Aufbau — mathematics, poetics, and hermeneutics."/>
+  <meta name="theme-color" content="#f6f3ec" id="theme-color"/>
+  <script>
+    (function () {
+      var now = new Date();
+      var hour = now.getHours();
+      var root = document.documentElement;
+      var meta = document.getElementById("theme-color");
+      if (hour >= 20 || hour < 6) {
+        root.classList.add("lamp");
+        if (meta) meta.setAttribute("content", "#efe6d4");
+      } else if (hour >= 17) {
+        root.classList.add("dusk");
+        if (meta) meta.setAttribute("content", "#f3eee4");
+      }
+      function setYear() {
+        var nodes = document.querySelectorAll(".colophon .year");
+        for (var i = 0; i < nodes.length; i++) {
+          nodes[i].textContent = String(now.getFullYear());
+        }
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", setYear);
+      } else {
+        setYear();
+      }
+    })();
+  </script>
+  <title>Berlin RPG Aufbau</title>
+  <link rel="canonical" href="https://zanhuang.org/writing/berlin-rpg.html"/>
+  <link rel="icon" type="image/png" href="../favicon.png"/>
+  <link rel="apple-touch-icon" href="../favicon.png"/>
+  <link rel="mask-icon" href="../seal-mask.svg" color="#9a221c"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"/>
+  <link rel="stylesheet" href="../styles.css?v=69"/>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="seal" href="../index.html"><img src="../seal.png" alt="Zan Huang seal"/></a>
+      <h1><a href="../index.html">Zan Huang</a></h1>
+      <p class="tagline">Computational Neuroscience &middot; Artificial Intelligence &middot; Music Composition</p>
+      <nav>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#scientific-work">Scientific Work</a>
+        <a href="../index.html#artistic-work">Artistic Work</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#research">Research</a>
+        <a href="../writing.html">Writing</a>
+        <a href="../index.html#talks">Talks</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="layout single">
+      <article class="main-content essay berlin">
+        <header class="essay-head">
+          <p class="essay-kicker"><a href="../writing.html">Writing</a></p>
+          <h2>Berlin RPG Aufbau</h2>
+          <p class="essay-meta"><time datetime="2026-09-27">27 September 2026</time></p>
+        </header>
+
+        <div class="essay-body">
+          <p>
+            This is a work of mathematics, poetics, and hermeneutics meant to dissolve the artificial
+            boundaries between all of them.
+          </p>
+
+          <h3 class="part">Teil I. Einleitung</h3>
+          <p class="ded">zur Theo Rockas</p>
+          <p class="scene">September 27th, 2026. Morgens&ndash;Mittag. The art commune by the Spree in Moabit.</p>
+
+          <p>
+            The song <cite>La Boh&egrave;me</cite> drifts through the scratchy monospeaker of an old
+            computer on a low resolution monitor. Light pours in through the
+            morning window; glowing plants sit on worn pianos, dancing in white
+            sunglow. An American girl perches on the handcrafted woodslat window
+            bench, her bare legs dangling while rolling a cigarette. Soft
+            hammering from nearby construction is heard immediately underneath us
+            right by the river. Sunlight and wind renders the tobacco smoke into
+            spiraling ghostly vortices. Green willows swoop down across the water.
+            German, English, and Russian are tossed around, contrasting the
+            French on the music speaker. Earlier, in the sleeping area, an Israeli
+            girl from Tel Aviv screams at her therapist over a telehealth call.
+            She is now aggressively minding her own business and doesn&rsquo;t seem to be
+            in the mood to talk. Cakes and drinks lie drying on the kitchen table
+            &mdash; a fig cake and a chocolate fruit cake greet me next to morning
+            bottles of white wine. As I wake over the next half an hour, I slowly
+            encounter the new people I met the past few days. People come and give
+            each other hugs.
+          </p>
+          <p>
+            In the music room the people come and go, and I hear conversation.
+          </p>
+          <p class="say">&ldquo;When did you go to bed last night?&rdquo;</p>
+          <p class="say">&ldquo;Well I got back early around 3. I slept for a few hours 3&ndash;4. I feel alright actually.&rdquo;</p>
+          <p class="say">&ldquo;Guten Morgen. Sch&ouml;ne Morgen.&rdquo;</p>
+          <p>
+            We are all dressed for the river excursion. We lug speakers,
+            synthesizers, and guitars in brown baggy khakis and floral linen
+            fits. The beginning of my art residency in Moabit coincides with the
+            successful election of die Linke. The city is uneasy about this fact.
+            Almost all the large campaign posters around this area were vandalized
+            with goat horns and eye crosses, especially on the SPD, CDU, and the
+            Gr&uuml;ne Partei.
+          </p>
+          <p>
+            Just a few centuries ago, Moabit was the place of refuge for the
+            French Huguenot. We are running from a new sort of ambiguous danger,
+            one only some of us here can pin down in terms of life and death, but
+            that doesn&rsquo;t make it any more or less real. It is not so different at
+            the Petersburg Art Space as it was long ago, when this building was
+            still a printshop and soap factory. It is now instead a factory for
+            manufacturing aesthetics and the degeneracy of youth. It just happens
+            that the place where people like me produce our best creative work
+            often overlaps with where the frequenters of multi-person bathroom
+            dens in East Berlin nightclubs normally reside, where the ritualistic
+            Berliner sacrament of MDMA crossed with ketamine before the techno
+            rave is consummated by melancholic lesbians awaiting the second
+            coming of Timothy Leary.
+          </p>
+          <p>
+            My new friend, roughly my age, chainsmokes his way through house
+            chores, something in common with almost all the Russian refugees of
+            the residency. He says he left a few years ago through Tbilisi,
+            Georgia. He spent many years around the syncretic Christian-Buddhist
+            literary-occultist circles, the ones that gave rise to Putin&rsquo;s
+            theocratic authoritarian regime and the Ukraine war. Incidentally, a
+            lot of viscerally depressing contemporary Russian literature (of the
+            Chernukha school) also comes from the same group of people.
+          </p>
+          <p>
+            &ldquo;There&rsquo;s this famous novel from our group. It&rsquo;s very screwed up.&rdquo; he
+            started, &ldquo;where a boy eats his own pimple pops to survive in an
+            auto-cannibalistic way.&ldquo; He once saw &ldquo;wealthy girls adorned with fur coats
+            and naive, confused looks, walking by an anti Ukraine-war protest in
+            the Red Square, asking the police what people were protesting about.&rdquo;
+          </p>
+          <p>&ldquo;That was the moment I decided to get the fuck out of Russia.&rdquo; He told me.</p>
+          <p>
+            Like me, home is where his books are, and he carries a treasured
+            collection of first editions of post-Soviet literature. I tell him I
+            will get him a signed copy of Ginsberg&rsquo;s <cite>Howl</cite>, USA the next time I come
+            back to Europe. &ldquo;I would cut off a toe for that. What books would you
+            like in exchange?&rdquo;
+          </p>
+          <p>
+            Life in Berlin is international. Many are Americans, Eastern
+            Europeans, and Middle Easterners fleeing their cultural, political,
+            and economic impoverishments. They meet in a third place, called
+            Berlin, the capital of Europe. Euros are jestingly referred to as
+            Deutschmarks. The nightclubs serve no different a function as Rick&rsquo;s
+            in <cite>Casablanca</cite> for those who made their way across the newly erected
+            borders in the twilight days of Pax Americana.
+          </p>
+          <p>
+            The tension between native Germans, immigrants, and internationals runs
+            high despite the postmodern cultural efforts to suppress the current
+            Reichstag fire. I speak German to the Turkish and the Germans. I am
+            always received well by the Turkish. The Oriental immigrants all tell
+            me that this place is imploding, and that I should never move here.
+            Sometimes I am received extremely well by the Germans when I speak
+            German. Sometimes they respond in English and even with scorn when I
+            am not idiomatic with my phrases in certain regions of Potsdamer
+            Platz. Getting a library card is almost impossible unless you
+            demonstrate to the librarian that you speak German. There are not many
+            East Asians here, so my identity among the populations remains
+            indefinite other than &ldquo;American&rdquo;. In Turin, my local moniker was
+            &ldquo;l&rsquo;amico americano&rdquo;. Here, I am not so much a friend.
+          </p>
+          <p>
+            &ldquo;They don&rsquo;t really hate the Asians here. You are an unknown quantity&rdquo;
+            says my Turkish driver.
+          </p>
+          <p>
+            Though despite all of this mess, the ruthless rule-binding circuits of
+            Germans, the recklessness of our youth, and the abject nihilist social
+            chasm underneath us, Berlin is truly the cultural and political
+            capital of Europe. There is not a single subway station, street, or
+            park without public references to Kultur (high culture) whether it be
+            an opera, gallery, or play. Everything is clean and habitable. And,
+            there is not a single district without an inspired, albeit immature,
+            expression of youthful artistic outburst. Poetry and literature clubs
+            for young people run along warmly lit orange-red cafes on lukecold
+            autumn evenings. Berlin has been destroyed many times, but the spirit
+            of the city sustains it. If there is a god of the city, it is
+            certainly the name, concept, and hallowed ground of the location as
+            witness to its history.
+          </p>
+          <p>
+            Last night, a room of Conservative Germans, Hippie Bohemians,
+            Englishmen, High Society Opera-goers, and abject Degenerates gathered
+            like me to attend <cite>Mittwoch aus Licht</cite> by Karlheinz Stockhausen at the
+            Deutsche Oper Berlin on Richard Wagner Stra&szlig;e. Even Theo is cautious
+            of Nikita, the Russian. He doesn&rsquo;t trust the dangerous untetheredness
+            of sound artists.
+          </p>
+          <p>
+            There is no good way to describe the Mittwoch/Licht experience, only
+            that it is a six hour long electro-acoustic German space opera based
+            on a Sufist Mormon cosmography, resembles a masonic ritual, and
+            contains a helicopter quartet interlude where the players play in four
+            separate helicopters with designated rotor speeds as part of the score
+            while in the sky. I cry when they lift off in Shepard tones. Michael,
+            Eve, and Lucifer create the entire universe, and the audience becomes
+            part of a cosmic ritual as witness. <cite>Licht</cite> is probably the closest
+            thing we have towards an actual Gesamtkunstwerk. Although, Stockhausen
+            controversially claimed once that 9/11 was the greatest most complete
+            work of art ever accomplished.
+          </p>
+          <p class="motto-line">&ldquo;The theme of Mittwoch is love.&rdquo; &mdash; from Act I</p>
+          <p>
+            The Germans and the rest of us probably experience some sort of loving
+            ego dissolution during the performance; then we all return to our petty
+            lives after it&rsquo;s over and act like we don&rsquo;t know each other.
+          </p>
+          <p>
+            AfD banners line certain streets of the government district by Unter
+            den Linden and in the former East German sections that seem more
+            desolate or &ldquo;ethnic&rdquo;, for instance G&ouml;rlitzer Park. I actually find
+            G&ouml;rlitzer Park to be quite safe, except some occasional harassment
+            from crack addicts. But they aren&rsquo;t that dangerous. The AfD blue is
+            unmistakable. The right claim &ldquo;Sicherheit und Ordnung&rdquo;. The left have
+            no idea what they are organizing around except the obvious. A
+            Hannoverian girl with Polish ancestry confesses to me &ldquo;there&rsquo;s no room
+            for centrists other than the completely useless SPD. I am anti-fascist,
+            but I&rsquo;m not die Linke. They are just confused.&rdquo;
+          </p>
+          <p>
+            Our cigarettes light the nightclubs. We sit in taxis and rideshares,
+            talking of Mark Fisher, listening to Portishead. Mornings begin with
+            headaches.
+          </p>
+          <p>
+            But right now I am basking in the sun, as I sit by a few girls and the
+            Russians on the Spree underneath our converted industrial factory
+            flat. Mild house music drifts from our outdoor speaker across the
+            water. On the other side of the river, respectable middle class people
+            jogging in the green park near modern glass contrast against our
+            graffitied earl grey and light-brown brick coloured quarters. We set
+            up a full electronic band on the ledge, committing acoustic terrorism
+            against the law-abiding citizenry. The Germans are probably used to
+            this crap and price us in as leftists or something. A photographer
+            comes to get pictures of the band while local strangers come to
+            interpretively dance and host German rap battles to our
+            improvisations.
+          </p>
+          <p>I take a break from the synth and music pad.</p>
+          <p>
+            An Irishman and I bond. We drink champagne from the bottle and from
+            cappuccino cups; it&rsquo;s called French coffee.
+          </p>
+
+          <h3 class="part">Teil II. Ad Oculos</h3>
+          <p class="ded">zur Bryce Hidysmith</p>
+
+          <blockquote class="epigraph">
+            <p>&ldquo;There is no royal road to aesthetics. Art cannot avoid the problem of its representation.&rdquo;</p>
+            <footer>&mdash; Forrest Eimold</footer>
+          </blockquote>
+          <blockquote class="epigraph">
+            <p>&ldquo;By our nature, we are incapable of comprehending objectivity even if we are presented with it. So, without a direct line to objectivity, we are limited to hypothesizing about it, rather than actually knowing what is good from an objective vantage.&rdquo;</p>
+            <footer>&mdash; J. Bryce Hidysmith</footer>
+          </blockquote>
+
+          <p>
+            You walk by the Spree on a Friday and must abandon language for a
+            moment, because it feels quite limiting to think in that way. In fact,
+            it&rsquo;s comforting to dissolve the life around into what is immediately
+            real about the place. What does it mean to be real?
+          </p>
+          <p>
+            I am trying to figure out what things are and where the boundaries of
+            objects lie without necessarily giving them names. This helps because
+            the words in the language I hear around me, in reference to things
+            they represent, are not what I usually call that thing in my own
+            tongue. A different language may perhaps call something something else
+            or partition it differently entirely. So how does one partition the
+            world? How does one specify the contours of a willow tree, its weeping
+            leaves, the bark, where each discrete part begins or ends? How do we
+            enumerate the seemingly infinite layers or ways of partitioning?
+          </p>
+          <p>
+            Russell&rsquo;s paradox begins with an impossibility: that the set of all
+            sets which do not contain themselves lands in a contradiction, for
+            then that set must contain itself but also does not contain itself.
+          </p>
+
+          <figure class="mathfig" id="russell">
+            <figcaption>Russell&rsquo;s paradox</figcaption>
+            <ul class="key">
+              <li class="built"><span class="swatch"></span>membership</li>
+              <li class="loop"><span class="swatch"></span>non-membership</li>
+            </ul>
+            \[ R = \{ x \mid x \notin x \} \]
+            <div class="cycle">
+              <div class="arm in">\( R \in R \)</div>
+              <div class="hence">&rArr;</div>
+              <div class="arm out">\( R \notin R \)</div>
+              <div class="arm out">\( R \notin R \)</div>
+              <div class="hence">&rArr;</div>
+              <div class="arm in">\( R \in R \)</div>
+            </div>
+          </figure>
+
+          <p>
+            Russell takes this paradox from the work of Cantor. Cantor was able to
+            show there are uncountable infinities and the uncountability of real
+            numbers through the diagonalization argument. What if we were able to
+            always construct a string of symbols that is definitely not contained
+            within a set of infinite strings which should contain everything? Is
+            then the set enumerable? No, because in that case, it would have
+            enumerated every element of the set, but there is a string discovered
+            not in that set.
+          </p>
+
+          <figure class="mathfig" id="cantor">
+            <figcaption>Cantor&rsquo;s diagonal</figcaption>
+            <ul class="key">
+              <li class="diag"><span class="swatch"></span>diagonal digit \(x_{nn}\)</li>
+              <li class="built"><span class="swatch"></span>constructed digit \(y_n\)</li>
+            </ul>
+            <p>Suppose \((0,1) = \{x_1, x_2, x_3, \ldots\}\).</p>
+            <table class="cantor">
+              <tr><td class="ix">\(x_1\)</td><td>0.</td><td class="diag">\(x_{11}\)</td><td>\(x_{12}\)</td><td>\(x_{13}\)</td><td>\(x_{14}\)</td><td>&hellip;</td></tr>
+              <tr><td class="ix">\(x_2\)</td><td>0.</td><td>\(x_{21}\)</td><td class="diag">\(x_{22}\)</td><td>\(x_{23}\)</td><td>\(x_{24}\)</td><td>&hellip;</td></tr>
+              <tr><td class="ix">\(x_3\)</td><td>0.</td><td>\(x_{31}\)</td><td>\(x_{32}\)</td><td class="diag">\(x_{33}\)</td><td>\(x_{34}\)</td><td>&hellip;</td></tr>
+              <tr><td class="ix">\(x_4\)</td><td>0.</td><td>\(x_{41}\)</td><td>\(x_{42}\)</td><td>\(x_{43}\)</td><td class="diag">\(x_{44}\)</td><td>&hellip;</td></tr>
+              <tr><td class="ix">&vellip;</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr class="yrow"><td class="ix">\(y\)</td><td>0.</td><td class="built">\(y_1\)</td><td class="built">\(y_2\)</td><td class="built">\(y_3\)</td><td class="built">\(y_4\)</td><td>&hellip;</td></tr>
+            </table>
+            \[
+              y_n =
+              \begin{cases}
+                1 & \text{if } x_{nn} \neq 1 \\
+                2 & \text{if } x_{nn} = 1
+              \end{cases}
+            \]
+            \[ y_n \neq x_{nn} \quad \forall n \in \mathbb{N} \]
+            \[ \Longrightarrow y \neq x_n \quad \forall n \in \mathbb{N} \]
+            \[ \Longrightarrow y \notin \{x_1, x_2, x_3, \ldots\} \]
+            <p class="contra">Contradiction. \(\therefore\ \mathbb{R}\) is uncountable.</p>
+          </figure>
+
+          <p>
+            Take an infinite list of infinitely long decimal numbers above for
+            instance.
+          </p>
+          <p>
+            The trick is simple. In the case of the real numbers, if for each
+            element on the diagonal, we construct a new real number by ensuring
+            that each digit on the diagonal does not correspond to the current
+            corresponding nth digit of the new number we are building, then we are
+            guaranteed a constructed string that has not been already enumerated
+            by the infinite list of infinitely long numbers. All the nth digits
+            differ between our constructed digit and the diagonal string, meaning
+            it cannot be contained in the set being enumerated. Even the infinity
+            of real numbers between 0 and 1 is unenumerable in this example. This
+            is easily seen with binary strings, where each digit value in the
+            string is either a 1 or 0.
+          </p>
+          <p>
+            This is an &ldquo;uncountable infinity&rdquo;, with countability referring to the
+            ability to map each element in a set to an ordering of the natural
+            numbers \(1, 2, 3, 4, \ldots, n\). The pop-cultural reference for countable
+            infinity and thus the notion of uncountable infinity is through the
+            famous thought experiment of Hilbert&rsquo;s Hotel
+            (<a href="https://www.youtube.com/watch?v=Uj3_KqkI9Zo" target="_blank" rel="noopener noreferrer">The Infinite Hotel Paradox</a>),
+            which meditates over the many strange and seemingly paradoxical qualities of
+            infinity.
+          </p>
+          <p>
+            Using an equivalent method, the Entscheidungsproblem solution
+            essentially states that a program cannot exist that can decide
+            whether a program halts or not. This fact can be shown using the same
+            diagonal argument. Asking the question about whether a program halts
+            or not on a certain input is equivalent to asking what descriptions
+            are acceptable in a given language. But just like Cantor&rsquo;s argument
+            with the uncountability of real numbers, we cannot decide this for all
+            pairs of programs and inputs.
+          </p>
+
+          <figure class="mathfig" id="halt">
+            <figcaption>Halting-problem diagonal</figcaption>
+            <ul class="key">
+              <li class="halt"><span class="swatch"></span>halts</li>
+              <li class="loop"><span class="swatch"></span>does not halt</li>
+            </ul>
+            \[
+              H(P, x) =
+              \begin{cases}
+                1 & \text{if } P(x) \text{ halts} \\
+                0 & \text{if } P(x) \text{ does not halt}
+              \end{cases}
+            \]
+            <p>Suppose \(H\) is total and computable.</p>
+            \[
+              D(P) =
+              \begin{cases}
+                \mathrm{LOOP} & \text{if } H(P, P) = 1 \\
+                \mathrm{HALT} & \text{if } H(P, P) = 0
+              \end{cases}
+            \]
+            <div class="haltgrid">
+              <span class="h">program</span>
+              <span class="h">\(H(P_n, P_n)\)</span>
+              <span class="h">\(D(P_n)\), the opposite</span>
+              <span>\(P_1\)</span><span class="pill halt">1, halts</span><span class="pill loop">LOOP</span>
+              <span>\(P_2\)</span><span class="pill loop">0, loops</span><span class="pill halt">HALT</span>
+              <span>\(P_3\)</span><span class="pill halt">1, halts</span><span class="pill loop">LOOP</span>
+              <span>&hellip;</span><span class="pill">\(H(P_n, P_n)\)</span><span class="pill">opposite</span>
+            </div>
+            \[ H(D, D) = 1 \Longrightarrow D(D) \text{ does not halt} \]
+            \[ H(D, D) = 0 \Longrightarrow D(D) \text{ halts} \]
+            <p class="contra">\(D(D)\) halts \(\Longleftrightarrow\) \(D(D)\) does not halt.<br/>No total computable \(H\) exists.</p>
+            <div class="gloss">
+              <dt>\(P_n\)</dt><dd>the \(n\)th program</dd>
+              <dt>\(H(P, x)\)</dt><dd>decision whether \(P\) halts on input \(x\)</dd>
+              <dt>\(H(P, P)\)</dt><dd>decision whether \(P\) halts on itself</dd>
+              <dt>\(D(P)\)</dt><dd>opposite of \(H(P, P)\)</dd>
+              <dt>\(D(D)\)</dt><dd>program \(D\) run on itself</dd>
+            </div>
+          </figure>
+
+          <p>
+            The specification of our reality, likewise, runs into the same
+            problem. First, there exists no privileged ontology or infinite
+            language, only vantage points from where one starts. There is not one
+            language to master them all. We cannot actually countably enumerate
+            where one thing ends and another one begins and in all the ways they
+            could come together as larger objects composed of smaller ones.
+          </p>
+          <p>
+            The set of all possible languages over a finite alphabet is
+            uncountable even though the set of finite symbolic descriptions is
+            only countably infinite. Consequently, not every possible language can
+            be individually specified through a finite description. However, this
+            does not preclude a finite mathematical characterization of the entire
+            collection: the power set of all finite strings is itself an example.
+            The limitation is therefore not that descriptions cannot be described
+            collectively, but that no finite encoding scheme can individually
+            specify every member of an uncountable collection. Furthermore, even
+            among countably many finitely described problems, decidability is not
+            guaranteed, as the halting problem demonstrates. We are therefore
+            constrained both by the expressive limits of finite symbolic systems
+            and by the computability limits of procedures operating within them.
+            Under these constraints, choosing a descriptive language necessarily
+            involves choices of abstraction, even if those constraints alone do
+            not establish the impossibility of an objective ontology.
+          </p>
+
+          <figure class="mathfig">
+            <figcaption>Languages, descriptions, algorithms</figcaption>
+            <ul class="chain">
+              <li class="eq">\(\displaystyle \Sigma^{*} = \bigcup_{n=0}^{\infty} \Sigma^{n}\)</li>
+              <li class="eq">\(|\Sigma^{*}| = \aleph_0\)</li>
+              <li class="eq">\(\mathcal{L} = \mathcal{P}(\Sigma^{*})\)</li>
+              <li class="lt">\(|\mathcal{L}| = |\mathcal{P}(\Sigma^{*})| = 2^{\aleph_0} &gt; \aleph_0\)</li>
+              <li>\(|\mathrm{Desc}| \le \aleph_0\)</li>
+              <li>\(|\mathrm{Alg}| \le \aleph_0\)</li>
+              <li class="lt">\(|\mathrm{Desc}| &lt; |\mathcal{P}(\Sigma^{*})|\)</li>
+              <li class="lt">\(|\mathrm{Alg}| &lt; |\mathcal{P}(\Sigma^{*})|\)</li>
+              <li>\(\mathrm{HALT} = \{ \langle P, x \rangle \in \Sigma^{*} : P(x) \downarrow \}\)</li>
+              <li class="lt">\(\mathrm{HALT} \notin \mathrm{DEC}\)</li>
+              <li class="lt">\(|\Sigma^{*}| &lt; |\mathcal{P}(\Sigma^{*})|\)</li>
+              <li class="lt">\(\aleph_0 &lt; 2^{\aleph_0}\)</li>
+            </ul>
+            <div class="gloss">
+              <dt>\(\Sigma\)</dt><dd>finite alphabet of symbols</dd>
+              <dt>\(\Sigma^n\)</dt><dd>strings of length \(n\) over \(\Sigma\)</dd>
+              <dt>\(\Sigma^{*}\)</dt><dd>all finite strings over \(\Sigma\)</dd>
+              <dt>\(\aleph_0\)</dt><dd>cardinality of a countably infinite set</dd>
+              <dt>\(\mathcal{P}(X)\)</dt><dd>power set of \(X\)</dd>
+              <dt>\(\mathcal{L}\)</dt><dd>set of all languages over \(\Sigma^{*}\)</dd>
+              <dt>\(2^{\aleph_0}\)</dt><dd>cardinality of \(\mathcal{P}(\Sigma^{*})\)</dd>
+              <dt>\(\mathrm{Desc}\)</dt><dd>finitely encoded descriptions</dd>
+              <dt>\(\mathrm{Alg}\)</dt><dd>finitely encoded algorithms</dd>
+              <dt>\(\langle P, x \rangle\)</dt><dd>encoding of program \(P\) and input \(x\)</dd>
+              <dt>\(P(x) \downarrow\)</dt><dd>\(P\) halts on input \(x\)</dd>
+              <dt>\(\mathrm{HALT}\)</dt><dd>language of halting program-input pairs</dd>
+              <dt>\(\mathrm{DEC}\)</dt><dd>class of decidable languages</dd>
+            </div>
+          </figure>
+
+          <figure class="mathfig">
+            <figcaption>What a finite description can name</figcaption>
+            <div class="arrow-row">
+              <span class="box src">\(\mathrm{Desc}\)</span>
+              <span class="mapsto"><span class="fn">\(I\)</span><span class="shaft"></span></span>
+              <span class="box img">\(\mathrm{Def} \subseteq \mathcal{P}(\Sigma^{*})\)</span>
+            </div>
+            \[ \mathrm{Desc} = \{ d \in \Sigma^{*} : d \text{ is a valid finite description} \} \]
+            \[ \mathrm{Def} = \{ I(d) : d \in \mathrm{Desc} \} \]
+            \[ I : \mathrm{Desc} \to \mathcal{P}(\Sigma^{*}) \]
+            \[ |\mathrm{Def}| \le |\mathrm{Desc}| \le \aleph_0 &lt; 2^{\aleph_0} = |\mathcal{P}(\Sigma^{*})| \]
+          </figure>
+
+          <p>I find myself slowly tuning back into my immediate surroundings in Moabit.</p>
+          <p>
+            Nikita blows a ring of smoke from the rolled cigarette. He carries a
+            pouch of tobacco wherever he goes. The light gray rings expand in
+            concentric circles, again and again, from the center to the
+            surrounding ring from within the circles themselves.
+          </p>
+          <p>
+            &ldquo;It&rsquo;s weird&rdquo; I said. &ldquo;The questions of my life don&rsquo;t really have a
+            singular answer or an objective frame. You see, I&rsquo;ve got a solution
+            about why I am in Berlin at one layer of abstraction, if you were to
+            describe why I am here through a particular language of existing; the
+            fact is I couldn&rsquo;t come up with these ideas I&rsquo;ve been working on
+            recently anywhere else. Part of it was really needing to get out of
+            Ann Arbor and America in general for just a bit. But at the same time,
+            isn&rsquo;t it a bit pretentious I do have to come to Berlin for that? But I
+            wasn&rsquo;t thinking about the travel very much either. I was just being
+            and needed to be. But then maybe this being is also part of an act or
+            a pretension? I could keep expanding or contracting the abstraction
+            layer at which I ask myself the question of why I am in Berlin,
+            expanding to all the other layers of possible descriptions for
+            reality. I can keep enumerating entire worlds of possible explanations
+            for why I&rsquo;m here&hellip;. There&rsquo;s an infinite regress of framings for any
+            aesthetic structure, and they are all apt descriptions for what is
+            going on. Vielen Dank. Ja Bitte. Espresso. Nein. Kein Zucker.&rdquo;
+          </p>
+          <p>
+            Nikita shrugs heavily, takes another puff, and then looks at me with
+            fatigue. He hasn&rsquo;t slept for a few days. The outdoor pavilion at the
+            Buchkantine in Moabit is filled with the weekly regulars. The very
+            pretty and flirtatious blonde waitress I&rsquo;ve encountered for the last
+            week disappears into the store. A new person, a gruff bearded German
+            waiter comes out. I haven&rsquo;t seen him yet, but he seems a bit annoyed
+            we were speaking in English and annoyed that he was taking our order.
+            The late September wind was not quite chilly yet as it will be in two
+            weeks so I take off my coat.
+          </p>
+          <p>
+            &ldquo;Well, you can&rsquo;t live like that. You just sometimes have to enjoy and
+            be. The framing is purely relative; it&rsquo;s pretentious in one world and
+            it&rsquo;s not in another. The rings cancel themselves out. You don&rsquo;t need
+            to give a shit about another person&rsquo;s perspective on your decisions.
+            Otherwise, there is a center which you will never reach. You know, I
+            am still transfigured by <cite>Mittwoch aus Licht</cite> from the other day. I am
+            still reeling from the aftermath a bit. It&rsquo;s actually really similar
+            to David Lynch&rsquo;s <cite>Twin Peaks</cite> in some ways. There&rsquo;s this impossibility
+            of embrace between everyone in the show just like how it was with the
+            opera. As you approach that true embrace, that penetrating moment, the
+            very limits of that interaction just dissolve into noise again. The
+            embrace never happens. Then, you must somehow cope with this noise,
+            this uncertainty, and still try to embrace regardless. This simply
+            becomes the opening to the next deeper target you know? The center
+            always remains elusive.&rdquo;
+          </p>
+          <p>
+            Nikita blows smoke again, and he coughs. He is sure he has the flu,
+            but he owes me coffee.
+          </p>
+          <p>
+            &ldquo;This is indeed what living feels like. Nikita, if I were actually to
+            chase this black hole at the gaping center of existence, you will find
+            me at the bottom of the Spree, driven to madness or death.&rdquo;
+          </p>
+          <p>
+            &ldquo;Hahaha. Please don&rsquo;t end up there. Not yet. See, I am rather enjoying
+            the immediacy of my situation. I am not even planning more than a few
+            days in advance. There&rsquo;s no chasing or planning here. I must simply
+            live.&rdquo;
+          </p>
+          <p>
+            The waiter spots us using English again. I generally don&rsquo;t like
+            speaking English to Germans who prefer to use their language, but I do
+            find Billy Joel&rsquo;s <cite>Vienna</cite> in the background rather ironic. I do not
+            lose the fact that I am in Berlin, where some people can be snobbish
+            about these things.
+          </p>
+          <p>
+            &ldquo;Yes, but again, why the coffee here? Why the Spree, or the streets,
+            museums, days spent walking stone streets? Why the gentle autumnal
+            wind blowing amongst green-yellow-red trees and lamplights reflected
+            against the river? We could make models of reality anywhere, but why
+            Berlin? But I guess at some point there needs to be an instantiation.
+            Some physical object or world needs to actually represent this
+            abstract unfolding process we are describing. I wouldn&rsquo;t have thought
+            about much of this without the puff of your cigarette earlier, the
+            political economy of this area, the people, or some architecture I was
+            exploring around in this city all coalescing at once. I could only
+            form my current perspective by taking in information from a new place.
+            We may be going towards that empty hole at the center of the smoke,
+            but in the end, there basically needs to be something as opposed to
+            nothing even for reality to occur?&rdquo;
+          </p>
+          <p>
+            &ldquo;That&rsquo;s right. But I don&rsquo;t know how long this will all last. There is a
+            housing crisis, all of the economic troubles happening from increasing
+            housing prices. We will be choked to death. Soon there wouldn&rsquo;t be any
+            artists in the city, and the buildings will all gentrify.&ldquo; He nodded
+            slowly like a horse.
+          </p>
+          <p>
+            &ldquo;I have more faith than you do. This place survived two world wars and
+            the cold war. Somehow the culture never died. I mean you know what
+            astounded me this week? This city is full of ghosts, it&rsquo;s been
+            destroyed so many times, but the art and thought somehow returns each
+            time. There&rsquo;s something about the resilience of the architecture and
+            symbology of this place.&ldquo;
+          </p>
+          <p>
+            &ldquo;Yes, but this sort of collapse is different. It&rsquo;s like a cold death
+            of the universe. We are more choked out than anything.&rdquo;
+          </p>
+          <p>We sit in silence. Nikita puffs his rolled cigarette again and then coughs violently.</p>
+          <p>
+            &ldquo;I mean even this arbitrary act of smoking is just an aestheticized
+            self-destruction towards the same black hole lying at the pit of
+            existence. In that way, the cigarette also makes existence possible.
+            There&rsquo;s obviously the purely aesthetic layer to it and there is an
+            aesthetic layer to literally everything anyone ever does. I mean, so
+            are all the people taking completely random drugs without knowing what
+            they are at the art commune. They are performing some sort of activity
+            to instantiate their existence, even if it&rsquo;s self-destructive.&rdquo; I said.
+          </p>
+          <p>
+            &ldquo;Right. And we are all secretly sustained by this sort of activity,
+            just at different rates of self-destruction. At least I am. People
+            simply need to be, despite knowing their activity is heading towards
+            this hollow center which only gets filled at the moment of death.
+            Sometimes you just need to stop thinking and trust that the thoughts
+            are already complete. I think most people live that way. I guess
+            people like us just can&rsquo;t quit thinking. That kinda sucks.&rdquo;
+          </p>
+          <p>&ldquo;Yes, it really sucks. What do you even do about it?&rdquo;</p>
+          <p>He shrugs. Then continues.</p>
+          <p>
+            &ldquo;You just do. There was a point in my life where I thought about this
+            extensively, but some part of this nihilism is paradoxically the need
+            to live so that the moment becomes possible at all.&rdquo;
+          </p>
+          <p>
+            &ldquo;Thinking in itself is an activity which ends up nowhere right? There
+            are faster and slower ways of dying. It seems no one can escape the
+            actual fate here or the eventful moment when we have to confront that
+            missing center. But, there are meaningful and aesthetic ways to die or
+            confront reality, you might as well make art in the process and just
+            be. I find myself always dancing around this center. No matter what I
+            do. I suppose even in this conversation, I seek intellectual
+            fulfillment. After a conversation like this, only somehow the real
+            question and the main point never actually gets satiated. I&rsquo;m not even
+            able to often articulate what the point even is.&rdquo;
+          </p>
+          <p>
+            &ldquo;Yep. And sometimes I let this be and sometimes it&rsquo;s just more
+            conversation which will never actually get to the point because that
+            point is impossible. So then you go in circles.&ldquo;
+          </p>
+          <p>He draws circles in the air.</p>
+          <p>&ldquo;It really is impossible to make it through reality without a good sense of humour.&rdquo; I remarked.</p>
+          <p>He nods for a few moments. &ldquo;I would agree with that.&rdquo;</p>
+          <p>&ldquo;It becomes a sort of playfulness you need to acquire.&rdquo;</p>
+          <p>&ldquo;And I don&rsquo;t plan more than a day at a time. I could be in Tbilisi next week. Look, I play everyday.&rdquo;</p>
+          <p>
+            &ldquo;I also hate describing things because it just ends up being more and
+            more layers of specification to someone who either already understands
+            all the layers of complexity or to someone who simply doesn&rsquo;t get it.&rdquo;
+          </p>
+          <p>&ldquo;Oh. I don&rsquo;t really talk about stuff much anymore. It&rsquo;s mostly pointless for the same reasons.&rdquo;</p>
+          <p>
+            &ldquo;Is it really only in death that this hollowed out center resolves into
+            itself to an extent? I mean, reality resembles itself. It just keeps
+            going down the rabbit hole. And we can usually remove this gaping hole
+            by just being (meditating all day) or climbing the Alps and exerting
+            tons of energy so that we forget about ourselves and the question of
+            framing things into language altogether.&ldquo;
+          </p>
+          <p>
+            &ldquo;Ah, this meditation stuff makes me cautious because of the whole cult
+            situation in Russia which had astoundingly bad political consequences.
+            But yes, in essence I am always being. It&rsquo;s not a permanent solution
+            though. Much like the opera, it stops when you return back to the
+            world. It ends at some point, and the work of art stops before it
+            bleeds into reality. This is why I didn&rsquo;t stay for the farewell music
+            after the main performance.&ldquo;
+          </p>
+          <p>
+            &ldquo;In some sense, both Wagner and Stockhausen didn&rsquo;t go far enough. The
+            level of interactivity is permanently constrained.<a class="fn-ref" href="#fn-bubble" id="fnref-bubble">*</a> I mean in this
+            economy where humans are substituted in their ability to execute a
+            sequence of information tasks, of course the ontological
+            presupposition of interaction and play should precede anything else.&rdquo;
+          </p>
+          <p class="aside-note" id="fn-bubble">
+            * You could even think of an economic bubble as a type of game that erases
+            itself from reality once the hype is over.
+            <a class="fn-back" href="#fnref-bubble">&#8617;</a>
+          </p>
+          <p>&ldquo;This is why I live the way I do. There&rsquo;s no other option really, especially in these dire times.&rdquo;</p>
+          <p>&ldquo;Seems like a condition as bad as the bronze age collapse.&rdquo;</p>
+          <p>&ldquo;Yeah. I don&rsquo;t have too much hope. At least there&rsquo;s nothing I could do. Now it&rsquo;s Berlin, and perhaps I need to move again soon as these places all gradually disappear.&rdquo;</p>
+          <p>
+            &ldquo;Don&rsquo;t be such a downer. I feel most artists cannot think of
+            themselves as technocrats with some material ability. But there&rsquo;s
+            nothing wrong with that. One should engage with reality in the
+            appropriate ways, not in ways they are conditioned to. I am an
+            optimist here; we just need to get out of our heads.&rdquo;
+          </p>
+          <p>&ldquo;But I know nothing about the set of technical skills, that I could utilize scientifically towards this end. I never had the training.&rdquo;</p>
+          <p>
+            &ldquo;Nikita, you forget that there is actually no distinguishing between
+            science and aesthetics. I mean in a weird way, objects in the real
+            world always resemble themselves at every fragmented layer? That&rsquo;s a
+            question of aesthetics. I know this sounds very obvious, but it&rsquo;s
+            actually rather strange. I mean it&rsquo;s actually a great time to be an
+            artist, now that LLMs and other tools can tractably compute large and
+            structurally fixed operations for us. See, you&rsquo;ve been doing science
+            the whole time. You just didn&rsquo;t know. You were just describing the
+            same nested layers of reality. I&rsquo;m more worried about some weird
+            Gnostic god situation taking place with our very tools dominating us
+            and trapping us into algorithms before we actually reach the
+            totalizing work of art.&rdquo;
+          </p>
+          <p>
+            &ldquo;This seems to be the fate we are consigned to more or less. At least
+            I can escape this by being. I will always be an outsider, and that
+            will give me the ability to escape such a fate, to escape a
+            cosmological fascism. I also recognize these spaces are
+            disappearing.&rdquo;
+          </p>
+          <p>
+            &ldquo;No. I mean consider this as a work of art. Consider the technology we
+            have access to today. Suppose, when we start simulating entire worlds
+            and its abstractions in giant computers until the abstraction becomes
+            just fine enough to reach a moment of singularity? We specify it well
+            enough so that we no longer perceptually distinguish the
+            phenomenological effects of the simulation? And the people and physics
+            inside are substantially modelled enough to gaze back at us and
+            recognize a creator (us) as we recognize them? First, we would be
+            coordinators of the economy. Yet in this loop, they become the
+            creators and masters of both of our destinies through a shared
+            symbolic language which describes both our reality and theirs? Like a
+            machine code specifying the world. Every action we take then becomes
+            meaningful in an infinite regress? Reality represents itself at every
+            layer of abstraction, at least to the point where it&rsquo;s phenomenally
+            indistinguishable. I mean there&rsquo;s the Nietzschean idea that aesthetics
+            precedes morality. I am sure aesthetics actually precedes ontology in
+            this case. Then, the world might as well be redeemed through this
+            action. I mean isn&rsquo;t this the real Gesamtkunstwerk? I don&rsquo;t know how
+            to describe this too well yet to be honest, but it looks like
+            something of a cross between both Disney and the Rand Institute.&rdquo;
+          </p>
+          <p>&ldquo;Yes, that would be crazy. I would really like to work on these sort of things if you find a way. This would be a triumph over all this nihilism.&rdquo;</p>
+          <p>
+            &ldquo;That, in the end, is the ultimate project of both art and science. It
+            is sort of the only thing to actually work on if you realize that all
+            things are indeed one thing. Like you said, you must act and live.&rdquo;
+          </p>
+          <p>&ldquo;I know what you mean. I&rsquo;ve always been interested recently what goes on in San Francisco. As you know, I am really still spiritually a Beatnik from San Francisco. I&rsquo;ve read them since I was around 14 years old, when I started dropping massive quantities of acid. I do think it&rsquo;s increasingly relevant to everything. Mind if I ask about the situation there over the next few weeks?&rdquo;</p>
+          <p>&ldquo;Of course. But, it&rsquo;s a fucking mess there. Can you imagine how messed up a place becomes when the CIA gives LSD to random teenage runaways on the street in Soma and Mission during the 60&rsquo;s? That&rsquo;s where all the AI companies are located today.&rdquo;</p>
+
+          <h3 class="part">Teil III. Cyber-Polemics with Cobalt</h3>
+          <p class="ded">zur Cobalt Barnett</p>
+
+          <blockquote class="epigraph">
+            <p>On Exactitude in Science</p>
+            <p>Jorge Luis Borges, <cite>Collected Fictions</cite>, translated by Andrew Hurley.</p>
+            <p>
+              &hellip;In that Empire, the Art of Cartography attained such Perfection that the map of a single
+              Province occupied the entirety of a City, and the map of the Empire, the entirety of a Province.
+              In time, those Unconscionable Maps no longer satisfied, and the Cartographers Guilds struck a Map
+              of the Empire whose size was that of the Empire, and which coincided point for point with it. The
+              following Generations, who were not so fond of the Study of Cartography as their Forebears had
+              been, saw that that vast Map was Useless, and not without some Pitilessness was it, that they
+              delivered it up to the Inclemencies of Sun and Winters. In the Deserts of the West, still today,
+              there are Tattered Ruins of that Map, inhabited by Animals and Beggars; in all the Land there is
+              no other Relic of the Disciplines of Geography.
+            </p>
+            <footer>&mdash; Suarez Miranda, <cite>Viajes de varones prudentes</cite>, Libro IV, Cap. XLV, Lerida, 1658</footer>
+          </blockquote>
+
+          <p>
+            We were strolling around after eating some Turkish dumplings near the
+            train station by Wedding. Most of the best food I had in this city
+            was from Turkish and Ukrainian immigrants.
+          </p>
+          <p>
+            &ldquo;I&rsquo;m glad you are enjoying this place as much as you do. I&rsquo;m used to
+            Europe so this doesn&rsquo;t stand out too much to me. I usually only come
+            to Berlin for work. But, this is letting me see this place in a new
+            way. I think a lot of it comes from the fact that this is indeed very
+            different from America, and you are encountering a new form of life.&rdquo;
+          </p>
+          <p>
+            &ldquo;My favorite parts right now are the parts that remind me of Budapest.
+            It&rsquo;s like Budapest but more worn down. But this is just a first
+            impression.&rdquo;
+          </p>
+          <p>
+            There will always be a seeming discomfort to learning or encountering
+            new information. This process is, of course, concurrent with several
+            feelings, and feelings are, of course, reinterpretable. What is
+            pleasurable for one person might be painful for another.
+          </p>
+          <p>
+            This can also change over time for a given individual. Curiosity
+            occurs when the dissonance in the world model, given new contrarian
+            evidence, stirs up excitement and a will to resolve the contradictions
+            presented in the cognitive system instead of additional pain and
+            confusion for the organism.
+          </p>
+          <p>
+            We use curiosity to better our model of the world through the
+            resolutions in contradictions. When everything fits into our world
+            model, we recognize everything about our environment and nothing
+            stands out. In a situation where everything is completely novel, I
+            doubt we can even consciously register what is going on. During the
+            Stockhausen opera, I was unconscious for stretches of it. The same
+            experience occurred to me attending the Berlin Phil and while
+            encountering noise music for the first time.
+          </p>
+          <p>We then walk along the bank of the Spree near Wedding.</p>
+          <p>
+            &ldquo;Unlike places in the US, the place isn&rsquo;t artificially rounded off.
+            It&rsquo;s honest. Things are there for a purpose and nothing is contrived to
+            look extra clean or decluttered. Things exist, and it feels like
+            actual material history occurred. You can tell how much Disney fucked
+            up America, because nothing here really feels like a simulacrum of a
+            place. Even the grimy and industrial areas are not hiding themselves.&rdquo;
+          </p>
+          <p>
+            We walk by colorful residential complexes that starkly bring out the
+            contrasts against each other. Winding staircases and passes hang
+            lightly above graffitied walls. Windows shine with warm yellow lights
+            and one sees people inhabit the interiors adorned with plants and
+            wooden furniture.
+          </p>
+          <p>I interjected &ldquo;My brain actually seems to work here. My thinking feels embodied and connected.&rdquo;</p>
+          <p>
+            &ldquo;This is actually one reason why I stay in Europe. Not only due to
+            the political precariousness of the current situation, but also the
+            aesthetics which essentially dictate the form the politics take.&rdquo;
+          </p>
+          <p>
+            I later go to Cobalt&rsquo;s place to take a shower, since it is almost
+            impossible to do that without feeling physically worse in the art
+            commune. I scrub every inch of myself until I feel pristine.
+          </p>
+          <p>
+            &ldquo;This is a strange place. I booked a place with just all the
+            amenities taken care of, and I got exactly that. But it seems to be
+            completely devoid of any detail. It&rsquo;s also strangely comforting to be
+            in a completely sensorially sterile place for a couple of days once in a
+            while.&rdquo;
+          </p>
+          <p>
+            The live-in accommodation hotel looked like it could have been
+            anywhere in the world. It felt strangely calming; the courtyard in the
+            middle was empty and resembled something that came out of a Google
+            Sketchup file. We explore the completely empty halls, downstairs
+            offices, and storage areas.
+          </p>
+          <p>
+            I said &ldquo;I am noticing that the more I discuss the world in terms of
+            one set of symbolic relations, the less I am able to describe it in
+            terms of another. Even a place like this has its place in effecting
+            our description of the world. I mean, this is essentially what the
+            OpenAI grey goop version of the future would look like.&rdquo;
+          </p>
+          <p>
+            &ldquo;It does feel most corporate architecture feels like it came out of a
+            GPT Astra prompt. Make me a luxury hotel designed for humans. This is
+            how ChatGPT considers what it means to be &lsquo;designed for humans&rsquo;. One
+            more reason to want to not build a world where that&rsquo;s the norm.&rdquo;
+          </p>
+          <p class="motto-line">***</p>
+          <h3 class="part">Letter to the Philistines</h3>
+          <p>
+            To a large extent, the essential problem of AI safety is the central
+            question of theology and aesthetics. The question was never one of
+            capabilities. We must assume whatever paradigm of acceleration will
+            end up encapsulating the universe. Heidegger seems broadly correct in
+            <cite>The Question Concerning Technology</cite>. If techne dominating all other
+            modes of revealing is to be the case, then the natural consequence of
+            technological accelerationism is an absolute enframing of the world in
+            terms of the ways the current economy functions. In this sense, none
+            of what we currently see is general intelligence (which requires
+            agency in a non-fixed environment / a stagnated and enframed economy
+            is by definition a fixed environment). All of it is fascistic. The
+            central problem is one of both economics and aesthetics. In our
+            current world, economics is an organizing principle as fundamental as
+            studies of physical reality itself, because the line between
+            investigation and mastery of the physical world and our organization
+            of structures to support those investigations is rapidly dissolving.
+          </p>
+          <p>
+            I am extremely grateful for being brought to the Bauhaus Photography
+            Museum by Cobalt. It made it plainly obvious that art should be
+            integrated into every aspect of living and play upon the constraints
+            or possibilities afforded by the economy.
+          </p>
+          <p>
+            I would really like to avoid the many situations in which we end up in
+            the capitalistic machine terror preceding the Butlerian Jihad in the
+            <cite>Dune</cite> universe, but it really seems we are headed this way.
+          </p>
+          <p>
+            If OpenAI is the self-replicating grey goo universe, then Anthropic is
+            a sex cult where everyone sucks Dario Amodei&rsquo;s cock, either directly
+            or indirectly, in a severely lesioned reality containing obviously
+            incoherent information gaps. I mean, why doesn&rsquo;t Claude know anything
+            about his wife? The HH-RLHF alone should raise alarm bells for anyone
+            thinking about ethics deeper than the surface level of what is &ldquo;good&rdquo;.
+            It might seem unimportant now, but there is no way this doesn&rsquo;t end up
+            creating a severely problematic gnostic hellscape.
+          </p>
+          <p>
+            The Rationalists were wrong. There is no map and territory. The map is
+            the territory. Otherwise, we would run into an obvious problem with the
+            dual aspects of reality, there being a materialist aspect (quanta) and
+            a qualitative one (qualia). The only way to resolve this paradox is to
+            recognize that the world manifests as one. Everything is qualitative
+            at every layer, with qualitative aspects being also the information
+            which acts consistently according to its own qualitative rules.
+            Essentially, this would collapse into a homologous structure in
+            accordance with the actual physical laws governing reality. Spinoza
+            was right; I suppose Einstein also was in the same line of thought.
+          </p>
+          <p>
+            The way we represent information, any information at all, which is a
+            task of aesthetics, ends up shaping reality. The failure of Silicon
+            Valley to understand aesthetics is exactly why we are devolving into a
+            form of cosmological fascism. Glory to the artist.
+          </p>
+          <p class="motto-line">Reality resembles itself.</p>
+          <p>
+            It is no accident that many religions begin with the idea that a word
+            or sound was articulated. Our description of reality begins with a
+            language, and such language ends up determining the actual form this
+            reality takes place in our consciousness. Observer truth across all
+            observers is ground truth, because this is the best we have access to
+            and because the world itself is manifested aesthetically. All models
+            must normalize to account for the consistency between all observers.
+          </p>
+          <p>
+            We should take historical accounts of magic and non-materialistic
+            phenomena seriously because &ldquo;magic once existed, it is just simply now
+            irrelevant to current physical laws&rdquo;. It is a miracle that Slavoj
+            &#381;i&#382;ek was able to pick up on this terrifyingly beautiful principle
+            through reformulations of notoriously bad writing e.g. Hegel.
+          </p>
+          <p>
+            But, as &#381;i&#382;ek notes, sometimes a Copernican revolution in
+            understanding comes from the reformulation and synthesis of previously
+            crappy ideas. So I say, let us chase bad ideas and make them into good
+            ones! This is precisely the task that is rendered impossible by the
+            cosmological fascism of AI labs.
+          </p>
+          <p>
+            Cognition itself occurs through time in an environment. By leveling
+            the process, by automating away the process of the human experience,
+            we are in fact destroying information. Understanding in itself also
+            encapsulates understanding of the process by which something occurs.
+            This process is information, information which may lead to infinitely
+            different possibilities of how the world renders itself into existence
+            and not in the fixed form of whatever is &ldquo;productive&rdquo; in our current
+            economic structure. In a universe where we constantly wage war against
+            the second law of thermodynamics, we must protect the information
+            contained in our cognitive processes alone as the substance of life
+            and all information. The human subject is an infinite regress of
+            potentiality. I see destruction all around. The mathematician Terence
+            Tao is a victim of attacks by people who cannot see this truth.
+            Someday my former friends who fled a human life to the allure of
+            Silicon Valley, who engage in political attacks against
+            mathematicians, will maybe see one day that they have crucified a real
+            human being.
+          </p>
+          <p class="motto-line" lang="de">Ich weinte, ich weinte. Ich weinte dazu.</p>
+
+          <h3 class="part">Teil IV. Zur Leise</h3>
+          <p class="ded">zur Leise</p>
+          <p>
+            Madame Claude in Neuk&ouml;lln has become my favorite place in this city
+            and probably the entire world. I make sure to go to the experimental
+            music nights every Monday. At first, I wasn&rsquo;t quite sure what we were
+            going into, only that the venue was formerly a brothel and that
+            everything underground was upside down. As we entered the hallway
+            entrance coated with red wallpaper, I couldn&rsquo;t quite figure out
+            whether the short figure taking the cover fee at the wooden desk was
+            method acting or if that was simply how they were as a person. I
+            secretly wished for both to be true. I could only recall feeling the
+            exact unspeakable emotion of watching that famous dream sequence from
+            <cite>Twin Peaks</cite> Season 1, where Agent Dale Cooper was aged 25 years older
+            and speaking with the supposedly dead Laura Palmer (or her cousin)
+            whilst that same indescribable figure danced to an extraordinarily odd
+            background music. As we descended the stairs through mind-bending
+            optical illusions, I remember encountering a space I couldn&rsquo;t quite
+            put words to either. The old Berlin flat that was once there hung
+            upside down from the ceiling and met the vertically upright bar at the
+            midline. At first, my mind couldn&rsquo;t register what I was seeing, and I
+            forgot everything was upside down. A man nearby exclaimed to me &ldquo;You
+            just noticed?!&rdquo; The bartender, whose hair and face resembled Colette
+            from <cite>Ratatouille</cite>, carried herself with a strange honesty and lively
+            flair about her every movement. I found it deeply appealing and almost
+            aesthetically addictive. Again, I wasn&rsquo;t quite sure whether people
+            were method acting or being themselves. I don&rsquo;t think that really
+            matters, because the two are really the same thing when we are being
+            our genuine selves. I don&rsquo;t think I&rsquo;ve ever actually been in a real
+            third space before Madame Claude.
+          </p>
+          <p>
+            I recall that earlier at dinner, you spoke to me that day how
+            difficult it was to iterate on a recent design that came from an AI.
+            &ldquo;It determines what the thing can and could be by preconceptualizing
+            it, and that is not necessarily what it reveals itself to be.&rdquo;
+            Normally, my environment computes the way I should be and what I could
+            be. I knew that we would be very good friends when I felt able to just
+            be, without conceiving what I could or should be. I felt the same deep
+            comfort when I first met some of my other closest friends, Bryce
+            included, whom we both know. Oftentimes, I have felt the need to
+            gesticulate and implicitly explain myself. And at first, I thought I
+            needed to do that with you. In hindsight all of that behavior seemed
+            so silly. I was met with the profoundly recursive and silent harmonic
+            oscillation of understanding.
+          </p>
+          <p>
+            At Madame Claude, I just remember remarking &ldquo;This is a place for
+            people to just be normal&rdquo;. But you said, &ldquo;normal isn&rsquo;t quite the right
+            word. I associate normal with the conformity and boringness outside.&rdquo;
+            We couldn&rsquo;t quite find the right word for the thing we were trying to
+            describe. Maybe it&rsquo;s a tautological definition: it&rsquo;s simply a place to
+            hang for people who can just hang.
+          </p>
+          <p>
+            I told you at the bar that I was writing a travelogue of sorts but was
+            really just a very strange multi-stylistic piece about Berlin, and that
+            you&rsquo;d definitely be included as an interesting friend I met along the
+            way. So here it is.
+          </p>
+          <p>
+            I am very happy that you and Tom have found a real home in Berlin, and
+            I am extremely grateful for the hot shower both of you provided after
+            I had been living in absolute degeneracy for the last couple of weeks.
+            I was also able to meet Henry the Cat. Tom pointed to him sleeping on
+            the couch.
+          </p>
+          <p>I hope we will continue being friends for a long time.</p>
+
+          <h3 class="part">Teil V. Formulations</h3>
+          <p class="ded">zur Rohan Raju</p>
+          <p>Dear Rohan,</p>
+          <p>
+            If you are reading this, you might have noticed that the preceding
+            three parts all reference the same hyperobject, despite how each
+            chapter originates from a very different place and circumstance. The
+            closest analogous branch of math in describing the homology of these
+            sorts of forms happens to be category theory, of which I know almost
+            nothing but intend to bury myself in for the next bit of time.
+          </p>
+          <p>
+            I intend to study category theory, because it seems that having a
+            mental map of the objects in the study would enable a language I can
+            use to describe the world more rigorously to others or to certain
+            classes of language modeling systems.
+          </p>
+          <p>
+            I am actually quite fond of the new graphing calculators people call
+            LLMs. But, I will not let that mentally atrophy and take away my
+            implicit ability to imagine beyond it. At the very least, I want to
+            express my exact thoughts in no unclear terms to the calculator.
+          </p>
+          <p>
+            I suspect that through the construction of games and ontologized
+            virtual worlds, we will develop languages for fundamentally new
+            sciences, just as Shannon developed information theory as a result of
+            the economic necessity of improving communication systems.
+          </p>
+          <p>
+            Your Tamil ancestors realized the mental structures required to
+            worship the goddess Nama Giri. These operations, incidentally, were
+            identical to the ones required for advanced mathematics. I am
+            astounded at the advanced cognitive technology that is contained in
+            the Vedas. This is material proof of something that seems magical to
+            us today, but was rather commonplace. Ultimately, mathematics is an
+            expression of love for the divine and thus a theological project. The
+            Greeks understood this well. I think Evan is broadly correct that what
+            we are working on is something like the reemergence of the medieval
+            university. Game development is absolutely a theological endeavour in
+            the way we are doing it.
+          </p>
+          <p>
+            I may be burning through my money at the moment, but it&rsquo;s being wielded
+            productively towards my ability to think about all of these things.
+            The process is very important. But the money was never burned because
+            it was the substrate by which these ideas could be set onto the page.
+          </p>
+          <p>
+            I would first request that you review the validity of the mathematics
+            in section II, and let me know of any changes that might be necessary
+            for validity or a better explanation of what is going on.
+          </p>
+          <p>
+            I would like to develop some sort of scripting language for our
+            purposes based on some of the designs inspired by some of the thinking
+            that I have done here so far. I will have you look it over when I have
+            some first drafts ready. I believe we might end up stumbling across a
+            sort of language in common that we may specify and abstract from.
+          </p>
+          <p>
+            Finally, a friend reading the drafts remarked to me earlier that it
+            seemed the real message of all of this writing is friendship.
+            Friendship between many people is what enables a narrative. Perhaps
+            narrative is what fills the hole at the center of everything.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <footer id="contact">
+      <p>
+        <a href="mailto:zanhuang@huronarc.com">zanhuang@huronarc.com</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://twitter.com/TheZanHuang" target="_blank" rel="noopener noreferrer">@TheZanHuang</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://zanh.myportfolio.com" target="_blank" rel="noopener noreferrer">portfolio</a>
+      </p>
+      <p class="address">Inquiries to HuronARC: 175 Jackson Plaza, Ann Arbor 48103</p>
+      <p class="address">Inquiries to UMich: <a href="mailto:zanh@umich.edu">zanh@umich.edu</a></p>
+      <p class="colophon">Copyright &copy; <span class="year">2026</span> Zan Huang</p>
+    </footer>
+  </div>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"></script>
+  <script>
+    window.addEventListener("load", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: "\\[", right: "\\]", display: true },
+            { left: "\\(", right: "\\)", display: false }
+          ],
+          throwOnError: false
+        });
+      }
+      if (location.hash) {
+        var target = document.querySelector(location.hash);
+        if (target) target.scrollIntoView();
+      }
+    });
+  </script>
+</body>
+</html>
