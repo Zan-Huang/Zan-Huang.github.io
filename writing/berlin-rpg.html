@@ -1304,18 +1304,21 @@
       var meta = document.getElementById("theme-color");
       var baseTheme = meta ? meta.getAttribute("content") : "#f6f3ec";
       var applied = "";
-      var BASE_INK = [28, 27, 24];
-      var BASE_MUTED = [90, 86, 76];
-      var BASE_LINK = [26, 61, 143];
-      var BASE_RULE = [200, 194, 180];
-      var CREAM = [246, 239, 232];
+      var paras = [];
+      var essay = document.querySelector(".essay-body");
+      if (essay) {
+        var bits = essay.querySelectorAll("p, blockquote, figure, h3");
+        for (var b = 0; b < bits.length; b++) {
+          if (!bits[b].closest("nav")) paras.push(bits[b]);
+        }
+      }
       var sections = [
-        { glow: [255, 246, 212], mid: [230, 204, 120], deep: [125, 154, 98], edge: [243, 230, 188], link: [26, 61, 143], bar: [232, 210, 140], lift: 0 },
-        { glow: [244, 248, 249], mid: [176, 206, 214], deep: [90, 140, 156], edge: [214, 230, 234], link: [26, 61, 143], bar: [186, 214, 222], lift: 0 },
-        { glow: [109, 147, 224], mid: [30, 74, 154], deep: [12, 32, 72], edge: [22, 53, 107], link: [213, 226, 255], bar: [12, 32, 72], lift: 1 },
-        { glow: [224, 194, 122], mid: [92, 70, 48], deep: [26, 20, 14], edge: [58, 44, 28], link: [240, 192, 20], bar: [26, 20, 14], lift: 1 },
-        { glow: [226, 59, 76], mid: [154, 26, 44], deep: [58, 12, 20], edge: [76, 16, 24], link: [240, 192, 20], bar: [110, 20, 34], lift: 1 },
-        { glow: [125, 206, 160], mid: [31, 107, 69], deep: [12, 46, 28], edge: [20, 61, 40], link: [231, 246, 200], bar: [12, 46, 28], lift: 1 }
+        { glow: [255, 246, 212], mid: [230, 204, 120], deep: [125, 154, 98], edge: [243, 230, 188], veil: 0.34 },
+        { glow: [244, 248, 249], mid: [176, 206, 214], deep: [90, 140, 156], edge: [214, 230, 234], veil: 0.42 },
+        { glow: [109, 147, 224], mid: [30, 74, 154], deep: [12, 32, 72], edge: [22, 53, 107], veil: 0.62 },
+        { glow: [224, 194, 122], mid: [92, 70, 48], deep: [26, 20, 14], edge: [58, 44, 28], veil: 0.64 },
+        { glow: [226, 59, 76], mid: [154, 26, 44], deep: [58, 12, 20], edge: [76, 16, 24], veil: 0.6 },
+        { glow: [125, 206, 160], mid: [31, 107, 69], deep: [12, 46, 28], edge: [20, 61, 40], veil: 0.62 }
       ];
 
       function clamp(t) { return Math.max(0, Math.min(1, t)); }
@@ -1333,10 +1336,28 @@
           mid: lerpArr(a.mid, b.mid, t),
           deep: lerpArr(a.deep, b.deep, t),
           edge: lerpArr(a.edge, b.edge, t),
-          link: lerpArr(a.link, b.link, t),
-          bar: lerpArr(a.bar, b.bar, t),
-          lift: lerp(a.lift, b.lift, t)
+          veil: lerp(a.veil, b.veil, t)
         };
+      }
+      function cream() {
+        var raw = getComputedStyle(root).getPropertyValue("--bg").trim();
+        if (raw.charAt(0) === "#" && raw.length >= 7) {
+          var n = parseInt(raw.slice(1, 7), 16);
+          return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+        }
+        return [246, 243, 236];
+      }
+      function phrase() {
+        if (!paras.length) return { i: 0, p: 0 };
+        var line = (window.innerHeight || 800) * 0.4;
+        var idx = 0;
+        for (var i = 0; i < paras.length; i++) {
+          if (paras[i].getBoundingClientRect().top <= line) idx = i;
+        }
+        var el = paras[idx];
+        var top = el.getBoundingClientRect().top;
+        var h = Math.max(el.offsetHeight, 24);
+        return { i: idx, p: clamp((line - top) / h) };
       }
       function clear() {
         root.classList.remove("leise");
@@ -1351,26 +1372,43 @@
         field.style.opacity = "0";
         if (meta) meta.setAttribute("content", baseTheme);
       }
-      function paintPalette(pal, travel, opacity) {
-        var lift = pal.lift * opacity;
-        var x = reduce ? 50 : 46 + Math.sin(travel * Math.PI * 2.4) * 24;
-        var yPos = reduce ? 42 : 18 + travel * 58;
-        var angle = reduce ? 168 : 128 + travel * 210;
-        var band = reduce ? 46 : 24 + travel * 38;
+      function paintPalette(pal, opacity) {
+        var step = phrase();
+        var spots = [[20, 16], [76, 14], [16, 74], [82, 68], [48, 24], [28, 58], [70, 40], [38, 82]];
+        var here = spots[step.i % spots.length];
+        var nxt = spots[(step.i + 1) % spots.length];
+        var along = reduce ? 0 : smooth(step.p);
+        var x = lerp(here[0], nxt[0], along);
+        var yPos = lerp(here[1], nxt[1], along);
+        var angle = reduce ? 160 : (step.i * 67 + along * 52) % 360;
+        var band = 22 + (step.i % 5) * 11 + along * 14;
+        var paper = cream();
+        var veil = pal.veil;
+        function tint(c) { return lerpArr(c, paper, veil); }
+        var stops = [pal.glow, pal.mid, pal.edge, pal.deep];
+        var turn = step.i % 4;
+        function pick(offset) {
+          var from = stops[(turn + offset) % 4];
+          var to = stops[(turn + 1 + offset) % 4];
+          return tint(lerpArr(from, to, along));
+        }
+        var glow = pick(0);
+        var mid = pick(1);
+        var edge = pick(2);
+        var deep = pick(3);
         field.style.opacity = String(opacity);
         field.style.background =
-          "radial-gradient(ellipse at " + x.toFixed(1) + "% " + yPos.toFixed(1) + "%, " + rgb(pal.glow) + " 0%, " + rgb(pal.mid) + " 36%, rgba(" + Math.round(pal.deep[0]) + "," + Math.round(pal.deep[1]) + "," + Math.round(pal.deep[2]) + ",0) 70%)," +
-          "linear-gradient(" + angle.toFixed(1) + "deg, " + rgb(pal.deep) + " 0%, " + rgb(pal.mid) + " " + band.toFixed(1) + "%, " + rgb(pal.glow) + " 58%, " + rgb(pal.edge) + " 100%)";
+          "radial-gradient(ellipse at " + x.toFixed(1) + "% " + yPos.toFixed(1) + "%, " + rgb(glow) + " 0%, " + rgb(mid) + " 42%, rgba(" + Math.round(deep[0]) + "," + Math.round(deep[1]) + "," + Math.round(deep[2]) + ",0) 78%)," +
+          "linear-gradient(" + angle.toFixed(1) + "deg, " + rgb(deep) + " 0%, " + rgb(mid) + " " + band.toFixed(1) + "%, " + rgb(glow) + " 62%, " + rgb(edge) + " 100%)";
         root.classList.add("leise");
-        root.style.setProperty("--leise", lift.toFixed(3));
-        root.style.setProperty("--leise-accent", rgb(pal.link));
-        root.style.setProperty("--leise-bar", rgb(pal.bar));
-        root.style.setProperty("--ink", rgb(lerpArr(BASE_INK, CREAM, lift)));
-        root.style.setProperty("--muted", rgb(lerpArr(BASE_MUTED, [240, 220, 206], lift)));
-        root.style.setProperty("--link", rgb(lerpArr(BASE_LINK, pal.link, Math.max(lift, opacity * 0.35))));
-        root.style.setProperty("--rule", rgb(lerpArr(BASE_RULE, pal.mid, opacity)));
+        root.style.setProperty("--leise", "0");
+        root.style.setProperty("--leise-bar", rgb(mid));
+        root.style.removeProperty("--ink");
+        root.style.removeProperty("--muted");
+        root.style.removeProperty("--link");
+        root.style.removeProperty("--rule");
         document.body.style.background = "transparent";
-        if (meta) meta.setAttribute("content", opacity > 0.45 ? rgb(pal.bar) : baseTheme);
+        if (meta) meta.setAttribute("content", baseTheme);
       }
       function paint() {
         var y = window.scrollY;
@@ -1387,7 +1425,7 @@
           if (key === applied) return;
           applied = key;
           if (fadeIn < 0.004) { clear(); return; }
-          paintPalette(sections[0], 0, fadeIn);
+          paintPalette(sections[0], fadeIn);
           return;
         }
         var last = marks.length - 2;
@@ -1397,7 +1435,7 @@
           if (key === applied) return;
           applied = key;
           if (fadeOut < 0.004) { clear(); return; }
-          paintPalette(sections[last], 1, fadeOut);
+          paintPalette(sections[last], fadeOut);
           return;
         }
         var idx = 0;
@@ -1408,11 +1446,11 @@
         var pal = sections[idx];
         if (idx > 0 && p < edge) pal = mixPal(sections[idx - 1], sections[idx], smooth(p / edge));
         else if (idx < last && p > 1 - edge) pal = mixPal(sections[idx], sections[idx + 1], smooth((p - (1 - edge)) / edge));
-        var travel = reduce ? 0.45 : (idx + p) / sections.length;
-        key = idx + ":" + Math.round(p * 48) + ":" + Math.round(pal.lift * 20);
+        var step = phrase();
+        key = idx + ":" + step.i + ":" + Math.round(step.p * 5);
         if (key === applied) return;
         applied = key;
-        paintPalette(pal, travel, 1);
+        paintPalette(pal, 1);
       }
       var ticking = false;
       function queue() {
