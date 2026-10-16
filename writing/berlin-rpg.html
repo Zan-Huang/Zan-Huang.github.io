@@ -40,10 +40,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"/>
-  <link rel="stylesheet" href="../styles.css?v=77"/>
+  <link rel="stylesheet" href="../styles.css?v=78"/>
 </head>
 <body>
-  <div id="leise-field" aria-hidden="true"></div>
+  <div id="leise-field" aria-hidden="true"><span></span></div>
   <div class="wrap">
     <header>
       <a class="seal" href="../index.html"><img src="../seal.png" alt="Zan Huang seal"/></a>
@@ -1396,6 +1396,7 @@
         var mid = pick(1);
         var edge = pick(2);
         var deep = pick(3);
+        field.style.setProperty("--drift", "rgba(" + Math.round(pal.mid[0]) + "," + Math.round(pal.mid[1]) + "," + Math.round(pal.mid[2]) + ",0.28)");
         field.style.opacity = String(opacity);
         field.style.background =
           "radial-gradient(ellipse at " + x.toFixed(1) + "% " + yPos.toFixed(1) + "%, " + rgb(glow) + " 0%, " + rgb(mid) + " 42%, rgba(" + Math.round(deep[0]) + "," + Math.round(deep[1]) + "," + Math.round(deep[2]) + ",0) 78%)," +
