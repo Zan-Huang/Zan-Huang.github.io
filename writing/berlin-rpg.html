@@ -40,10 +40,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"/>
-  <link rel="stylesheet" href="../styles.css?v=79"/>
+  <link rel="stylesheet" href="../styles.css?v=80"/>
 </head>
 <body>
-  <div id="leise-field" aria-hidden="true"><span></span></div>
+  <div id="leise-field" aria-hidden="true">
+    <div class="rail left"><div class="mark"><span></span><i></i></div></div>
+    <div class="rail right"><div class="mark"><span></span><i></i></div></div>
+  </div>
   <div class="wrap">
     <header>
       <a class="seal" href="../index.html"><img src="../seal.png" alt="Zan Huang seal"/></a>
@@ -1374,45 +1377,45 @@
       }
       function paintPalette(pal, opacity, shape) {
         var step = phrase();
-        var spots = [[20, 16], [76, 14], [16, 74], [82, 68], [48, 24], [28, 58], [70, 40], [38, 82]];
-        var here = spots[step.i % spots.length];
-        var nxt = spots[(step.i + 1) % spots.length];
         var along = reduce ? 0 : smooth(step.p);
-        var x = lerp(here[0], nxt[0], along);
-        var yPos = lerp(here[1], nxt[1], along);
-        var angle = reduce ? 160 : (step.i * 67 + along * 52) % 360;
-        var band = 22 + (step.i % 5) * 11 + along * 14;
-        var paper = cream();
-        var veil = pal.veil;
-        function tint(c) { return lerpArr(c, paper, veil); }
-        var stops = [pal.glow, pal.mid, pal.edge, pal.deep];
-        var turn = step.i % 4;
-        function pick(offset) {
-          var from = stops[(turn + offset) % 4];
-          var to = stops[(turn + 1 + offset) % 4];
-          return tint(lerpArr(from, to, along));
-        }
-        var glow = pick(0);
-        var mid = pick(1);
-        var edge = pick(2);
-        var deep = pick(3);
-        field.style.setProperty("--drift", "rgba(" + Math.round(pal.mid[0]) + "," + Math.round(pal.mid[1]) + "," + Math.round(pal.mid[2]) + ",0.28)");
+        field.style.setProperty("--read", (along * 22).toFixed(1) + "px");
+        field.style.setProperty("--drift", "rgba(" + Math.round(pal.mid[0]) + "," + Math.round(pal.mid[1]) + "," + Math.round(pal.mid[2]) + ",0.55)");
+        field.style.setProperty("--line", "rgba(" + Math.round(pal.mid[0]) + "," + Math.round(pal.mid[1]) + "," + Math.round(pal.mid[2]) + ",1)");
         field.style.opacity = String(opacity);
+        field.style.background = "none";
         if (shape) field.setAttribute("data-shape", shape);
-        field.style.background =
-          "radial-gradient(ellipse at " + x.toFixed(1) + "% " + yPos.toFixed(1) + "%, " + rgb(glow) + " 0%, " + rgb(mid) + " 42%, rgba(" + Math.round(deep[0]) + "," + Math.round(deep[1]) + "," + Math.round(deep[2]) + ",0) 78%)," +
-          "linear-gradient(" + angle.toFixed(1) + "deg, " + rgb(deep) + " 0%, " + rgb(mid) + " " + band.toFixed(1) + "%, " + rgb(glow) + " 62%, " + rgb(edge) + " 100%)";
         root.classList.add("leise");
         root.style.setProperty("--leise", "0");
-        root.style.setProperty("--leise-bar", rgb(mid));
-        root.style.removeProperty("--ink");
-        root.style.removeProperty("--muted");
-        root.style.removeProperty("--link");
-        root.style.removeProperty("--rule");
-        document.body.style.background = "transparent";
+        root.style.removeProperty("--leise-bar");
+        document.body.style.background = "";
         if (meta) meta.setAttribute("content", baseTheme);
       }
+      function place() {
+        if (!essay) return;
+        var col = essay.getBoundingClientRect();
+        var wide = window.innerWidth >= 860;
+        var w = wide ? 16 : 8;
+        var gap = 4;
+        field.style.setProperty("--rail", w + "px");
+        var leftRail = field.querySelector(".rail.left");
+        var rightRail = field.querySelector(".rail.right");
+        if (leftRail) {
+          leftRail.style.left = Math.max(0, Math.round(col.left - gap - w)) + "px";
+          leftRail.style.right = "auto";
+        }
+        if (rightRail) {
+          rightRail.style.left = Math.min(window.innerWidth - w, Math.round(col.right + gap)) + "px";
+          rightRail.style.right = "auto";
+        }
+      }
+      function track() {
+        place();
+        var step = phrase();
+        var along = reduce ? 0 : smooth(step.p);
+        field.style.setProperty("--read", (along * 22).toFixed(1) + "px");
+      }
       function paint() {
+        track();
         var y = window.scrollY;
         var vh = window.innerHeight || 800;
         var marks = [];

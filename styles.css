@@ -2321,16 +2321,62 @@ body:has(#leise-field) {
 }
 
 #leise-field {
+  --rail: 0.5rem;
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 4;
   pointer-events: none;
   opacity: 0;
-  overflow: hidden;
-  background: #3a0c14;
+  background: none;
 }
 
-#leise-field span {
+#leise-field .rail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--rail);
+  overflow: hidden;
+}
+
+#leise-field .rail.left { left: 0; }
+#leise-field .rail.right { right: 0; }
+
+#leise-field .mark {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+  height: 0;
+  transform: translateY(var(--read, 0px));
+}
+
+#leise-field .mark span { z-index: 0; }
+
+#leise-field .mark i {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  height: 2px;
+  background: var(--line, transparent);
+}
+
+#leise-field .rail.left .mark i { left: 0; right: 0; }
+#leise-field .rail.right .mark i { left: 0; right: 0; }
+
+#leise-field .rail.left .mark i::after,
+#leise-field .rail.right .mark i::before {
+  content: "";
+  position: absolute;
+  top: -0.55rem;
+  width: 2px;
+  height: 1.15rem;
+  background: var(--line, transparent);
+}
+
+#leise-field .rail.left .mark i::after { right: 0; }
+#leise-field .rail.right .mark i::before { left: 0; }
+
+#leise-field .rail span {
   position: absolute;
   margin: 0;
   border: 0 solid transparent;
@@ -2340,92 +2386,98 @@ body:has(#leise-field) {
   pointer-events: none;
 }
 
-#leise-field[data-shape="willow"] span {
-  width: 62%;
-  height: 150%;
-  left: 19%;
-  top: -28%;
+#leise-field[data-shape="willow"] .rail span {
+  width: 140%;
+  height: 5.4rem;
+  left: -20%;
+  top: -5.7rem;
   border-radius: 50%;
-  background: radial-gradient(ellipse at 50% 8%, var(--drift, transparent) 0%, transparent 58%);
+  background: radial-gradient(ellipse at 50% 100%, var(--drift, transparent) 0%, transparent 72%);
   animation: wash-sway 8s ease-in-out infinite alternate;
 }
 
-#leise-field[data-shape="river"] span {
+#leise-field[data-shape="river"] .rail span {
   width: 180%;
-  height: 38%;
+  height: 0.55rem;
   left: -40%;
-  top: 34%;
-  border-radius: 50%;
-  background: linear-gradient(90deg, transparent, var(--drift, transparent) 38%, var(--drift, transparent) 62%, transparent);
-  animation: wash-current 12s ease-in-out infinite alternate;
+  top: -1rem;
+  border-radius: 1rem;
+  background: var(--drift, transparent);
+  animation: wash-current 7s ease-in-out infinite alternate;
 }
 
-#leise-field[data-shape="map"] span {
-  width: 72%;
-  height: 72%;
-  left: 14%;
-  top: 14%;
+#leise-field[data-shape="map"] .rail span {
+  width: 0.95rem;
+  height: 0.95rem;
+  left: 50%;
+  top: -1.25rem;
+  margin: 0 0 0 -0.48rem;
   background: var(--drift, transparent);
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  animation: wash-sheet 20s ease-in-out infinite alternate;
+  animation: wash-sheet 16s ease-in-out infinite alternate;
 }
 
-#leise-field[data-shape="slab"] span {
-  width: 130%;
-  height: 28%;
-  left: -15%;
-  top: 36%;
-  background: var(--drift, transparent);
-  animation: wash-slab 16s ease-in-out infinite alternate;
-}
-
-#leise-field[data-shape="wallpaper"] span {
+#leise-field[data-shape="slab"] .rail span {
   width: 160%;
-  height: 160%;
+  height: 0.4rem;
   left: -30%;
-  top: -30%;
-  background:
-    repeating-linear-gradient(45deg, var(--drift, transparent) 0 4px, transparent 4px 34px),
-    repeating-linear-gradient(-45deg, var(--drift, transparent) 0 4px, transparent 4px 34px);
-  animation: wash-paper 18s ease-in-out infinite alternate;
+  top: -0.75rem;
+  background: var(--drift, transparent);
+  animation: wash-slab 9s ease-in-out infinite alternate;
 }
 
-#leise-field[data-shape="proof"] span {
-  width: 78vmin;
-  height: 78vmin;
+#leise-field[data-shape="wallpaper"] .rail span {
+  width: 2.2rem;
+  height: 2.2rem;
   left: 50%;
-  top: 46%;
-  margin: -39vmin 0 0 -39vmin;
+  top: -2.55rem;
+  margin: 0 0 0 -1.1rem;
+  background:
+    repeating-linear-gradient(45deg, var(--drift, transparent) 0 2px, transparent 2px 7px),
+    repeating-linear-gradient(-45deg, var(--drift, transparent) 0 2px, transparent 2px 7px);
+  animation: wash-paper 14s ease-in-out infinite alternate;
+}
+
+#leise-field[data-shape="proof"] .rail span {
+  width: 1.15rem;
+  height: 1.15rem;
+  left: 50%;
+  top: -1.5rem;
+  margin: 0 0 0 -0.58rem;
   border-radius: 50%;
-  border-width: 12px;
+  border-width: 2px;
   border-style: solid;
   border-color: transparent var(--drift, transparent) var(--drift, transparent) transparent;
-  animation: wash-proof 22s linear infinite;
+  animation: wash-proof 18s linear infinite;
+}
+
+@media (min-width: 860px) {
+  #leise-field { --rail: 1rem; }
 }
 
 @keyframes wash-sway {
-  from { transform: rotate(-7deg) translate3d(-3%, 0, 0); }
-  to { transform: rotate(8deg) translate3d(4%, 0, 0); }
+  from { transform: rotate(-8deg); }
+  to { transform: rotate(8deg); }
 }
 
 @keyframes wash-current {
-  from { transform: translate3d(-7%, 6%, 0); }
-  to { transform: translate3d(7%, -8%, 0); }
+  from { transform: translate3d(-18%, 0, 0); }
+  to { transform: translate3d(18%, 0, 0); }
 }
 
 @keyframes wash-sheet {
-  from { transform: rotate(-12deg); }
-  to { transform: rotate(14deg); }
+  from { transform: rotate(-16deg); }
+  to { transform: rotate(16deg); }
 }
 
 @keyframes wash-slab {
-  from { transform: translate3d(-8%, 16%, 0); }
-  to { transform: translate3d(8%, -18%, 0); }
+  from { transform: translate3d(-12%, 0, 0); }
+  to { transform: translate3d(12%, 0, 0); }
 }
 
 @keyframes wash-paper {
-  from { transform: rotate(-7deg) scale(1.2); }
-  to { transform: rotate(7deg) scale(1.2); }
+  from { transform: rotate(-10deg); }
+  to { transform: rotate(10deg); }
 }
 
 @keyframes wash-proof {
@@ -2433,7 +2485,7 @@ body:has(#leise-field) {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #leise-field span {
+  #leise-field .rail span {
     animation: none;
   }
 }
