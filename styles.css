@@ -2330,9 +2330,9 @@ body:has(#leise-field) {
 }
 
 html.leise .berlin .ded {
-  color: color-mix(in srgb, var(--built), #f0c014 calc(var(--leise) * 100%));
+  color: color-mix(in srgb, var(--built), var(--leise-accent, #f0c014) calc(var(--leise) * 100%));
 }
 
 html.leise .berlin .berlin-toc {
-  background: color-mix(in srgb, #6e1422 calc(var(--leise) * 100%), var(--bg));
+  background: var(--leise-bar, var(--bg));
 }

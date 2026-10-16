@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"/>
-  <link rel="stylesheet" href="../styles.css?v=76"/>
+  <link rel="stylesheet" href="../styles.css?v=77"/>
 </head>
 <body>
   <div id="leise-field" aria-hidden="true"></div>
@@ -1290,72 +1290,129 @@
   <script>
     (function () {
       var field = document.getElementById("leise-field");
-      var from = document.getElementById("teil-iv");
-      var to = document.getElementById("teil-v");
-      if (!field || !from || !to) return;
+      var order = ["teil-i", "teil-ii", "teil-iii", "philistines", "teil-iv", "teil-v"];
+      var heads = [];
+      for (var h = 0; h < order.length; h++) {
+        var node = document.getElementById(order[h]);
+        if (!node) return;
+        heads.push(node);
+      }
+      var tail = document.getElementById("contact");
+      if (!field || !tail) return;
       var root = document.documentElement;
       var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       var meta = document.getElementById("theme-color");
       var baseTheme = meta ? meta.getAttribute("content") : "#f6f3ec";
-      var applied = -1;
+      var applied = "";
+      var BASE_INK = [28, 27, 24];
+      var BASE_MUTED = [90, 86, 76];
+      var BASE_LINK = [26, 61, 143];
+      var BASE_RULE = [200, 194, 180];
+      var CREAM = [246, 239, 232];
+      var sections = [
+        { glow: [255, 246, 212], mid: [230, 204, 120], deep: [125, 154, 98], edge: [243, 230, 188], link: [26, 61, 143], bar: [232, 210, 140], lift: 0 },
+        { glow: [244, 248, 249], mid: [176, 206, 214], deep: [90, 140, 156], edge: [214, 230, 234], link: [26, 61, 143], bar: [186, 214, 222], lift: 0 },
+        { glow: [109, 147, 224], mid: [30, 74, 154], deep: [12, 32, 72], edge: [22, 53, 107], link: [213, 226, 255], bar: [12, 32, 72], lift: 1 },
+        { glow: [224, 194, 122], mid: [92, 70, 48], deep: [26, 20, 14], edge: [58, 44, 28], link: [240, 192, 20], bar: [26, 20, 14], lift: 1 },
+        { glow: [226, 59, 76], mid: [154, 26, 44], deep: [58, 12, 20], edge: [76, 16, 24], link: [240, 192, 20], bar: [110, 20, 34], lift: 1 },
+        { glow: [125, 206, 160], mid: [31, 107, 69], deep: [12, 46, 28], edge: [20, 61, 40], link: [231, 246, 200], bar: [12, 46, 28], lift: 1 }
+      ];
 
-      function mix(a, b, t) {
-        return "rgb(" +
-          Math.round(a[0] + (b[0] - a[0]) * t) + "," +
-          Math.round(a[1] + (b[1] - a[1]) * t) + "," +
-          Math.round(a[2] + (b[2] - a[2]) * t) + ")";
+      function clamp(t) { return Math.max(0, Math.min(1, t)); }
+      function smooth(t) { t = clamp(t); return t * t * (3 - 2 * t); }
+      function lerp(a, b, t) { return a + (b - a) * t; }
+      function lerpArr(a, b, t) {
+        return [lerp(a[0], b[0], t), lerp(a[1], b[1], t), lerp(a[2], b[2], t)];
       }
-      function smooth(t) {
-        t = Math.max(0, Math.min(1, t));
-        return t * t * (3 - 2 * t);
+      function rgb(c) {
+        return "rgb(" + Math.round(c[0]) + "," + Math.round(c[1]) + "," + Math.round(c[2]) + ")";
       }
-      function envelope(p) {
-        var edge = 0.16;
-        if (p <= 0 || p >= 1) return 0;
-        if (p < edge) return smooth(p / edge);
-        if (p > 1 - edge) return smooth((1 - p) / edge);
-        return 1;
+      function mixPal(a, b, t) {
+        return {
+          glow: lerpArr(a.glow, b.glow, t),
+          mid: lerpArr(a.mid, b.mid, t),
+          deep: lerpArr(a.deep, b.deep, t),
+          edge: lerpArr(a.edge, b.edge, t),
+          link: lerpArr(a.link, b.link, t),
+          bar: lerpArr(a.bar, b.bar, t),
+          lift: lerp(a.lift, b.lift, t)
+        };
       }
-      function paint() {
-        var y = window.scrollY;
-        var vh = window.innerHeight || 800;
-        var start = from.getBoundingClientRect().top + y - vh * 0.72;
-        var end = to.getBoundingClientRect().top + y - vh * 0.28;
-        var span = Math.max(end - start, 1);
-        var p = (y - start) / span;
-        var ease = envelope(p);
-        var q = Math.round(ease * 250) + Math.round(Math.max(0, Math.min(1, p)) * 40);
-        if (q === applied) return;
-        applied = q;
-        if (ease < 0.004) {
-          root.classList.remove("leise");
-          root.style.removeProperty("--leise");
-          root.style.removeProperty("--ink");
-          root.style.removeProperty("--muted");
-          root.style.removeProperty("--link");
-          root.style.removeProperty("--rule");
-          document.body.style.background = "";
-          field.style.opacity = "0";
-          if (meta) meta.setAttribute("content", baseTheme);
-          return;
-        }
-        var travel = reduce ? 0.45 : Math.max(0, Math.min(1, p));
+      function clear() {
+        root.classList.remove("leise");
+        root.style.removeProperty("--leise");
+        root.style.removeProperty("--leise-accent");
+        root.style.removeProperty("--leise-bar");
+        root.style.removeProperty("--ink");
+        root.style.removeProperty("--muted");
+        root.style.removeProperty("--link");
+        root.style.removeProperty("--rule");
+        document.body.style.background = "";
+        field.style.opacity = "0";
+        if (meta) meta.setAttribute("content", baseTheme);
+      }
+      function paintPalette(pal, travel, opacity) {
+        var lift = pal.lift * opacity;
         var x = reduce ? 50 : 46 + Math.sin(travel * Math.PI * 2.4) * 24;
         var yPos = reduce ? 42 : 18 + travel * 58;
         var angle = reduce ? 168 : 128 + travel * 210;
         var band = reduce ? 46 : 24 + travel * 38;
-        field.style.opacity = String(ease);
+        field.style.opacity = String(opacity);
         field.style.background =
-          "radial-gradient(ellipse at " + x.toFixed(1) + "% " + yPos.toFixed(1) + "%, #e23b4c 0%, #8d1828 36%, rgba(61,10,18,0) 70%)," +
-          "linear-gradient(" + angle.toFixed(1) + "deg, #3a0c14 0%, #9a1a2c " + band.toFixed(1) + "%, #c42e40 58%, #4c1018 100%)";
+          "radial-gradient(ellipse at " + x.toFixed(1) + "% " + yPos.toFixed(1) + "%, " + rgb(pal.glow) + " 0%, " + rgb(pal.mid) + " 36%, rgba(" + Math.round(pal.deep[0]) + "," + Math.round(pal.deep[1]) + "," + Math.round(pal.deep[2]) + ",0) 70%)," +
+          "linear-gradient(" + angle.toFixed(1) + "deg, " + rgb(pal.deep) + " 0%, " + rgb(pal.mid) + " " + band.toFixed(1) + "%, " + rgb(pal.glow) + " 58%, " + rgb(pal.edge) + " 100%)";
         root.classList.add("leise");
-        root.style.setProperty("--leise", ease.toFixed(3));
-        root.style.setProperty("--ink", mix([28, 27, 24], [246, 239, 232], ease));
-        root.style.setProperty("--muted", mix([90, 86, 76], [240, 210, 204], ease));
-        root.style.setProperty("--link", mix([26, 61, 143], [240, 192, 20], ease));
-        root.style.setProperty("--rule", mix([200, 194, 180], [196, 120, 124], ease));
+        root.style.setProperty("--leise", lift.toFixed(3));
+        root.style.setProperty("--leise-accent", rgb(pal.link));
+        root.style.setProperty("--leise-bar", rgb(pal.bar));
+        root.style.setProperty("--ink", rgb(lerpArr(BASE_INK, CREAM, lift)));
+        root.style.setProperty("--muted", rgb(lerpArr(BASE_MUTED, [240, 220, 206], lift)));
+        root.style.setProperty("--link", rgb(lerpArr(BASE_LINK, pal.link, Math.max(lift, opacity * 0.35))));
+        root.style.setProperty("--rule", rgb(lerpArr(BASE_RULE, pal.mid, opacity)));
         document.body.style.background = "transparent";
-        if (meta) meta.setAttribute("content", ease > 0.45 ? "#6e1422" : baseTheme);
+        if (meta) meta.setAttribute("content", opacity > 0.45 ? rgb(pal.bar) : baseTheme);
+      }
+      function paint() {
+        var y = window.scrollY;
+        var vh = window.innerHeight || 800;
+        var marks = [];
+        for (var i = 0; i < heads.length; i++) {
+          marks.push(heads[i].getBoundingClientRect().top + y - vh * 0.42);
+        }
+        marks.push(tail.getBoundingClientRect().top + y - vh * 1.05);
+        var key;
+        if (y < marks[0]) {
+          var fadeIn = smooth(1 - (marks[0] - y) / (vh * 0.28));
+          key = "in" + Math.round(fadeIn * 40);
+          if (key === applied) return;
+          applied = key;
+          if (fadeIn < 0.004) { clear(); return; }
+          paintPalette(sections[0], 0, fadeIn);
+          return;
+        }
+        var last = marks.length - 2;
+        if (y >= marks[marks.length - 1]) {
+          var fadeOut = smooth(1 - (y - marks[marks.length - 1]) / (vh * 0.45));
+          key = "out" + Math.round(fadeOut * 40);
+          if (key === applied) return;
+          applied = key;
+          if (fadeOut < 0.004) { clear(); return; }
+          paintPalette(sections[last], 1, fadeOut);
+          return;
+        }
+        var idx = 0;
+        for (var k = 0; k <= last; k++) if (y >= marks[k]) idx = k;
+        var span = Math.max(marks[idx + 1] - marks[idx], 1);
+        var p = clamp((y - marks[idx]) / span);
+        var edge = 0.18;
+        var pal = sections[idx];
+        if (idx > 0 && p < edge) pal = mixPal(sections[idx - 1], sections[idx], smooth(p / edge));
+        else if (idx < last && p > 1 - edge) pal = mixPal(sections[idx], sections[idx + 1], smooth((p - (1 - edge)) / edge));
+        var travel = reduce ? 0.45 : (idx + p) / sections.length;
+        key = idx + ":" + Math.round(p * 48) + ":" + Math.round(pal.lift * 20);
+        if (key === applied) return;
+        applied = key;
+        paintPalette(pal, travel, 1);
       }
       var ticking = false;
       function queue() {
