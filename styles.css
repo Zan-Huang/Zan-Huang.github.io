@@ -2332,19 +2332,104 @@ body:has(#leise-field) {
 
 #leise-field span {
   position: absolute;
-  width: 170%;
-  height: 170%;
-  left: -35%;
-  top: -35%;
-  background:
-    radial-gradient(circle at 32% 38%, var(--drift, transparent) 0%, transparent 42%),
-    radial-gradient(circle at 68% 62%, var(--drift, transparent) 0%, transparent 46%);
-  animation: wash-drift 26s ease-in-out infinite alternate;
+  margin: 0;
+  border: 0 solid transparent;
+  border-radius: 0;
+  clip-path: none;
+  background: none;
+  pointer-events: none;
 }
 
-@keyframes wash-drift {
-  from { transform: translate3d(-5%, -4%, 0); }
-  to { transform: translate3d(6%, 5%, 0); }
+#leise-field[data-shape="willow"] span {
+  width: 62%;
+  height: 150%;
+  left: 19%;
+  top: -28%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 8%, var(--drift, transparent) 0%, transparent 58%);
+  animation: wash-sway 8s ease-in-out infinite alternate;
+}
+
+#leise-field[data-shape="river"] span {
+  width: 180%;
+  height: 38%;
+  left: -40%;
+  top: 34%;
+  border-radius: 50%;
+  background: linear-gradient(90deg, transparent, var(--drift, transparent) 38%, var(--drift, transparent) 62%, transparent);
+  animation: wash-current 12s ease-in-out infinite alternate;
+}
+
+#leise-field[data-shape="map"] span {
+  width: 72%;
+  height: 72%;
+  left: 14%;
+  top: 14%;
+  background: var(--drift, transparent);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  animation: wash-sheet 20s ease-in-out infinite alternate;
+}
+
+#leise-field[data-shape="slab"] span {
+  width: 130%;
+  height: 28%;
+  left: -15%;
+  top: 36%;
+  background: var(--drift, transparent);
+  animation: wash-slab 16s ease-in-out infinite alternate;
+}
+
+#leise-field[data-shape="wallpaper"] span {
+  width: 160%;
+  height: 160%;
+  left: -30%;
+  top: -30%;
+  background:
+    repeating-linear-gradient(45deg, var(--drift, transparent) 0 4px, transparent 4px 34px),
+    repeating-linear-gradient(-45deg, var(--drift, transparent) 0 4px, transparent 4px 34px);
+  animation: wash-paper 18s ease-in-out infinite alternate;
+}
+
+#leise-field[data-shape="proof"] span {
+  width: 78vmin;
+  height: 78vmin;
+  left: 50%;
+  top: 46%;
+  margin: -39vmin 0 0 -39vmin;
+  border-radius: 50%;
+  border-width: 12px;
+  border-style: solid;
+  border-color: transparent var(--drift, transparent) var(--drift, transparent) transparent;
+  animation: wash-proof 22s linear infinite;
+}
+
+@keyframes wash-sway {
+  from { transform: rotate(-7deg) translate3d(-3%, 0, 0); }
+  to { transform: rotate(8deg) translate3d(4%, 0, 0); }
+}
+
+@keyframes wash-current {
+  from { transform: translate3d(-7%, 6%, 0); }
+  to { transform: translate3d(7%, -8%, 0); }
+}
+
+@keyframes wash-sheet {
+  from { transform: rotate(-12deg); }
+  to { transform: rotate(14deg); }
+}
+
+@keyframes wash-slab {
+  from { transform: translate3d(-8%, 16%, 0); }
+  to { transform: translate3d(8%, -18%, 0); }
+}
+
+@keyframes wash-paper {
+  from { transform: rotate(-7deg) scale(1.2); }
+  to { transform: rotate(7deg) scale(1.2); }
+}
+
+@keyframes wash-proof {
+  to { transform: rotate(360deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
