@@ -530,6 +530,30 @@ cite {
   font-size: 0.92rem;
 }
 
+.post-list li.post-berlin {
+  margin-left: -0.7rem;
+  margin-right: -0.35rem;
+  padding: 0.22rem 0.35rem 0.26rem 0.7rem;
+  background: color-mix(in srgb, #f0c014 46%, var(--bg));
+  box-shadow: inset 4px 0 0 #f0c014;
+}
+
+.post-list li.post-berlin time,
+.post-list li.post-berlin a {
+  color: #1a3d8f;
+}
+
+.post-list li.post-berlin a {
+  font-weight: 600;
+  text-decoration-color: #f0c014;
+  text-decoration-thickness: 0.14em;
+  text-underline-offset: 0.16em;
+}
+
+.post-list li.post-berlin a:hover {
+  color: var(--ink);
+}
+
 .page-lead,
 .empty-note {
   color: var(--muted);
