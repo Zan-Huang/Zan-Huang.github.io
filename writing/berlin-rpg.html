@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"/>
-  <link rel="stylesheet" href="../styles.css?v=80"/>
+  <link rel="stylesheet" href="../styles.css?v=81"/>
 </head>
 <body>
   <div id="leise-field" aria-hidden="true">
@@ -1379,7 +1379,7 @@
         var step = phrase();
         var along = reduce ? 0 : smooth(step.p);
         field.style.setProperty("--read", (along * 22).toFixed(1) + "px");
-        field.style.setProperty("--drift", "rgba(" + Math.round(pal.mid[0]) + "," + Math.round(pal.mid[1]) + "," + Math.round(pal.mid[2]) + ",0.55)");
+        field.style.setProperty("--drift", "rgba(" + Math.round(pal.mid[0]) + "," + Math.round(pal.mid[1]) + "," + Math.round(pal.mid[2]) + ",0.92)");
         field.style.setProperty("--line", "rgba(" + Math.round(pal.mid[0]) + "," + Math.round(pal.mid[1]) + "," + Math.round(pal.mid[2]) + ",1)");
         field.style.opacity = String(opacity);
         field.style.background = "none";
@@ -1393,9 +1393,11 @@
       function place() {
         if (!essay) return;
         var col = essay.getBoundingClientRect();
-        var wide = window.innerWidth >= 860;
-        var w = wide ? 16 : 8;
-        var gap = 4;
+        var gap = 8;
+        var cap = 156;
+        var leftRoom = Math.max(0, col.left - gap);
+        var rightRoom = Math.max(0, window.innerWidth - col.right - gap);
+        var w = Math.round(Math.min(cap, leftRoom, rightRoom));
         field.style.setProperty("--rail", w + "px");
         var leftRail = field.querySelector(".rail.left");
         var rightRail = field.querySelector(".rail.right");
