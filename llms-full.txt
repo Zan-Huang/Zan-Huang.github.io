@@ -79,12 +79,19 @@ Talk: selected talk on ongoing technical work — https://www.youtube.com/watch?
 
 - Home: https://zanhuang.org/
 - Writing: https://zanhuang.org/writing.html
+- Berlin RPG Aufbau: https://zanhuang.org/writing/berlin-rpg.html
 - Notes from the London Underground: https://zanhuang.org/writing/london-underground.html
 - Turin Travelogue: https://zanhuang.org/writing/turin-travelogue.html
 - Two Images of Ann Arbor in Different Years: https://zanhuang.org/writing/two-images.html
 - Outside Permutation: https://zanhuang.org/writing/outside-permutation.html
 - Visualizing Movement in Higher Dimensions: https://zanhuang.org/writing/visualizing.html
 - Index for language models: https://zanhuang.org/llms.txt
+
+## Berlin RPG Aufbau
+
+27 September 2026. https://zanhuang.org/writing/berlin-rpg.html
+
+This is a work of mathematics, poetics, and hermeneutics meant to dissolve the artificial boundaries between all of them.
 
 ## Notes from the London Underground
 
