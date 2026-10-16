@@ -40,9 +40,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"/>
-  <link rel="stylesheet" href="../styles.css?v=75"/>
+  <link rel="stylesheet" href="../styles.css?v=76"/>
 </head>
 <body>
+  <div id="leise-field" aria-hidden="true"></div>
   <div class="wrap">
     <header>
       <a class="seal" href="../index.html"><img src="../seal.png" alt="Zan Huang seal"/></a>
@@ -1071,7 +1072,7 @@
             music nights every Monday. At first, I wasn&rsquo;t quite sure what we were
             getting into, only that the venue was formerly a brothel and that
             everything underground was upside down. As we entered the hallway
-            entrance coated with red wallpaper, I couldn&rsquo;t quite figure out
+            entrance coated with hypnotic red wallpaper, I couldn&rsquo;t quite figure out
             whether the short figure taking the cover fee at the wooden desk was
             method acting or if that was simply how they were as a person. I
             secretly wished for both to be true. I could only recall feeling the
@@ -1284,6 +1285,90 @@
         });
       }, { passive: true });
       update();
+    })();
+  </script>
+  <script>
+    (function () {
+      var field = document.getElementById("leise-field");
+      var from = document.getElementById("teil-iv");
+      var to = document.getElementById("teil-v");
+      if (!field || !from || !to) return;
+      var root = document.documentElement;
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var meta = document.getElementById("theme-color");
+      var baseTheme = meta ? meta.getAttribute("content") : "#f6f3ec";
+      var applied = -1;
+
+      function mix(a, b, t) {
+        return "rgb(" +
+          Math.round(a[0] + (b[0] - a[0]) * t) + "," +
+          Math.round(a[1] + (b[1] - a[1]) * t) + "," +
+          Math.round(a[2] + (b[2] - a[2]) * t) + ")";
+      }
+      function smooth(t) {
+        t = Math.max(0, Math.min(1, t));
+        return t * t * (3 - 2 * t);
+      }
+      function envelope(p) {
+        var edge = 0.16;
+        if (p <= 0 || p >= 1) return 0;
+        if (p < edge) return smooth(p / edge);
+        if (p > 1 - edge) return smooth((1 - p) / edge);
+        return 1;
+      }
+      function paint() {
+        var y = window.scrollY;
+        var vh = window.innerHeight || 800;
+        var start = from.getBoundingClientRect().top + y - vh * 0.72;
+        var end = to.getBoundingClientRect().top + y - vh * 0.28;
+        var span = Math.max(end - start, 1);
+        var p = (y - start) / span;
+        var ease = envelope(p);
+        var q = Math.round(ease * 250) + Math.round(Math.max(0, Math.min(1, p)) * 40);
+        if (q === applied) return;
+        applied = q;
+        if (ease < 0.004) {
+          root.classList.remove("leise");
+          root.style.removeProperty("--leise");
+          root.style.removeProperty("--ink");
+          root.style.removeProperty("--muted");
+          root.style.removeProperty("--link");
+          root.style.removeProperty("--rule");
+          document.body.style.background = "";
+          field.style.opacity = "0";
+          if (meta) meta.setAttribute("content", baseTheme);
+          return;
+        }
+        var travel = reduce ? 0.45 : Math.max(0, Math.min(1, p));
+        var x = reduce ? 50 : 46 + Math.sin(travel * Math.PI * 2.4) * 24;
+        var yPos = reduce ? 42 : 18 + travel * 58;
+        var angle = reduce ? 168 : 128 + travel * 210;
+        var band = reduce ? 46 : 24 + travel * 38;
+        field.style.opacity = String(ease);
+        field.style.background =
+          "radial-gradient(ellipse at " + x.toFixed(1) + "% " + yPos.toFixed(1) + "%, #e23b4c 0%, #8d1828 36%, rgba(61,10,18,0) 70%)," +
+          "linear-gradient(" + angle.toFixed(1) + "deg, #3a0c14 0%, #9a1a2c " + band.toFixed(1) + "%, #c42e40 58%, #4c1018 100%)";
+        root.classList.add("leise");
+        root.style.setProperty("--leise", ease.toFixed(3));
+        root.style.setProperty("--ink", mix([28, 27, 24], [246, 239, 232], ease));
+        root.style.setProperty("--muted", mix([90, 86, 76], [240, 210, 204], ease));
+        root.style.setProperty("--link", mix([26, 61, 143], [240, 192, 20], ease));
+        root.style.setProperty("--rule", mix([200, 194, 180], [196, 120, 124], ease));
+        document.body.style.background = "transparent";
+        if (meta) meta.setAttribute("content", ease > 0.45 ? "#6e1422" : baseTheme);
+      }
+      var ticking = false;
+      function queue() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () {
+          ticking = false;
+          paint();
+        });
+      }
+      window.addEventListener("scroll", queue, { passive: true });
+      window.addEventListener("resize", queue);
+      paint();
     })();
   </script>
 </body>

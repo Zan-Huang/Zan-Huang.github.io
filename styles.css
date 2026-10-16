@@ -2315,3 +2315,24 @@ footer a:hover {
     scroll-margin-top: 3.6rem;
   }
 }
+
+body:has(#leise-field) {
+  z-index: 0;
+}
+
+#leise-field {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  background: #3a0c14;
+}
+
+html.leise .berlin .ded {
+  color: color-mix(in srgb, var(--built), #f0c014 calc(var(--leise) * 100%));
+}
+
+html.leise .berlin .berlin-toc {
+  background: color-mix(in srgb, #6e1422 calc(var(--leise) * 100%), var(--bg));
+}
