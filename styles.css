@@ -1897,6 +1897,17 @@ footer a:hover {
   border-left: 3px solid var(--gelb);
 }
 
+.berlin .acks {
+  margin: 0.2rem 0 1.4rem;
+  padding: 0 0 0 1.35rem;
+  list-style: lower-alpha;
+}
+
+.berlin .acks li {
+  margin: 0.85rem 0;
+  padding-left: 0.35rem;
+}
+
 .berlin .epigraph {
   border-left: 3px solid var(--gelb);
   font-size: 0.92rem;
