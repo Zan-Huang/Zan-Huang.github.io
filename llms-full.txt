@@ -79,6 +79,7 @@ Talk: selected talk on ongoing technical work — https://www.youtube.com/watch?
 
 - Home: https://zanhuang.org/
 - Writing: https://zanhuang.org/writing.html
+- Berlin Abschied: https://zanhuang.org/writing/berlin-abschied.html
 - Berlin RPG Aufbau: https://zanhuang.org/writing/berlin-rpg.html
 - Notes from the London Underground: https://zanhuang.org/writing/london-underground.html
 - Turin Travelogue: https://zanhuang.org/writing/turin-travelogue.html
@@ -86,6 +87,34 @@ Talk: selected talk on ongoing technical work — https://www.youtube.com/watch?
 - Outside Permutation: https://zanhuang.org/writing/outside-permutation.html
 - Visualizing Movement in Higher Dimensions: https://zanhuang.org/writing/visualizing.html
 - Index for language models: https://zanhuang.org/llms.txt
+
+## Berlin Abschied
+
+29 October 2026. Written in Delft, Netherlands. https://zanhuang.org/writing/berlin-abschied.html
+
+after Paul Celan
+
+Black Spree-water of midnight,
+we drink you in lead moonlit cups
+of silvery Spree-glimmer, we await
+the stone trumpet of still-faced Gabriel
+hovering in silence facing the subterranean
+Kaisergrab of the Potsdam Friedenskirche
+
+The noise band makes sound dissolving into song,
+and Pierrot drowns embracing the moon.
+
+Oh Maria, how you braid your lover’s long hair!
+So close to the end of the world.
+Your face I found once on a queen of spades
+when the crackling trumpet of the second coming
+swept across your native Madrid
+and the stars vanished above Berlin in an instant,
+and my gut knotted and unknotted before the blackness of the sky
+like poisoned and entangled roots of a polychrome vineyard.
+
+Black Spree-water of midnight,
+we drink you.
 
 ## Berlin RPG Aufbau
 

@@ -92,6 +92,33 @@ html.lamp ::selection {
   background: #d4c8b0;
 }
 
+html.midnight {
+  --bg: #07080c;
+  --ink: #e6e1d6;
+  --muted: #b7b1a4;
+  --rule: #6e6a62;
+  --link: #b7c7ea;
+}
+
+html.midnight ::selection {
+  background: #2c3344;
+  color: var(--ink);
+}
+
+html.midnight body::before {
+  filter: brightness(2.5) saturate(1.2);
+  opacity: 0.72;
+}
+
+html.midnight body::after {
+  filter: invert(0.88);
+  opacity: 0.4;
+}
+
+html.midnight .seal img {
+  filter: invert(1) hue-rotate(180deg);
+}
+
 a {
   color: var(--link);
   text-decoration-thickness: from-font;
@@ -792,6 +819,21 @@ footer a:hover {
     --link: #1a3d8f;
   }
 
+  html.midnight {
+    --bg: #ffffff;
+    --ink: #1c1b18;
+    --muted: #5a564c;
+    --rule: #c8c2b4;
+    --link: #1a3d8f;
+  }
+
+  html.midnight body::before,
+  html.midnight body::after,
+  html.midnight .seal img {
+    filter: none;
+    opacity: 0.88;
+  }
+
   .essay-rail {
     position: static;
   }
@@ -1122,6 +1164,22 @@ footer a:hover {
   padding-left: 1.15em;
   text-indent: -1.15em;
   line-height: 1.55;
+}
+
+.verse .poem-place {
+  margin: 1.8em 0 0;
+  font-size: 0.78rem;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.verse .poem-after {
+  margin: 0.15rem 0 0;
+  font-size: 0.95rem;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: var(--muted);
 }
 
 .essay .epigraph {
