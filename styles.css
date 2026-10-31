@@ -557,24 +557,20 @@ cite {
   font-size: 0.92rem;
 }
 
-.post-list li.post-berlin {
-  margin-left: -0.7rem;
-  margin-right: -0.35rem;
-  padding: 0.35rem 0.45rem 0.35rem 0.7rem;
-  background: color-mix(in srgb, #f0c014 46%, var(--bg));
-  box-shadow: inset 4px 0 0 #f0c014;
+.post-list li.has-thumb {
+  margin-bottom: 0.7rem;
 }
 
-.post-list li.post-berlin a {
+.post-list li.has-thumb a {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: #1a3d8f;
   font-weight: 400;
   text-decoration: none;
+  color: inherit;
 }
 
-.post-list li.post-berlin .post-thumb {
+.post-list li.has-thumb .post-thumb {
   flex: 0 0 auto;
   width: 4.4rem;
   height: 6.2rem;
@@ -583,23 +579,47 @@ cite {
   background: #fff;
 }
 
-.post-list li.post-berlin time {
+.post-list li.has-thumb time {
   display: block;
   width: auto;
   margin-bottom: 0.12rem;
+}
+
+.post-list li.has-thumb .post-title {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+  text-underline-offset: 0.12em;
+}
+
+.post-list li.has-thumb a:hover .post-title {
+  color: var(--ink);
+}
+
+.post-list li.post-berlin {
+  margin-left: -0.7rem;
+  margin-right: -0.35rem;
+  padding: 0.35rem 0.45rem 0.35rem 0.7rem;
+  background: color-mix(in srgb, #f0c014 46%, var(--bg));
+  box-shadow: inset 4px 0 0 #f0c014;
+}
+
+.post-list li.post-berlin a,
+.post-list li.post-berlin time,
+.post-list li.post-berlin .post-title {
   color: #1a3d8f;
 }
 
 .post-list li.post-berlin .post-title {
   font-weight: 600;
-  text-decoration: underline;
   text-decoration-color: #f0c014;
   text-decoration-thickness: 0.14em;
   text-underline-offset: 0.16em;
 }
 
 .post-list li.post-berlin a:hover,
-.post-list li.post-berlin a:hover time {
+.post-list li.post-berlin a:hover time,
+.post-list li.post-berlin a:hover .post-title {
   color: var(--ink);
 }
 
